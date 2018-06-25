@@ -11,7 +11,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.jetherrodrigues.webflix.domain.Image;
 import com.jetherrodrigues.webflix.exceptions.WebflixMovieNotFound;
@@ -50,12 +49,9 @@ public class ImageResource implements Serializable {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Void> save(@Valid @RequestBody Image image) {
+	public ResponseEntity<Image> save(@Valid @RequestBody Image image) {
 		image = this.imageService.save(image);
-		return ResponseEntity
-				.created(ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}")
-				.buildAndExpand(image.getId())
-				.toUri()).build();
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(image);
 	}
 }

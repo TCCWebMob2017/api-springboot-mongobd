@@ -11,7 +11,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.jetherrodrigues.webflix.domain.Category;
 import com.jetherrodrigues.webflix.exceptions.WebflixMovieNotFound;
@@ -50,12 +49,9 @@ public class CategoryResource implements Serializable {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Void> save(@Valid @RequestBody Category category) {
+	public ResponseEntity<Category> save(@Valid @RequestBody Category category) {
 		category = this.categoryService.save(category);
-		return ResponseEntity
-				.created(ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}")
-				.buildAndExpand(category.getId())
-				.toUri()).build();
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(category);
 	}
 }

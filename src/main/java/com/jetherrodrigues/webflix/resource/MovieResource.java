@@ -1,5 +1,7 @@
 package com.jetherrodrigues.webflix.resource;
 
+import static com.jetherrodrigues.webflix.util.ApiVersionUtil.*;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -9,12 +11,10 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.jetherrodrigues.webflix.domain.Movie;
 import com.jetherrodrigues.webflix.exceptions.WebflixMovieNotFound;
 import com.jetherrodrigues.webflix.service.MovieService;
-import static com.jetherrodrigues.webflix.util.ApiVersionUtil.*;
 
 @RestController
 @RequestMapping(value={
@@ -49,12 +49,9 @@ public class MovieResource implements Serializable {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Void> saveMovie(@Valid @RequestBody Movie movie) {
+	public ResponseEntity<Movie> saveMovie(@Valid @RequestBody Movie movie) {
 		movie = this.movieService.save(movie);
-		return ResponseEntity
-				.created(ServletUriComponentsBuilder.fromCurrentRequest()
-				.path("/{id}")
-				.buildAndExpand(movie.getId())
-				.toUri()).build();
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(movie);
 	}
 }
