@@ -1,5 +1,5 @@
 # webflix-api
 
-Swagger webflix API: https://webflix-api.herokuapp.com/swagger-ui.html
+Swagger App API: https://bioup.herokuapp.com/swagger-ui.html
 
-Heroku app: https://webflix-api.herokuapp.com/
+Heroku app: https://bioup.herokuapp.com/
