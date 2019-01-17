@@ -26,10 +26,10 @@ public class SwaggerConfig {
     }
 
 	private ApiInfo metaData() {
-		ApiInfo apiInfo = new ApiInfo("Webflix REST API", "Webflix", "1.0",
+		ApiInfo apiInfo = new ApiInfo("AppMed REST API", "AppMed", "1.0",
 				"Terms of service",
-				new Contact("Webflix", "http://www.webflix.com", "contato@webflix.com"),
-				"2018 © Webflix.", "http://www.webflix.com");
+				new Contact("AppMed", "http://www.appmed.com", "contato@appmed.com"),
+				"2018 © AppMed.", "http://www.appmed.com");
 		return apiInfo;
 	}
 
