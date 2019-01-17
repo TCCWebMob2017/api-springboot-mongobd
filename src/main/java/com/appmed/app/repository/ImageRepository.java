@@ -1,9 +1,9 @@
-package com.jetherrodrigues.webflix.repository;
+package com.appmed.app.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.jetherrodrigues.webflix.domain.Image;
+import com.appmed.app.domain.Image;
 
 @Repository
 public interface ImageRepository extends MongoRepository<Image, String> {

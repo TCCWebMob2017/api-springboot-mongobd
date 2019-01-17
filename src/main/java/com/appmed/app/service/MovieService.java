@@ -1,4 +1,4 @@
-package com.jetherrodrigues.webflix.service;
+package com.appmed.app.service;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jetherrodrigues.webflix.domain.Movie;
-import com.jetherrodrigues.webflix.repository.MovieRepository;
+import com.appmed.app.domain.Movie;
+import com.appmed.app.repository.MovieRepository;
 
 @Service
 public class MovieService implements Serializable {

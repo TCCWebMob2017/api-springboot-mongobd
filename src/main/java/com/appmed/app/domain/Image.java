@@ -1,4 +1,4 @@
-package com.jetherrodrigues.webflix.domain;
+package com.appmed.app.domain;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

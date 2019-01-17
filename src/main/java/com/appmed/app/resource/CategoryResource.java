@@ -1,6 +1,6 @@
-package com.jetherrodrigues.webflix.resource;
+package com.appmed.app.resource;
 
-import static com.jetherrodrigues.webflix.util.ApiVersionUtil.*;
+import static com.appmed.app.util.ApiVersionUtil.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import com.jetherrodrigues.webflix.domain.Category;
-import com.jetherrodrigues.webflix.exceptions.WebflixMovieNotFound;
-import com.jetherrodrigues.webflix.service.CategoryService;
+import com.appmed.app.domain.Category;
+import com.appmed.app.exceptions.WebflixMovieNotFound;
+import com.appmed.app.service.CategoryService;
 
 @RestController
 @RequestMapping(value={

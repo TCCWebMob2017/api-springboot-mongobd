@@ -1,4 +1,4 @@
-package com.jetherrodrigues.webflix.exceptions;
+package com.appmed.app.exceptions;
 
 public class WebflixMovieNotFound extends Exception {
 

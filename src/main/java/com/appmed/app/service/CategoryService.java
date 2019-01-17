@@ -1,4 +1,4 @@
-package com.jetherrodrigues.webflix.service;
+package com.appmed.app.service;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jetherrodrigues.webflix.domain.Category;
-import com.jetherrodrigues.webflix.repository.CategoryRepository;
+import com.appmed.app.domain.Category;
+import com.appmed.app.repository.CategoryRepository;
 
 @Service
 public class CategoryService implements Serializable {
