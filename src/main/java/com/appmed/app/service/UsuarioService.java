@@ -38,8 +38,13 @@ public class UsuarioService implements Serializable {
     public void delete(String id) {
         this.usuarioRepository.delete(id);
     }
-
-    public Usuario findUserByEmail(String email) {
-        return usuarioRepository.findByEmail(email);
+    
+    public List<Usuario> findUserByNome(String nome) {
+        return (List<Usuario>) usuarioRepository.findByNome(nome);
     }
+     
+    public Usuario authenticate(String nome, String password) {
+        return usuarioRepository.authenticate(nome, password) ;
+    }
+    
 }

@@ -13,8 +13,6 @@ public class Usuario extends AbstractDocument implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String email;
     
-    private String userName;
-    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String password;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;
@@ -96,22 +94,6 @@ public class Usuario extends AbstractDocument implements Serializable {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
-    }
-
-    //public Set<Role> getRoles() {
-    //    return roles;
-    //}
-
-    //public void setRoles(Set<Role> roles) {
-    //    this.roles = roles;
-    //}
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     

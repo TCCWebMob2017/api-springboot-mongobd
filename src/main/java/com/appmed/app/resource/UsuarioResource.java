@@ -71,4 +71,40 @@ public class UsuarioResource implements Serializable {
         this.usuarioService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("Usuario removido");
     }
+
+    @PostMapping("/authenticate/")
+    public ResponseEntity<Usuario> authenticate(@Valid @RequestBody Usuario login) throws NotFound {
+        Usuario usuario = this.usuarioService.authenticate(login.getEmail(), 
+                login.getPassword());
+
+        if (usuario == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                    .body(usuario);
+        } else {
+
+            return ResponseEntity.status(HttpStatus.OK)
+                    .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                    .body(usuario);
+        }
+
+    }
+
+    @GetMapping("/nome/{nome}")
+    public ResponseEntity<List<Usuario>> getUsuarioByNome(@PathVariable(name = "nome") String nome) throws NotFound {
+        List<Usuario> usuarios = this.usuarioService.findUserByNome(nome);
+
+        if (usuarios == null) {
+            throw new NotFound("There is no user with this name!");
+        }
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(usuarios);
+
+    }
+    
+
+ 
+
 }
