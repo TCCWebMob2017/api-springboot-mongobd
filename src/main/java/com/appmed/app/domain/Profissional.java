@@ -7,7 +7,6 @@ import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "profissional")
 public class Profissional extends Perfil implements Serializable {
 
     private static final long serialVersionUID = 4426284080596900227L;

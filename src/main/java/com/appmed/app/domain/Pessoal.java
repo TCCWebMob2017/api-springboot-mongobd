@@ -13,9 +13,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "pessoal")
 public class Pessoal extends Perfil implements Serializable {
 
     private static final long serialVersionUID = 3104508455191920797L;
@@ -33,8 +31,8 @@ public class Pessoal extends Perfil implements Serializable {
     private boolean doadorSangue;
     private String tipoSangue;
     private Double altura;
-   private Double peso;
-    
+    private Double peso;
+
     private List<Dependente> dependentes;
     private List<DoencaFicha> doencas;
     private List<AlergiaFicha> alergias;
@@ -45,7 +43,7 @@ public class Pessoal extends Perfil implements Serializable {
     private List<Contato> profissionais;//medicos
     private List<Convenio> convenios;
     private List<DrogaFicha> drogas;
-    
+
     public Pessoal() {
         super();
     }
@@ -80,7 +78,7 @@ public class Pessoal extends Perfil implements Serializable {
     public Pessoal(Usuario usuario, TipoPerfil tipoPerfil, String nome, String RG,
             String CPF, Localidade residencia, Localidade trabalho,
             LocalDate nascimento,
-            String sexo, boolean praticaEsporte, boolean doadorOrgao, 
+            String sexo, boolean praticaEsporte, boolean doadorOrgao,
             boolean doadorSangue,
             String tipoSangue, Double altura, Double peso) {
         super(usuario, tipoPerfil, nome);
@@ -203,7 +201,9 @@ public class Pessoal extends Perfil implements Serializable {
     }
 
     public boolean add(Dependente e) {
-        if (this.dependentes==null){this.dependentes=new ArrayList<>();}
+        if (this.dependentes == null) {
+            this.dependentes = new ArrayList<>();
+        }
         return this.dependentes.add(e);
     }
 
@@ -283,7 +283,6 @@ public class Pessoal extends Perfil implements Serializable {
         this.drogas = drogas;
     }
 
-    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -291,7 +290,7 @@ public class Pessoal extends Perfil implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

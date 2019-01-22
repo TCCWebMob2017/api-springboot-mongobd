@@ -1,6 +1,12 @@
 package com.appmed.app.domain;
 
-public class Perfil extends AbstractEntityNetwork {
+import java.io.Serializable;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "perfil")
+public class Perfil extends AbstractEntityNetwork  implements Serializable {
+
+    private static final long serialVersionUID = -5049451532148876620L;
 
     private String nome;
     private TipoPerfil tipoPerfil;

@@ -2,6 +2,9 @@ package com.appmed.app.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "usuario")
@@ -12,7 +15,7 @@ public class Usuario extends AbstractDocument implements Serializable {
     private String nome;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String email;
-    
+
     private String password;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;
@@ -21,14 +24,21 @@ public class Usuario extends AbstractDocument implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String rg;
     private boolean enabled;
+
+    @DBRef
+    private Pessoal perfilPessoal;
+
+    @DBRef
+    private Profissional perfilProfissional;
+
+    @DBRef
+    private List<Institucional> perfisInstituicoes;
+
     //@DBRef
     //private Set<Role> roles;
-
     public Usuario() {
         super();
     }
-
-
 
     public Usuario(String nome, String email, String password, String tefefone, String cpf, String rg) {
         super();
@@ -96,7 +106,41 @@ public class Usuario extends AbstractDocument implements Serializable {
         this.enabled = enabled;
     }
 
-    
+    public Pessoal getPerfilPessoal() {
+        return perfilPessoal;
+    }
+
+    public void setPerfilPessoal(Pessoal perfilPessoal) {
+        this.perfilPessoal = perfilPessoal;
+    }
+
+    public Profissional getPerfilProfissional() {
+        return perfilProfissional;
+    }
+
+    public void setPerfilProfissional(Profissional perfilProfissional) {
+        this.perfilProfissional = perfilProfissional;
+    }
+
+    public List<Institucional> getPerfisInstituicoes() {
+        return perfisInstituicoes;
+    }
+
+    public void setPerfisInstituicoes(List<Institucional> perfisInstituicoes) {
+        this.perfisInstituicoes = perfisInstituicoes;
+    }
+
+    public boolean add(Institucional e) {
+        if (perfisInstituicoes.isEmpty()) {
+            perfisInstituicoes = new ArrayList<Institucional>();
+        };
+        return perfisInstituicoes.add(e);
+    }
+
+    public boolean remove(Object o) {
+        return perfisInstituicoes.remove(o);
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
