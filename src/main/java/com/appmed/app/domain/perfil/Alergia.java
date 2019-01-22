@@ -12,7 +12,10 @@ public class Alergia  extends AbstractEntityNetwork implements Serializable {
     private static final long serialVersionUID = -7137539624241707176L;
 
     private String nome;
-        
+
+    public Alergia() {
+        super();
+    }
     public Alergia(String nome, Usuario createdByUser) {
         super(createdByUser);
         this.nome = nome;

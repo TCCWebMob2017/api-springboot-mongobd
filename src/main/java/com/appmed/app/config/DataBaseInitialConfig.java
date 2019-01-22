@@ -34,7 +34,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
     public void onApplicationEvent(ContextRefreshedEvent argument) {
          
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+/*
         usuarioRepository.deleteAll();
         pessoalRepository.deleteAll();
         institucionalRepository.deleteAll();       
@@ -119,13 +119,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             
             perfilPessoal=this.pessoalRepository.save(perfilPessoal);
             
-/*    public Pessoal(Usuario usuario, TipoPerfil tipoPerfil, String nome, String RG,
-            String CPF, Localidade residencia, Localidade trabalho,
-            LocalDate nascimento,
-            String sexo, boolean praticaEsporte, boolean doadorOrgao, 
-            boolean doadorSangue,
-            String tipoSangue, Double altura, Double peso) {
-*/
+
             Pessoal perfilDependente = new Pessoal(
                     usuario, TipoPerfil.DEPENDENTE,"nome","rg","cpf",
                     new Localidade("Avenida Major Hermenegildo Antônio Aquino",
@@ -147,10 +141,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             
             perfilPessoal=this.pessoalRepository.save(perfilPessoal);
             
- //   public Institucional(String CNPJ, String inscricaoEstadual, LocalDate dataAbertura,
-// String site, String email, Localidade endereco, String telefone, String celular,
-//Area areaAtividade, String descricao, Usuario createdBy, String nome) {
-         
+    
             this.institucionalRepository.save(new Institucional( "62.887.344/0001-11",
                     "742.812.551.727", LocalDate.parse("23/09/2009", formatter),
                     "www.jaquelineemarcosviniciuscasanoturnaltda.com.br",
@@ -161,7 +152,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                     "vai que você tenha uma overdose...",usuarios.get(1), "Jaque Casa Noturna"
             ));
 
-        }
+        }*/
 
     }
 }

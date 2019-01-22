@@ -14,4 +14,5 @@ public class ApiVersionUtil {
     public final static String PERFILPESSOAL = "pessoal";
     public final static String PERFILINSTITUCIONAL = "instituicao";
     public final static String PERFILPROFISSIONAL = "prifissional";
+    public final static String ALERGIA = "alergia";
 }
