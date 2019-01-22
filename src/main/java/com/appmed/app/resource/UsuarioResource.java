@@ -72,7 +72,7 @@ public class UsuarioResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK).body("Usuario removido");
     }
 
-    @PostMapping("/authenticate/")
+    @PostMapping("/authenticate")
     public ResponseEntity<Usuario> authenticate(@Valid @RequestBody Usuario login) throws NotFound {
         Usuario usuario = this.usuarioService.authenticate(login.getEmail(), 
                 login.getPassword());
