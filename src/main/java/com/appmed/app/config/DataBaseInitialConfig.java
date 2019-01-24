@@ -185,7 +185,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             usuarios = usuarioRepository.findAll();
         }
          */
-
+/*
         usuarioRepository.deleteAll();
         pessoalRepository.deleteAll();
         institucionalRepository.deleteAll();
@@ -299,6 +299,6 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                     "vai que você tenha uma overdose...", usuarios.get(1), "Jaque Casa Noturna"
             ));
 
-        }
+        }*/
     }
 }
