@@ -75,6 +75,39 @@ public class Pessoal extends Perfil implements Serializable {
         }
     }
 
+    public Pessoal(Localidade residencia, LocalDate nascimento, String sexo, boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue, String tipoSangue, Double altura, Double peso, Usuario createdBy) {
+        super(createdBy, TipoPerfil.PESSOAL, createdBy.getNome());
+        this.residencia = residencia;
+        this.nascimento = nascimento;
+        this.sexo = sexo;
+        this.praticaEsporte = praticaEsporte;
+        this.doadorOrgao = doadorOrgao;
+        this.doadorSangue = doadorSangue;
+        this.tipoSangue = tipoSangue;
+        this.altura = altura;
+        this.peso = peso;
+        this.RG=createdBy.getRg();
+        this.CPF=createdBy.getCpf();
+    }
+
+    public Pessoal(Localidade residencia, LocalDate nascimento, String sexo,
+            String tipoSangue, Double altura, Double peso, Usuario createdBy) {
+        super(createdBy, TipoPerfil.PESSOAL, createdBy.getNome());
+        this.residencia = residencia;
+        this.nascimento = nascimento;
+        this.sexo = sexo;
+        this.tipoSangue = tipoSangue;
+        this.altura = altura;
+        this.peso = peso;
+        this.residencia = residencia;
+        this.nascimento = nascimento;
+        this.sexo = sexo;
+        this.tipoSangue = tipoSangue;
+        this.RG=createdBy.getRg();
+        this.CPF=createdBy.getCpf();
+    }
+
+    
     public Pessoal(Usuario usuario, TipoPerfil tipoPerfil, String nome, String RG,
             String CPF, Localidade residencia, Localidade trabalho,
             LocalDate nascimento,

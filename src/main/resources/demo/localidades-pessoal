@@ -1,2 +1,5 @@
-#,String logradouro, String bairro, String cidade, String estado, String numero, String CEP
-
+Rua São Sebastião,Cabelinha,Lorena,SP,852,12602-230
+Rua José Marcelo Carneiro,Santo Antônio,Lorena,SP,752,12608-440
+Avenida Godoy Neto,Olaria,Lorena,SP,278,12607-060
+Rua Tenente Argemiro Pereira Marcondes,Vila Nunes,Lorena,SP,713,12603-150
+Rua José Ferraz Mondesir,Parque Mondesir,Lorena,SP,942,12609-165
