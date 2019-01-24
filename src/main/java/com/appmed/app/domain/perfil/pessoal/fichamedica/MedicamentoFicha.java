@@ -2,7 +2,7 @@
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
 import com.appmed.app.domain.perfil.Medicamento;
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class MedicamentoFicha extends InfoFichaMedica{
@@ -12,7 +12,7 @@ public class MedicamentoFicha extends InfoFichaMedica{
     private String periodicidade;
     private String viaAdministracao;
 
-    public MedicamentoFicha(Medicamento medicamento, String dosagem, String frequencia, String viaAdministracao, Privacidade privacidade) {
+    public MedicamentoFicha(Medicamento medicamento, String dosagem, String frequencia, String viaAdministracao, NivelPermissao privacidade) {
         super(privacidade);
         this.medicamento = medicamento;
         this.dosagem = dosagem;

@@ -1,0 +1,1457 @@
+s00;traumatismo superficial cabeca
+s000;traumatismo superficial couro cabeludo
+s001;contusao palpebra regiao periocular
+s002;outros traumatismos superficiais palpebra regiao periocular
+s003;traumatismo superficial nariz
+s004;traumatismo superficial ouvido
+s005;traumatismo superficial labios cavidade oral
+s007;traumatismos superficiais multiplos cabeca
+s008;traumatismo superficial outras partes cabeca
+s009;traumatismo superficial cabeca parte nao especificada
+s01;ferimento cabeca
+s010;ferimento couro cabeludo
+s011;ferimento palpebra regiao periocular
+s012;ferimento nariz
+s013;ferimento ouvido
+s014;ferimento bochecha regiao temporo mandibular
+s015;ferimento labio cavidade oral
+s017;ferimentos multiplos cabeca
+s018;ferimento cabeca outras localizacoes
+s019;ferimento cabeca parte nao especificada
+s02;fratura cranio ossos face
+s020;fratura abobada cranio
+s021;fratura base cranio
+s022;fratura ossos nasais
+s023;fratura assoalho orbital
+s024;fratura ossos malares maxilares
+s025;fratura dentes
+s026;fratura mandibula
+s027;fraturas multiplas envolvendo ossos cranio face
+s028;outras fraturas cranio ossos face
+s029;fratura cranio ossos face parte nao especificada
+s03;luxacao entorse distensao articulacoes ligamentos cabeca
+s030;luxacao maxilar
+s031;luxacao cartilagem septo nasal
+s032;luxacao dentaria
+s033;luxacao outras partes cabeca nao especificadas
+s034;entorse distensao maxilar
+s035;entorse distensao articulacoes ligamentos outras localizacoes localizacoes nao especificadas cabeca
+s04;traumatismo nervos cranianos
+s040;traumatismo nervo vias opticas
+s041;traumatismo nervo oculomotor
+s042;traumatismo nervo troclear
+s043;traumatismo nervo trigemeo
+s044;traumatismo nervo abducente
+s045;traumatismo nervo facial
+s046;traumatismo nervo acustico
+s047;traumatismo nervo acessorio
+s048;traumatismo outros nervos cranianos
+s049;traumatismo nervo craniano nao especificado
+s05;traumatismo olho orbita ocular
+s050;traumatismo conjuntiva abrasao cornea sem mencao corpo estranho
+s051;contusao globo ocular tecidos orbita
+s052;laceracao ruptura ocular prolapso perda tecido intra ocular
+s053;laceracao ocular sem prolapso perda tecido intra ocular
+s054;ferimento penetrante orbita sem corpo estranho
+s055;ferimento penetrante globo ocular corpo estranho
+s056;ferimento penetrante globo ocular sem corpo estranho
+s057;avulsao olho
+s058;outros traumatismos olho orbita
+s059;traumatismo olho orbita nao especificado
+s06;traumatismo intracraniano
+s060;concussao cerebral
+s061;edema cerebral traumatico
+s062;traumatismo cerebral difuso
+s063;traumatismo cerebral focal
+s064;hemorragia epidural
+s065;hemorragia subdural devida traumatismo
+s066;hemorragia subaracnoide devida traumatismo
+s067;traumatismo intracraniano coma prolongado
+s068;outros traumatismos intracranianos
+s069;traumatismo intracraniano nao especificado
+s07;lesoes esmagamento cabeca
+s070;lesao esmagamento face
+s071;lesao esmagamento cranio
+s078;lesao esmagamento outras partes cabeca
+s079;lesao esmagamento cabeca parte nao especificada
+s08;amputacao traumatica parte cabeca
+s080;avulsao couro cabeludo
+s081;amputacao traumatica orelha
+s088;amputacao traumatica outras partes cabeca
+s089;amputacao traumatica parte nao especificada cabeca
+s09;outros traumatismos cabeca nao especificados
+s090;traumatismo vasos sanguineos cabeca nao classificados outra parte
+s091;traumatismo musculos tendoes cabeca
+s092;ruptura traumatica timpano
+s097;traumatismos multiplos cabeca
+s098;outros traumatismos especificados cabeca
+s099;traumatismo nao especificado cabeca
+s10;traumatismo superficial pescoco
+s100;contusao garganta
+s101;outros traumatismos superficiais garganta nao especificados
+s107;traumatismos superficiais multiplos pescoco
+s108;traumatismo superficial outras localizacoes pescoco
+s109;traumatismo superficial pescoco parte nao especificada
+s11;ferimento pescoco
+s110;ferimento envolvendo laringe traqueia
+s111;ferimento glandula tireoide
+s112;ferimento envolvendo faringe esofago cervical
+s117;ferimentos multiplos pescoco
+s118;ferimentos outras partes pescoco
+s119;ferimentos pescoco parte nao especificada
+s12;fratura pescoco
+s120;fratura primeira vertebra cervical
+s121;fratura segunda vertebra cervical
+s122;fratura outras vertebras cervicais especificadas
+s127;fraturas multiplas coluna cervical
+s128;fratura outras partes pescoco
+s129;fratura pescoco parte nao especificada
+s13;luxacao entorse distensao articulacoes ligamentos pescoco
+s130;ruptura traumatica disco intervertebral cervical
+s131;luxacao vertebra cervical
+s132;luxacao outras partes pescoco nao especificadas
+s133;luxacoes multiplas pescoco
+s134;distensao entorse coluna cervical
+s135;distensao entorse regiao tireoidiana
+s136;distensao entorse articulacoes ligamentos outras localizacoes nao especificadas pescoco
+s14;traumatismo nervos medula espinhal ao nivel cervical
+s140;concussao edema medula cervical
+s141;outros traumatismos nao especificados medula cervical
+s142;traumatismo raiz nervosa coluna cervical
+s143;traumatismo plexo braquial
+s144;traumatismo nervos perifericos pescoco
+s145;traumatismo nervos simpaticos pescoco
+s146;traumatismo outros nervos nao especificados pescoco
+s15;traumatismo vasos sanguineos ao nivel pescoco
+s150;traumatismo arteria carotida
+s151;traumatismo arteria vertebral
+s152;traumatismo veia jugular externa
+s153;traumatismo veia jugular interna
+s157;traumatismo multiplos vasos sanguineos ao nivel pescoco
+s158;traumatismo outros vasos sanguineos ao nivel pescoco
+s159;traumatismo vasos sanguineos nao especificados ao nivel pescoco
+s16;traumatismo tendoes musculos pescoco
+s17;lesoes esmagamento pescoco
+s170;lesao esmagamento laringe traqueia
+s178;lesao esmagamento outras partes pescoco
+s179;lesao esmagamento pescoco parte nao especificada
+s18;amputacao traumatica ao nivel pescoco
+s19;outros traumatismos pescoco nao especificados
+s197;traumatismos multiplos pescoco
+s198;outros traumatismos especificados pescoco
+s199;traumatismo nao especificado pescoco
+s20;traumatismo superficial torax
+s200;contusao mama
+s201;outros traumatismos superficiais mama nao especificados
+s202;contusao torax
+s203;outros traumatismos superficiais parede anterior torax
+s204;outros traumatismos superficiais parede posterior torax
+s207;traumatismos superficiais multiplos torax
+s208;traumatismo superficial outras partes especificadas torax nao especificadas
+s21;ferimento torax
+s210;ferimento mama
+s211;ferimento parede anterior torax
+s212;ferimento parede posterior torax
+s217;ferimentos multiplos parede toracica
+s218;ferimento outras partes torax
+s219;ferimento torax parte nao especificada
+s22;fratura costelas esterno coluna toracica
+s220;fratura vertebra toracica
+s221;fraturas multiplas coluna toracica
+s222;fratura esterno
+s223;fratura costela
+s224;fraturas multiplas costelas
+s225;torax fundido oscilante
+s228;fraturas outras partes ossos torax
+s229;fratura ossos torax parte nao especificada
+s23;luxacao entorse distensao articulacoes ligamentos torax
+s230;ruptura traumatica disco intervertebral toracico
+s231;luxacao vertebra toracica
+s232;luxacao outras partes torax nao especificadas
+s233;entorse distensao coluna toracica
+s234;entorse distensao costelas esterno
+s235;entorse distensao outras partes torax partes nao especificadas
+s24;traumatismos nervos medula espinhal ao nivel torax
+s240;concussao edema medula espinhal toracica
+s241;outros traumatismos medula espinhal toracica nao especificados
+s242;traumatismo raiz nervo coluna toracica
+s243;traumatismo nervos perifericos torax
+s244;traumatismo nervos simpaticos torax
+s245;traumatismo outros nervos torax
+s246;traumatismo nervo torax nao especificado
+s25;traumatismo vasos sanguineos torax
+s250;traumatismo aorta toracica
+s251;traumatismo arteria subclavia inominada braquiocefalica
+s252;traumatismo veia cava superior
+s253;traumatismo veia subclavia inominada braquiocefalica
+s254;traumatismo vasos sanguineos pulmonares
+s255;traumatismo vasos sanguineos intercostais
+s257;traumatismo multiplos vasos sanguineos torax
+s258;traumatismo outros vasos sanguineos torax
+s259;traumatismo vaso sanguineo nao especificado torax
+s26;traumatismo coracao
+s260;traumatismo coracao hemopericardio
+s268;outros traumatismos coracao
+s269;traumatismo coracao nao especificado
+s27;traumatismo outros orgaos intratoracicos nao especificados
+s270;pneumotorax traumatico
+s271;hemotorax traumatico
+s272;hemopneumotorax traumatico
+s273;outros traumatismos pulmao
+s274;traumatismo bronquios
+s275;traumatismo traqueia toracica
+s276;traumatismo pleura
+s277;traumatismos multiplos orgaos intratoracicos
+s278;traumatismo outros orgaos intratoracicos especificados
+s279;traumatismo orgao intratoracico nao especificado
+s28;lesao esmagamento torax amputacao traumatica parte torax
+s280;esmagamento torax
+s281;amputacao traumatica parte torax
+s29;outros traumatismos torax nao especificados
+s290;traumatismo musculo tendao ao nivel toracico
+s297;traumatismos multiplos torax
+s298;outros traumatismos especificados torax
+s299;traumatismo nao especificado torax
+s30;traumatismo superficial abdome dorso pelve
+s300;contusao dorso pelve
+s301;contusao parede abdominal
+s302;contusao orgaos genitais externos
+s307;traumatismos superficiais multiplos abdome dorso pelve
+s308;outros traumatismos superficiais abdome dorso pelve
+s309;traumatismo superficial parte nao especificada abdome dorso pelve
+s31;ferimento abdome dorso pelve
+s310;ferimento dorso pelve
+s311;ferimento parede abdominal
+s312;ferimento penis
+s313;ferimento escroto testiculo
+s314;ferimento vagina vulva
+s315;ferimento outros orgaos genitais externos nao especificados
+s317;ferimentos multiplos abdome dorso pelve
+s318;ferimento outras partes partes nao especificadas abdome
+s32;fratura coluna lombar pelve
+s320;fratura vertebra lombar
+s321;fratura sacro
+s322;fratura coccix
+s323;fratura ilio
+s324;fratura acetabulo
+s325;fratura pubis
+s327;fraturas multiplas coluna lombar pelve
+s328;fratura outras partes coluna lombossacra pelve partes nao especificadas
+s33;luxacao entorse distensao articulacoes ligamentos coluna lombar pelve
+s330;ruptura traumatica disco intervertebral lombar
+s331;luxacao vertebra lombar
+s332;luxacao articulacoes sacroiliaca sacrococcigea
+s333;luxacao outras partes nao especificadas coluna lombar pelve
+s334;ruptura traumatica sinfise pubica
+s335;entorse distensao coluna lombar
+s336;entorse distensao articulacao sacroiliaca
+s337;entorse distensao outras partes nao especificadas coluna lombar pelve
+s34;traumatismo nervos medula lombar ao nivel abdome dorso pelve
+s340;concussao edema medula lombar
+s341;outro traumatismo medula lombar
+s342;traumatismo raiz nervosa medula lombar sacra
+s343;traumatismo cauda equina
+s344;traumatismo plexo lombossacro
+s345;traumatismo nervos simpaticos lombares sacros pelvicos
+s346;traumatismo nervos perifericos abdome dorso pelve
+s348;traumatismo outros nervos nao especificados ao nivel abdome dorso pelve
+s35;traumatismo vasos sanguineos ao nivel abdome dorso pelve
+s350;traumatismo aorta abdominal
+s351;traumatismo veia cava inferior
+s352;traumatismo arteria celiaca mesenterica
+s353;traumatismo veia porta esplenica
+s354;traumatismo vaso sanguineo renal
+s355;traumatismo vaso sanguineo iliaco
+s357;traumatismo vasos multiplos ao nivel abdome dorso pelve
+s358;traumatismo outros vasos sanguineos ao nivel abdome dorso pelve
+s359;traumatismo vaso sanguineo nao especificado ao nivel abdome dorso pelve
+s36;traumatismo orgaos intra abdominais
+s360;traumatismo baco
+s361;traumatismo figado vesicula biliar
+s362;traumatismo pancreas
+s363;traumatismo estomago
+s364;traumatismo intestino delgado
+s365;traumatismo colon
+s366;traumatismo reto
+s367;traumatismo multiplos orgaos intra abdominais
+s368;traumatismo outros orgaos intra abdominais
+s369;traumatismo orgao intra abdominal nao especificado
+s37;traumatismo aparelho urinario orgaos pelvicos
+s370;traumatismo rim
+s371;traumatismo ureter
+s372;traumatismo bexiga
+s373;traumatismo uretra
+s374;traumatismo ovario
+s375;traumatismo trompa falopio
+s376;traumatismo utero
+s377;traumatismo multiplos orgaos pelvicos
+s378;traumatismo outros orgaos pelvicos
+s379;traumatismo orgao pelvico nao especificado
+s38;lesao esmagamento amputacao traumatica parte abdome dorso pelve
+s380;lesao esmagamento orgaos genitais externos
+s381;lesao esmagamento outras partes partes nao especificadas abdome dorso pelve
+s382;amputacao traumatica orgaos genitais externos
+s383;amputacao traumatica outras partes partes nao especificadas abdome dorso pelve
+s39;outros traumatismos nao especificados abdome dorso pelve
+s390;traumatismo musculo tendao abdome dorso pelve
+s396;traumatismo orgaos intra abdominal is orgaos pelvicos
+s397;outros traumatismos multiplos abdome dorso pelve
+s398;outros traumatismos especificados abdome dorso pelve
+s399;traumatismo nao especificado abdome dorso pelve
+s40;traumatismo superficial ombro braco
+s400;contusao ombro braco
+s407;traumatismos superficiais multiplos ombro braco
+s408;outros traumatismos superficiais ombro braco
+s409;traumatismo superficial nao especificado ombro braco
+s41;ferimento ombro braco
+s410;ferimento ombro
+s411;ferimento braco
+s417;ferimentos multiplos ombro braco
+s418;ferimento outras partes partes nao especificadas cintura escapular
+s42;fratura ombro braco
+s420;fratura clavicula
+s421;fratura omoplata escapula
+s422;fratura extremidade superior umero
+s423;fratura diafise umero
+s424;fratura extremidade inferior umero
+s427;fraturas multiplas clavicula omoplata escapula umero
+s428;fratura outras partes ombro braco
+s429;fratura cintura escapular parte nao especificada
+s43;luxacao entorse distensao articulacoes ligamentos cintura escapular
+s430;luxacao articulacao ombro
+s431;luxacao articulacao acromioclavicular
+s432;luxacao articulacao esternoclavicular
+s433;luxacao outras partes nao especificadas cintura escapular
+s434;entorse distensao articulacao ombro
+s435;entorse distensao articulacao acromioclavicular
+s436;entorse distensao articulacao esternoclavicular
+s437;entorse distensao outras partes partes nao especificadas cintura escapular
+s44;traumatismo nervos ao nivel ombro braco
+s440;traumatismo nervo cubital ulnar ao nivel braco
+s441;traumatismo nervo mediano ao nivel braco
+s442;traumatismo nervo radial ao nivel braco
+s443;traumatismo nervo axilar
+s444;traumatismo nervo musculocutaneo
+s445;traumatismo nervo sensitivo cutaneo ao nivel ombro braco
+s447;traumatismo multiplos nervos ao nivel ombro braco
+s448;traumatismo outros nervos ao nivel ombro braco
+s449;traumatismo nervo nao especificado ao nivel ombro braco
+s45;traumatismo vasos sanguineos ao nivel ombro braco
+s450;traumatismo arteria axilar
+s451;traumatismo arteria braquial
+s452;traumatismo veia axilar braquial
+s453;traumatismo veia superficial ao nivel ombro braco
+s457;traumatismo multiplos vasos sanguineos ao nivel ombro braco
+s458;traumatismo outros vasos sanguineos ao nivel ombro braco
+s459;traumatismo vaso sanguineo nao especificado ao nivel ombro braco
+s46;traumatismo tendao musculo ao nivel ombro braco
+s460;traumatismo tendao manguito rotador ombro
+s461;traumatismo musculo tendao cabeca longa biceps
+s462;traumatismo musculo tendao outras partes biceps
+s463;traumatismo musculo tendao triceps
+s467;traumatismo multiplos musculos tendoes ao nivel ombro braco
+s468;traumatismo outros musculos tendoes ao nivel ombro braco
+s469;traumatismo musculo tendao nao especificado ao nivel ombro braco
+s47;lesao esmagamento ombro braco
+s48;amputacao traumatica ombro braco
+s480;amputacao traumatica articulacao ombro
+s481;amputacao traumatica localizacao entre ombro cotovelo
+s489;amputacao traumatica ombro braco localizacao nao especificada
+s49;outros traumatismos nao especificados ombro braco
+s497;traumatismos multiplos ombro braco
+s498;outros traumatismos especificados ombro braco
+s499;traumatismo nao especificado ombro braco
+s50;traumatismo superficial cotovelo antebraco
+s500;contusao cotovelo
+s501;contusao outras partes partes nao especificadas antebraco
+s507;traumatismos superficiais multiplos antebraco
+s508;outros traumatismos superficiais antebraco
+s509;traumatismo superficial antebraco nao especificado
+s51;ferimento antebraco
+s510;ferimento cotovelo
+s517;ferimentos multiplos antebraco
+s518;ferimento outras partes antebraco
+s519;ferimento antebraco parte nao especificado
+s52;fratura antebraco
+s520;fratura extremidade superior cubito ulna
+s521;fratura extremidade superior radio
+s522;fratura diafise cubito ulna
+s523;fratura diafise radio
+s524;fratura diafises radio cubito ulna
+s525;fratura extremidade distal radio
+s526;fratura extremidade distal radio cubito ulna
+s527;fraturas multiplas antebraco
+s528;fratura outras partes antebraco
+s529;fratura antebraco parte nao especificada
+s53;luxacao entorse distensao articulacoes ligamentos cotovelo
+s530;luxacao cabeca radio
+s531;luxacao cotovelo nao especificada
+s532;ruptura traumatica ligamento colateral radio
+s533;ruptura traumatica ligamento colateral cubito ulna
+s534;entorse distensao cotovelo
+s54;traumatismo nervos ao nivel antebraco
+s540;traumatismo nervo cubital ulnar ao nivel antebraco
+s541;traumatismo nervo mediano ao nivel antebraco
+s542;traumatismo nervo radial ao nivel antebraco
+s543;traumatismo nervo cutaneo sensitivo ao nivel antebraco
+s547;traumatismo multiplos nervos ao nivel antebraco
+s548;traumatismo outros nervos ao nivel antebraco
+s549;traumatismo nervo nao especificado ao nivel antebraco
+s55;traumatismo vasos sanguineos ao nivel antebraco
+s550;traumatismo arteria cubital ulnar ao nivel antebraco
+s551;traumatismo arteria radial ao nivel antebraco
+s552;traumatismo veia ao nivel antebraco
+s557;traumatismo multiplos vasos sanguineos ao nivel antebraco
+s558;traumatismo outros vasos sanguineos ao nivel antebraco
+s559;traumatismo vasos sanguineos nao especificados ao nivel antebraco
+s56;traumatismo musculo tendao ao nivel antebraco
+s560;traumatismo musculo flexor tendao polegar ao nivel antebraco
+s561;traumatismo musculo flexor tendao outros dedos ao nivel antebraco
+s562;traumatismo outro musculo flexor tendao ao nivel antebraco
+s563;traumatismo musculos extensor abdutor tendoes polegar ao nivel antebraco
+s564;traumatismo musculo extensor tendao outros dedos ao nivel antebraco
+s565;traumatismo outros musculos extensores tendoes ao nivel antebraco
+s567;traumatismo musculos tendoes multiplos ao nivel antebraco
+s568;traumatismo outros musculos tendoes nao especificados ao nivel antebraco
+s57;lesao esmagamento antebraco
+s570;lesao esmagamento cotovelo
+s578;lesao esmagamento outras partes antebraco
+s579;lesao esmagamento parte nao especificada antebraco
+s58;amputacao traumatica cotovelo antebraco
+s580;amputacao traumatica ao nivel cotovelo
+s581;amputacao traumatica antebraco entre cotovelo punho
+s589;amputacao traumatica antebraco nivel nao especificado
+s59;outros traumatismos antebraco nao especificados
+s597;traumatismos multiplos cotovelo
+s598;outros traumatismos especificados antebraco
+s599;traumatismo nao especificado antebraco
+s60;traumatismo superficial punho mao
+s600;contusao dedos sem lesao unha
+s601;contusao dedos lesao unha
+s602;contusao outras partes punho mao
+s607;traumatismos superficiais multiplos punho mao
+s608;outros traumatismos superficiais punho mao
+s609;traumatismo superficial nao especificado punho mao
+s61;ferimento punho mao
+s610;ferimento dedos sem lesao unha
+s611;ferimento dedos lesao unha
+s617;ferimentos multiplos punho mao
+s618;ferimento outras partes punho mao
+s619;ferimento punho mao parte nao especificada
+s62;fratura ao nivel punho mao
+s620;fratura osso navicular escafoide mao
+s621;fratura outros ossos carpo
+s622;fratura primeiro metacarpiano
+s623;fratura outros ossos metacarpo
+s624;fraturas multiplas ossos metacarpianos
+s625;fratura polegar
+s626;fratura outros dedos
+s627;fraturas multiplas dedos
+s628;fratura outras partes partes nao especificadas punho mao
+s63;luxacao entorse distensao articulacoes ligamentos ao nivel punho mao
+s630;luxacao punho
+s631;luxacao dedo
+s632;luxacoes multiplas dedos
+s633;ruptura traumatica ligamentos punho carpo
+s634;ruptura traumatica ligamento dedo articulacoes metacarpofalangianas interfalangianas
+s635;entorse distensao punho
+s636;entorse distensao dedos
+s637;entorse distensao outras partes nao especificadas mao
+s64;traumatismo nervos ao nivel punho mao
+s640;traumatismo nervo cubital ulnar ao nivel punho mao
+s641;traumatismo nervo mediano ao nivel punho mao
+s642;traumatismo nervo radial ao nivel punho mao
+s643;traumatismo nervo digital polegar
+s644;traumatismo nervo digital outro dedo
+s647;traumatismo multiplos nervos ao nivel punho mao
+s648;traumatismo outros nervos ao nivel punho mao
+s649;traumatismo nervo nao especificado ao nivel punho mao
+s65;traumatismo vasos sanguineos ao nivel punho mao
+s650;traumatismo arteria cubital ulnar ao nivel punho mao
+s651;traumatismo arteria radial ao nivel punho mao
+s652;traumatismo arco palmar superficial
+s653;traumatismo arco palmar profundo
+s654;traumatismo vasos sanguineos polegar
+s655;traumatismo vasos sanguineos outro dedo
+s657;traumatismo vasos sanguineos multiplos ao nivel punho mao
+s658;traumatismo outros vasos sanguineos ao nivel punho mao
+s659;traumatismo vaso sanguineo nao especificado ao nivel punho mao
+s66;traumatismo musculo tendao ao nivel punho mao
+s660;traumatismo musculo flexor longo tendao polegar ao nivel punho mao
+s661;traumatismo musculo flexor tendao outro dedo ao nivel punho mao
+s662;traumatismo musculo extensor tendao polegar ao nivel punho mao
+s663;traumatismo musculo extensor tendao outro dedo ao nivel punho mao
+s664;traumatismo musculo intrinseco tendao polegar ao nivel punho mao
+s665;traumatismo musculo intrinseco tendao outro dedo ao nivel punho mao
+s666;traumatismo musculos flexores tendoes multiplos ao nivel punho mao
+s667;traumatismo musculos extensores tendoes multiplos ao nivel punho mao
+s668;traumatismo outros musculos tendoes ao nivel punho mao
+s669;traumatismo musculo tendao nao especificado ao nivel punho mao
+s67;lesao esmagamento punho mao
+s670;lesao esmagamento polegar outros dedos
+s678;lesao esmagamento outras partes nao especificadas punho mao
+s68;amputacao traumatica ao nivel punho mao
+s680;amputacao traumatica polegar completa parcial
+s681;amputacao traumatica um outro dedo apenas completa parcial
+s682;amputacao traumatica dois mais dedos somente completa parcial
+s683;amputacao traumatica combinada partes dedos associada outras partes punho mao
+s684;amputacao traumatica mao ao nivel punho
+s688;amputacao traumatica outras partes punho mao
+s689;amputacao traumatica punho mao nivel nao especificado
+s69;outros traumatismos nao especificados punho mao
+s697;traumatismos multiplos punho mao
+s698;outros traumatismos especificados punho mao
+s699;traumatismo nao especificados punho mao
+s70;traumatismo superficial quadril coxa
+s700;contusao quadril
+s701;contusao coxa
+s707;traumatismos superficiais multiplos quadril coxa
+s708;outros traumatismos superficiais quadril coxa
+s709;traumatismo superficial nao especificado quadril coxa
+s71;ferimento quadril coxa
+s710;ferimento quadril
+s711;ferimento coxa
+s717;ferimentos multiplos quadril coxa
+s718;ferimentos outras partes nao especificadas cintura pelvica
+s72;fratura femur
+s720;fratura colo femur
+s721;fratura pertrocanterica
+s722;fratura subtrocanterica
+s723;fratura diafise femur
+s724;fratura extremidade distal femur
+s727;fraturas multiplas femur
+s728;fraturas outras partes femur
+s729;fratura femur parte nao especificada
+s73;luxacao entorse distensao articulacao ligamentos quadril
+s730;luxacao articulacao quadril
+s731;entorse distensao quadril
+s74;traumatismo nervos ao nivel quadril coxa
+s740;traumatismo nervo ciatico ao nivel quadril coxa
+s741;traumatismo nervo femural ao nivel quadril coxa
+s742;traumatismo nervo sensitivo cutaneo ao nivel quadril coxa
+s747;traumatismo nervos multiplos ao nivel quadril coxa
+s748;traumatismo outros nervos ao nivel quadril coxa
+s749;traumatismo nervo nao especificado ao nivel quadril coxa
+s75;traumatismo vasos sanguineos ao nivel quadril coxa
+s750;traumatismo arteria femural
+s751;traumatismo veia femural ao nivel quadril coxa
+s752;traumatismo veia grande safena ao nivel quadril coxa
+s757;traumatismo multiplos vasos sanguineos ao nivel quadril coxa
+s758;traumatismo outros vaso sanguineos ao nivel quadril coxa
+s759;traumatismo vaso sanguineo nao especificado ao nivel quadril coxa
+s76;traumatismo musculo tendao ao nivel quadril coxa
+s760;traumatismo musculo tendao quadril
+s761;traumatismo musculo tendao quadriceps
+s762;traumatismo musculo tendao adutor coxa
+s763;traumatismo musculo tendao musculos posteriores ao nivel coxa
+s764;traumatismo outros musculos tendoes nao especificados ao nivel coxa
+s767;traumatismo multiplos musculos tendoes ao nivel quadril coxa
+s77;lesao esmagamento quadril coxa
+s770;lesao esmagamento quadril
+s771;lesao esmagamento coxa
+s772;lesao esmagamento quadril coxa
+s78;amputacao traumatica quadril coxa
+s780;amputacao traumatica articulacao quadril
+s781;amputacao traumatica localizada entre joelho quadril
+s789;amputacao traumatica quadril coxa nivel nao especificado
+s79;outros traumatismos nao especificados quadril coxa
+s797;traumatismos multiplos quadril coxa
+s798;outros traumatismos especificados quadril coxa
+s799;traumatismo nao especificado quadril coxa
+s80;traumatismo superficial perna
+s800;contusao joelho
+s801;contusao outras partes partes nao especificadas perna
+s807;traumatismos superficiais multiplos perna
+s808;outros traumatismos superficiais perna
+s809;traumatismo superficial nao especificado perna
+s81;ferimento perna
+s810;ferimento joelho
+s817;ferimentos multiplos perna
+s818;ferimento outras partes perna
+s819;ferimento perna parte nao especificada
+s82;fratura perna incluindo tornozelo
+s820;fratura rotula patela
+s821;fratura extremidade proximal tibia
+s822;fratura diafise tibia
+s823;fratura extremidade distal tibia
+s824;fratura peronio fibula
+s825;fratura maleolo medial
+s826;fratura maleolo lateral
+s827;fraturas multiplas perna
+s828;fratura outras partes perna
+s829;fratura perna parte nao especificada
+s83;luxacao entorse distensao articulacoes ligamentos joelho
+s830;luxacao rotula patela
+s831;luxacao joelho
+s832;ruptura menisco atual
+s833;ruptura atual cartilagem articulacao joelho
+s834;entorse distensao envolvendo ligamento colateral peronial tibial joelho
+s835;entorse distensao envolvendo ligamento cruzado anterior posterior joelho
+s836;entorse distensao outras partes nao especificadas joelho
+s837;traumatismo estruturas multiplas joelho
+s84;traumatismo nervos perifericos perna
+s840;traumatismo nervo tibial ao nivel perna
+s841;traumatismo nervo peronial ao nivel perna
+s842;traumatismo nervo cutaneo sensitivo ao nivel perna
+s847;traumatismo multiplos nervos ao nivel perna
+s848;traumatismo outros nervos ao nivel perna
+s849;traumatismo nervo nao especificado ao nivel perna
+s85;traumatismo vasos sanguineos perna
+s850;traumatismo arteria poplitea
+s851;traumatismo arteria tibial anterior posterior
+s852;traumatismo arteria peronial
+s853;traumatismo veia grande safena ao nivel perna
+s854;traumatismo veia safena menor ao nivel perna
+s855;traumatismo veia poplitea
+s857;traumatismo multiplos vasos sanguineos ao nivel perna
+s858;traumatismo outros vasos sanguineos ao nivel perna
+s859;traumatismo vasos sanguineos nao especificados ao nivel perna
+s86;traumatismos musculo tendao ao nivel perna
+s860;traumatismo tendao aquiles
+s861;traumatismo outros musculos tendao oes grupo muscular posterior ao nivel perna
+s862;traumatismo musculos tendao oes grupo muscular anterior ao nivel perna
+s863;traumatismo musculos tendao oes grupo muscular peronial ao nivel perna
+s867;traumatismo multiplos musculos tendoes ao nivel perna
+s868;traumatismos outros musculos tendoes ao nivel perna
+s869;traumatismo musculo tendao nao especificado ao nivel perna
+s87;traumatismo esmagamento perna
+s870;traumatismo esmagamento joelho
+s878;traumatismo esmagamento outra parte partes nao especificadas perna
+s88;amputacao traumatica perna
+s880;amputacao traumatica ao nivel joelho
+s881;amputacao traumatica entre joelho tornozelo
+s889;amputacao traumatica perna ao nivel nao especificado
+s89;outros traumatismos nao especificados perna
+s890;traumatismos multiplos perna
+s898;outros traumatismos especificados perna
+s899;traumatismo nao especificado perna
+s90;traumatismo superficial tornozelo pe
+s900;contusao tornozelo
+s901;contusao artelho sem lesao unha
+s902;contusao artelhos lesao unha
+s903;contusao outras partes partes nao especificadas pe
+s907;traumatismos superficiais multiplos tornozelo pe
+s908;outros traumatismos superficiais tornozelo pe
+s909;traumatismo superficial tornozelo pe nao especificado
+s91;ferimentos tornozelo pe
+s910;ferimento tornozelo
+s911;ferimento artelhos sem lesao unha
+s912;ferimento artelhos lesao unha
+s913;ferimento outras partes pe
+s917;ferimentos multiplos tornozelo pe
+s92;fratura pe exceto tornozelo
+s920;fratura calcaneo
+s921;fratura astragalo
+s922;fratura outros ossos tarso
+s923;fratura ossos metatarso
+s924;fratura halux
+s925;fratura outro artelho
+s927;fraturas multiplas pe
+s929;fratura pe nao especificada
+s93;luxacao entorse distensao articulacoes ligamentos ao nivel tornozelo pe
+s930;luxacao articulacao tornozelo
+s931;luxacao artelhos
+s932;ruptura ligamentos ao nivel tornozelo pe
+s933;luxacao outras partes nao especificadas pe
+s934;entorse distensao tornozelo
+s935;entorse distensao artelhos
+s936;entorse distensao outras partes partes nao especificadas pe
+s94;traumatismo nervos ao nivel tornozelo pe
+s940;traumatismo nervo plantar externo lateral
+s941;traumatismo nervo plantar interno medial
+s942;traumatismo nervo peronial fibular profundo ao nivel tornozelo pe
+s943;traumatismo nervo sensitivo cutaneo ao nivel tornozelo pe
+s947;traumatismo multiplos nervos ao nivel tornozelo pe
+s948;traumatismo outros nervos ao nivel tornozelo pe
+s949;traumatismo nervo nao especificado ao nivel tornozelo pe
+s95;traumatismo vasos sanguineos ao nivel tornozelo pe
+s950;traumatismo arteria dorsal pe
+s951;traumatismo arteria plantar pe
+s952;traumatismo veia dorsal pe
+s957;traumatismo multiplos vasos sanguineos ao nivel tornozelo pe
+s958;traumatismo outros vasos sanguineos ao nivel tornozelo pe
+s959;traumatismo vaso sanguineo nao especificado ao nivel tornozelo pe
+s96;traumatismos musculo tendao ao nivel tornozelo pe
+s960;traumatismo musculo tendao musculo flexor longo artelhos ao nivel tornozelo pe
+s961;traumatismo musculo tendao extensor longo artelhos ao nivel tornozelo pe
+s962;traumatismo musculo intrinseco tendao ao nivel tornozelo pe
+s967;traumatismo multiplos musculos tendoes ao nivel tornozelo pe
+s968;traumatismo outros tendoes musculos ao nivel tornozelo pe
+s969;traumatismo musculo tendao nao especificados tornozelo pe
+s97;lesao esmagamento tornozelo pe
+s970;lesao esmagamento tornozelo
+s971;lesao esmagamento artelhos
+s978;lesao esmagamento outras partes tornozelo pe
+s98;amputacao traumatica tornozelo pe
+s980;amputacao traumatica pe ao nivel tornozelo
+s981;amputacao traumatica apenas um artelho
+s982;amputacao traumatica dois mais artelhos
+s983;amputacao traumatica outras partes pe
+s984;amputacao traumatica pe ao nivel nao especificado
+s99;outros traumatismos nao especificados tornozelo pe
+s997;traumatismos multiplos tornozelo pe
+s998;outros traumatismos especificados tornozelo pe
+s999;traumatismos nao especificados tornozelo pe
+t00;traumatismos superficiais envolvendo multiplas regioes corpo
+t000;traumatismos superficiais envolvendo cabeca pescoco
+t001;traumatismos superficiais envolvendo torax abdome parte inferior dorso pelve
+t002;traumatismos superficiais envolvendo regioes multiplas membros superiores
+t003;traumatismos superficiais envolvendo regioes multiplas membros inferiores
+t006;traumatismos superficiais envolvendo regioes multiplas membros superiores membros inferiores
+t008;traumatismos superficiais envolvendo outras combinacoes regioes corpo
+t009;traumatismos superficiais multiplos nao especificados
+t01;ferimentos envolvendo multiplas regioes corpo
+t010;ferimentos envolvendo cabeca pescoco
+t011;ferimentos envolvendo torax abdome parte inferior dorso pelve
+t012;ferimentos envolvendo regioes multiplas membros superiores
+t013;ferimentos envolvendo multiplas regioes membros inferiores
+t016;ferimentos envolvendo regioes multiplas membros superiores membros inferiores
+t018;ferimentos envolvendo outras combinacoes regioes corpo
+t019;ferimentos multiplos nao especificados
+t02;fraturas envolvendo multiplas regioes corpo
+t020;fraturas envolvendo cabeca pescoco
+t021;fraturas envolvendo torax parte inferior dorso pelve
+t022;fraturas envolvendo regioes multiplas um membro superior
+t023;fraturas envolvendo regioes multiplas um membro inferior
+t024;fraturas envolvendo regioes multiplas ambos membros superiores
+t025;fraturas envolvendo regioes multiplas ambos membros inferiores
+t026;fraturas envolvendo regioes multiplas membros superiores inferiores
+t027;fraturas envolvendo torax parte inferior dorso pelve membros
+t028;fraturas envolvendo outras combinacoes regioes corpo
+t029;fraturas multiplas nao especificadas
+t03;luxacoes entorses distensoes envolvendo regioes multiplas corpo
+t030;luxacoes entorses distensoes envolvendo cabeca pescoco
+t031;luxacoes entorses distensoes envolvendo torax parte inferior dorso pelve
+t032;luxacoes entorses distensoes envolvendo regioes multiplas membros superiores
+t033;luxacoes entorses distensoes envolvendo regioes multiplas membros inferiores
+t034;luxacoes entorses distensoes envolvendo regioes multiplas membros superiores inferiores
+t038;luxacoes entorses distensoes envolvendo outras combinacoes regioes corpo
+t039;luxacoes entorses distensoes multiplas nao especificadas
+t04;traumatismos esmagamento envolvendo multiplas regioes corpo
+t040;traumatismos esmagamento envolvendo cabeca pescoco
+t041;traumatismos esmagamento envolvendo torax abdome parte inferior dorso pelve
+t042;traumatismos esmagamento envolvendo regioes multiplas membros superiores
+t043;traumatismos esmagamento envolvendo regioes multiplas membros inferiores
+t044;traumatismos esmagamento envolvendo regioes multiplas membros superiores inferiores
+t047;traumatismo esmagamento torax abdome parte inferior dorso pelve membros
+t048;traumatismos esmagamento envolvendo outras combinacoes regioes corpo
+t049;traumatismo multiplos esmagamento nao especificados
+t05;amputacoes traumaticas envolvendo multiplas regioes corpo
+t050;amputacao traumatica ambas maos
+t051;amputacao traumatica uma mao um outro braco qualquer nivel exceto mao
+t052;amputacao traumatica ambos bracos qualquer nivel
+t053;amputacao traumatica ambos pes
+t054;amputacao traumatica um pe outra perna qualquer nivel exceto pe
+t055;amputacao traumatica ambas pernas qualquer nivel
+t056;amputacao traumatica membros superiores inferiores qualquer combinacao qualquer nivel
+t058;amputacoes traumaticas envolvendo outras combinacoes regioes corpo
+t059;amputacoes traumaticas multiplas nao especificadas
+t06;outros traumatismos envolvendo regioes multiplas corpo nao classificados outra parte
+t060;traumatismos cerebro nervos cranianos traumatismos nervos medula espinhal ao nivel pescoco
+t061;traumatismos nervos medula espinhal envolvendo outras regioes multiplas corpo
+t062;traumatismos nervos envolvendo regioes multiplas corpo
+t063;traumatismos vasos sanguineos envolvendo regioes multiplas corpo
+t064;traumatismos musculos tendoes envolvendo regioes multiplas corpo
+t065;traumatismos orgaos intratoracicos orgaos intra abdominais pelvicos
+t068;outros traumatismos especificados envolvendo regioes multiplas corpo
+t07;traumatismos multiplos nao especificados
+t08;fratura coluna nivel nao especificado
+t09;outros traumatismos coluna tronco nivel nao especificado
+t090;traumatismo superficial tronco nivel nao especificado
+t091;ferimento tronco nivel nao especificado
+t092;luxacao entorse distensao articulacoes ligamentos nao especificados tronco
+t093;traumatismo medula espinhal nivel nao especificado
+t094;traumatismo nervos raizes nervos espinhais plexos nao especificados tronco
+t095;traumatismo musculo tendao nao especificados tronco
+t096;amputacao traumatica tronco nivel nao especificado
+t098;outros traumatismos especificados tronco nivel nao especificado
+t099;traumatismo nao especificado tronco nivel nao especificado
+t10;fratura membro superior nivel nao especificado
+t11;outros traumatismos membro superior nivel nao especificado
+t110;traumatismo superficial membro superior nivel nao especificado
+t111;ferimento membro superior nivel nao especificado
+t112;luxacao entorse distensao articulacao ligamento nao especificados membro superior nivel nao especificado
+t113;traumatismo nervo nao especificado membro superior nivel nao especificado
+t114;traumatismo vaso sanguineo nao especificado membro superior nivel nao especificado
+t115;traumatismo musculo tendao nao especificado membro superior nivel nao especificado
+t116;amputacao traumatica membro superior nivel nao especificado
+t118;outros traumatismos especificados membro superior nivel nao especificado
+t119;traumatismo nao especificado membro superior nivel nao especificado
+t12;fratura membro inferior nivel nao especificado
+t13;outros traumatismos membro inferior nivel nao especificado
+t130;traumatismo superficial membro inferior nivel nao especificado
+t131;ferimento membro inferior nivel nao especificado
+t132;luxacao entorse distensao articulacao ligamento nao especificados membro inferior nivel nao especificado
+t133;traumatismo nervo nao especificado membro inferior nivel nao especificado
+t134;traumatismo vaso sanguineo nao especificado membro inferior nivel nao especificado
+t135;traumatismo musculo tendao nao especificado membro inferior nivel nao especificado
+t136;amputacao traumatica membro inferior nivel nao especificado
+t138;outros traumatismos especificados membro inferior nivel nao especificado
+t139;traumatismo nao especificado membro inferior nivel nao especificado
+t14;traumatismo regiao nao especificada corpo
+t140;traumatismo superficial regiao nao especificada corpo
+t141;ferimento regiao nao especificada corpo
+t142;fratura regiao nao especificada corpo
+t143;luxacao entorse distensao regiao nao especificada corpo
+t144;traumatismo nervos regiao nao especificada corpo
+t145;traumatismo vasos sanguineos regiao nao especificada corpo
+t146;traumatismo musculos tendoes regiao nao especificada corpo
+t147;traumatismo esmagamento amputacao traumatica regioes nao especificadas corpo
+t148;outros traumatismos regiao nao especificada corpo
+t149;traumatismo nao especificado
+t15;corpo estranho parte externa olho
+t150;corpo estranho cornea
+t151;corpo estranho saco conjuntival
+t158;corpo estranho outros locais locais multiplos parte externa olho
+t159;corpo estranho parte nao especificada regiao externa olho
+t16;corpo estranho ouvido
+t17;corpo estranho trato respiratorio
+t170;corpo estranho seio nasal
+t171;corpo estranho narina
+t172;corpo estranho faringe
+t173;corpo estranho laringe
+t174;corpo estranho traqueia
+t175;corpo estranho bronquio
+t178;corpo estranho outras partes partes multiplas trato respiratorio
+t179;corpo estranho trato respiratorio parte nao especificada
+t18;corpo estranho aparelho digestivo
+t180;corpo estranho boca
+t181;corpo estranho esofago
+t182;corpo estranho estomago
+t183;corpo estranho intestino delgado
+t184;corpo estranho colon
+t185;corpo estranho anus reto
+t188;corpo estranho outras partes partes multiplas aparelho digestivo
+t189;corpo estranho parte nao especificada aparelho digestivo
+t19;corpo estranho trato geniturinario
+t190;corpo estranho uretra
+t191;corpo estranho bexiga
+t192;corpo estranho vulva vagina
+t193;corpo estranho utero qualquer parte
+t198;corpo estranho outras partes partes multiplas trato geniturinario
+t199;corpo estranho trato geniturinario parte nao especificada
+t20;queimadura corrosao cabeca pescoco
+t200;queimadura cabeca pescoco grau nao especificado
+t201;queimadura primeiro grau cabeca pescoco
+t202;queimadura segundo grau cabeca pescoco
+t203;queimadura terceiro grau cabeca pescoco
+t204;corrosao cabeca pescoco grau nao especificado
+t205;corrosao primeiro grau cabeca pescoco
+t206;corrosao segundo grau cabeca pescoco
+t207;corrosao terceiro grau cabeca pescoco
+t21;queimadura corrosao tronco
+t210;queimadura tronco grau nao especificado
+t211;queimadura primeiro grau tronco
+t212;queimadura segundo grau tronco
+t213;queimadura terceiro grau tronco
+t214;corrosao tronco grau nao especificado
+t215;corrosao primeiro grau tronco
+t216;corrosao segundo grau tronco
+t217;corrosao terceiro grau tronco
+t22;queimadura corrosao ombro membro superior exceto punho mao
+t220;queimadura ombro membro superior exceto punho mao grau nao especificado
+t221;queimadura primeiro grau ombro membro superior exceto punho mao
+t222;queimadura segundo grau ombro membro superior exceto punho mao
+t223;queimadura terceiro grau ombro membro superior exceto punho mao
+t224;corrosao ombro membro superior exceto punho mao grau nao especificado
+t225;corrosao primeiro grau ombro membro superior exceto punho mao
+t226;corrosao segundo grau ombro membro superior exceto punho mao
+t227;corrosao terceiro grau ombro membro superior exceto punho mao
+t23;queimadura corrosao punho mao
+t230;queimadura punho mao grau nao especificado
+t231;queimadura primeiro grau punho mao
+t232;queimadura segundo grau punho mao
+t233;queimadura terceiro grau punho mao
+t234;corrosao punho mao grau nao especificado
+t235;corrosao primeiro grau punho mao
+t236;corrosao segundo grau punho mao
+t237;corrosao terceiro grau punho mao
+t24;queimadura corrosao quadril membro inferior exceto tornozelo pe
+t240;queimadura quadril membro inferior exceto tornozelo pe grau nao especificado
+t241;queimadura primeiro grau quadril membro inferior exceto tornozelo pe
+t242;queimadura segundo grau quadril membro inferior exceto tornozelo pe
+t243;queimadura terceiro grau quadril membro inferior exceto tornozelo pe
+t244;corrosao quadril membro inferior exceto tornozelo pe grau nao especificado
+t245;corrosao primeiro grau quadril membro inferior exceto tornozelo pe
+t246;corrosao segundo grau quadril membro inferior exceto tornozelo pe
+t247;corrosao terceiro grau quadril membro inferior exceto tornozelo pe
+t25;queimadura corrosao tornozelo pe
+t250;queimadura tornozelo pe grau nao especificado
+t251;queimadura primeiro grau tornozelo pe
+t252;queimadura segundo grau tornozelo pe
+t253;queimadura terceiro grau tornozelo pe
+t254;corrosao tornozelo pe grau nao especificado
+t255;corrosao primeiro grau tornozelo pe
+t256;corrosao segundo grau tornozelo pe
+t257;corrosao terceiro grau tornozelo pe
+t26;queimadura corrosao limitadas ao olho seus anexos
+t260;queimadura palpebra regiao periocular
+t261;queimadura cornea saco conjuntival
+t262;queimadura resultante ruptura destruicao globo ocular
+t263;queimadura outras partes olho anexos
+t264;queimadura olho anexos parte nao especificada
+t265;corrosao palpebra regiao periocular
+t266;corrosao cornea saco conjuntival
+t267;corrosao resultante ruptura destruicao globo ocular
+t268;corrosao outras partes olho anexos
+t269;corrosao olho anexos parte nao especificada
+t27;queimadura corrosao trato respiratorio
+t270;queimadura laringe traqueia
+t271;queimadura laringe traqueia pulmao
+t272;queimadura outras partes trato respiratorio
+t273;queimadura trato respiratorio parte nao especificada
+t274;corrosao laringe traqueia
+t275;corrosao laringe traqueia corrosao pulmao
+t276;corrosao outras partes trato respiratorio
+t277;corrosao trato respiratorio parte nao especificada
+t28;queimadura corrosao outros orgaos internos
+t280;queimadura boca faringe
+t281;queimadura esofago
+t282;queimadura outras partes trato alimentar
+t283;queimadura orgaos geniturinarios internos
+t284;queimadura outros orgaos internos nao especificados
+t285;corrosao boca faringe
+t286;corrosao esofago
+t287;corrosao outras partes trato alimentar
+t288;corrosao orgaos geniturinarios internos
+t289;corrosao outros orgaos internos nao especificados
+t29;queimaduras corrosoes multiplas regioes corpo
+t290;queimaduras multiplas grau nao especificado
+t291;queimaduras multiplas sem mencionar queimaduras ultrapassando primeiro grau
+t292;queimaduras multiplas sem mencionar queimaduras ultrapassando segundo grau
+t293;queimaduras multiplas mencionando ao menos uma queimadura terceiro grau
+t294;corrosoes multiplas grau nao especificado
+t295;corrosoes multiplas sem mencionar corrosao oes ultrapassando primeiro grau
+t296;corrosoes multiplas sem mencionar corrosao oes ultrapassando segundo grau
+t297;corrosoes multiplas mencionado ao menos uma corrosao terceiro grau
+t30;queimadura corrosao parte nao especificada corpo
+t300;queimadura parte corpo nao especificada grau nao especificado
+t301;queimadura primeiro grau parte corpo nao especificada
+t302;queimadura segundo grau parte corpo nao especificada
+t303;queimadura terceiro grau parte corpo nao especificada
+t304;corrosao parte corpo nao especificada grau nao especificado
+t305;corrosao primeiro grau parte corpo nao especificada
+t306;corrosao segundo grau parte corpo nao especificada
+t307;corrosao terceiro grau parte corpo nao especificada
+t31;queimaduras classificadas segundo extensao superficie corporal atingida
+t310;queimaduras envolvendo menos 10% superficie corporal
+t311;queimaduras envolvendo 10 19% superficie corporal
+t312;queimaduras envolvendo 20 29% superficie corporal
+t313;queimaduras envolvendo 30 39% superficie corporal
+t314;queimaduras envolvendo 40 49% superficie corporal
+t315;queimaduras envolvendo 50 59% superficie corporal
+t316;queimaduras envolvendo 60 69% superficie corporal
+t317;queimaduras envolvendo 70 79% superficie corporal
+t318;queimaduras envolvendo 80 89% superficie corporal
+t319;queimaduras envolvendo 90% mais superficie corporal
+t32;corrosoes classificadas segundo extensao superficie corporal atingida
+t320;corrosoes envolvendo menos 10% superficie corporal
+t321;corrosoes envolvendo 10 19% superficie corporal
+t322;corrosoes envolvendo 20 29% superficie corporal
+t323;corrosoes envolvendo 30 39% superficie corporal
+t324;corrosoes envolvendo 40 49% superficie corporal
+t325;corrosoes envolvendo 50 59% superficie corporal
+t326;corrosoes envolvendo 60 69% superficie corporal
+t327;corrosoes envolvendo 70 79% superficie corporal
+t328;corrosoes envolvendo 80 89% superficie corporal
+t329;corrosoes envolvendo 90% mais superficie corporal
+t33;geladura superficial
+t330;geladura superficial cabeca
+t331;geladura superficial pescoco
+t332;geladura superficial torax
+t333;geladura superficial parede abdominal parte inferior dorso pelve
+t334;geladura superficial braco
+t335;geladura superficial punho mao
+t336;geladura superficial quadril coxa
+t337;geladura superficial joelho perna
+t338;geladura superficial tornozelo pe
+t339;geladura superficial outros locais locais nao especificados
+t34;geladura necrose tecidos
+t340;geladura necrose tecidos cabeca
+t341;geladura necrose tecidos pescoco
+t342;geladura necrose tecidos torax
+t343;geladura necrose tecidos parede abdominal parte inferior dorso pelve
+t344;geladura necrose tecidos braco
+t345;geladura necrose tecidos punho mao
+t346;geladura necrose tecidos quadril coxa
+t347;geladura necrose tecidos joelho perna
+t348;geladura necrose tecidos tornozelo pe
+t349;geladura necrose tecidos localizacao nao especificada
+t35;geladura multiplas partes corpo nao especificadas
+t350;geladura superficial envolvendo multiplas partes corpo
+t351;geladura necrose tecidos multiplas partes corpo
+t352;geladura grau nao especificado cabeca pescoco
+t353;geladura grau nao especificado torax abdome parte inferior dorso pelve
+t354;geladura grau nao especificado membro superior
+t355;geladura grau nao especificado membro inferior
+t356;geladura grau nao especificado multiplas partes corpo
+t357;geladura grau nao especificado localizacao nao especificada
+t36;intoxicacao antibioticos sistemicos
+t360;intoxicacao penicilinas
+t361;intoxicacao cefalosporinas outras betalactaminas
+t362;intoxicacao pelo grupo cloranfenicol
+t363;intoxicacao macrolidios
+t364;intoxicacao tetraciclinas
+t365;intoxicacao aminoglicosideos
+t366;intoxicacao rifamicinas
+t367;intoxicacao antibioticos antifungicos administrados via sistemica
+t368;intoxicacao outros antibioticos sistemicos
+t369;intoxicacao antibioticos sistemicos nao especificados
+t37;intoxicacao outras substancias antiinfecciosas antiparasitarias sistemicas
+t370;intoxicacao sulfonamidas
+t371;intoxicacao drogas antimicobacterianas
+t372;intoxicacao antimalaricos drogas atuam sobre outros protozoarios sangue
+t373;intoxicacao outros medicamentos antiprotozoarios
+t374;intoxicacao anti helminticos
+t375;intoxicacao drogas antivirais
+t378;intoxicacao outros agentes antiinfecciosos antiparasitarios especificados
+t379;intoxicacao agentes antiinfecciosos antiparasitarios sistemicos nao especificados
+t38;intoxicacao hormonios seus substitutos sinteticos seus antagonistas nao classificados outra parte
+t380;intoxicacao glicocorticoides analogos sinteticos
+t381;intoxicacao hormonios tireoidianos seus derivados
+t382;intoxicacao medicamentos antitireoidianos
+t383;intoxicacao insulina drogas hipoglicemiantes orais antidiabeticos
+t384;intoxicacao anticoncepcionais orais
+t385;intoxicacao outros estrogenos progestagenos
+t386;intoxicacao antigonadotrofinas antiestrogenos antiandrogenos nao classificados outra parte
+t387;intoxicacao androgenos anabolizantes congeneres
+t388;intoxicacao outros hormonios substitutos sinteticos nao especificados
+t389;intoxicacao outros antagonistas hormonais nao especificados
+t39;intoxicacao analgesicos antipireticos anti reumaticos nao opiaceos
+t390;intoxicacao salicilatos
+t391;intoxicacao derivados 4 aminofenol
+t392;intoxicacao derivados pirazolonicos
+t393;intoxicacao outros antiinflamatorios nao esteroides
+t394;intoxicacao anti reumaticos nao classificados outra parte
+t398;intoxicacao outros analgesicos nao opiaceos antipireticos nao classificados outra parte
+t399;intoxicacao analgesico nao opiaceo antipiretico anti reumatico nao especificados
+t40;intoxicacao narcoticos psicodislepticos alucinogenos
+t400;intoxicacao opio
+t401;intoxicacao heroina
+t402;intoxicacao outros opiaceos
+t403;intoxicacao metadona
+t404;intoxicacao outros narcoticos sinteticos
+t405;intoxicacao cocaina
+t406;intoxicacao outros narcoticos nao especificados
+t407;intoxicacao cannabis derivados
+t408;intoxicacao lisergida lsd
+t409;intoxicacao outros psicodislepticos nao especificados alucinogenos
+t41;intoxicacao anestesicos gases terapeuticos
+t410;intoxicacao anestesicos inalatorios
+t411;intoxicacao anestesicos intravenosos
+t412;intoxicacao outros anestesicos gerais nao especificados
+t413;intoxicacao anestesicos locais
+t414;intoxicacao anestesico nao especificado
+t415;intoxicacao gases terapeuticos
+t42;intoxicacao antiepilepticos sedativos hipnoticos antiparkinsonianos
+t420;intoxicacao derivados hidantoina
+t421;intoxicacao iminostilbenos
+t422;intoxicacao succinimidas oxazolidinadionas
+t423;intoxicacao barbituricos
+t424;intoxicacao benzodiazepinas
+t425;intoxicacao antiepileticos associacao nao classificados outra parte
+t426;intoxicacao outras drogas antiepilepticas sedativos hipnoticos
+t427;intoxicacao drogas antiepilepticos sedativos hipnoticos nao especificados
+t428;intoxicacao drogas antiparkinsonianos outros depressores centrais tonus muscular
+t43;intoxicacao drogas psicotropicas nao classificadas outra parte
+t430;intoxicacao antidepressivos triciclicos tetraciclicos
+t431;intoxicacao antidepressivos inibidores monoaminooxidase mao
+t432;intoxicacao outros antidepressivos nao especificados
+t433;intoxicacao antipsicoticos neurolepticos derivados fenotiazina
+t434;intoxicacao neurolepticos tipo butirofenona tioxanteno
+t435;intoxicacao outros antipsicoticos neurolepticos nao especificados
+t436;intoxicacao psicoestimulantes potencialmente podem provocar dependencia
+t438;intoxicacao outras drogas psicotropicas nao classificadas outra parte
+t439;intoxicacao droga psicotropica nao especificada
+t44;intoxicacao drogas afetam principalmente sistema nervoso autonomo
+t440;intoxicacao agentes anticolinesterase
+t441;intoxicacao outros agentes parassimpaticomimeticos colinergicos
+t442;intoxicacao bloqueadores ganglionares nao classificados outra parte
+t443;intoxicacao outros parassimpaticoliticos anticolinergicos antimuscarinicos espasmoliticos nao classificados outra parte
+t444;intoxicacao agonistas principalmente alfa adrenorreceptores nao classificados outra parte
+t445;intoxicacao agonistas principalmente beta adrenorreceptores nao classificados outra parte
+t446;intoxicacao antagonistas alfa adrenorreceptores nao classificados outra parte
+t447;intoxicacao antagonistas beta adrenorreceptores nao classificados outra parte
+t448;intoxicacao bloqueadores neuronais adrenergicos acao central nao classificados outra parte
+t449;intoxicacao outras drogas afetam principalmente sistema nervoso autonomo nao especificadas
+t45;intoxicacao substancias acao essencialmente sistemica substancias hematologicas nao classificadas outra parte
+t450;intoxicacao drogas antialergicas antiemeticas
+t451;intoxicacao drogas antineoplasicas imunomupressoras
+t452;intoxicacao vitaminas nao classificadas outra parte
+t453;intoxicacao enzimas nao classificadas outra parte
+t454;intoxicacao ferro seus compostos
+t455;intoxicacao anticoagulantes
+t456;intoxicacao drogas afetam fibrinolise
+t457;intoxicacao antagonistas anticoagulantes vitamina k outros fatores coagulacao
+t458;intoxicacao outras substancias primariamente sistemicas hematologicas
+t459;intoxicacao substancia essencialmente sistemica hematologica nao especificada
+t46;intoxicacao substancias atuam primariamente sobre aparelho circulatorio
+t460;intoxicacao glicosideos estimulantes coracao substancias acao semelhante
+t461;intoxicacao bloqueadores canais calcio
+t462;intoxicacao outras drogas antidisritmicas nao classificadas outra parte
+t463;intoxicacao vasodilatadores coronarianos nao classificados outra parte
+t464;intoxicacao inibidores enzima conversao angiotensina
+t465;intoxicacao outras drogas anti hipertensivas nao classificadas outra parte
+t466;intoxicacao drogas antihiperlipemicas antiarterioscleroticas
+t467;intoxicacao vasodilatadores perifericos
+t468;intoxicacao drogas antivaricosas incluindo substancias esclerosantes
+t469;intoxicacao outras substancias nao especificadas agem essencialmente sobre aparelho circulatorio
+t47;intoxicacao substancias atuam primariamente sobre aparelho gastrointestinal
+t470;intoxicacao antagonistas receptores h2 histamina
+t471;intoxicacao outros antiacidos drogas inibem secrecao gastrica
+t472;intoxicacao laxativos estimulantes
+t473;intoxicacao laxativos salinos osmoticos
+t474;intoxicacao outros laxativos
+t475;intoxicacao digestivos
+t476;intoxicacao drogas antidiarreicas
+t477;intoxicacao emeticos
+t478;intoxicacao outras substancias atuam primariamente sobre aparelho gastrintestinal
+t479;intoxicacao substancia nao especificada atua primariamente sobre aparelho gastrointestinal
+t48;intoxicacao substancias atuam primariamente sobre musculos lisos esqueleticos sobre aparelho respiratorio
+t480;intoxicacao drogas ocitocicas
+t481;intoxicacao relaxantes musculares esqueleticos bloqueadores neuromusculares
+t482;intoxicacao outras substancias nao especificadas atuam sobre musculos
+t483;intoxicacao antitussigenos
+t484;intoxicacao expectorantes
+t485;intoxicacao drogas anti resfriado
+t486;intoxicacao antiasmaticos nao classificados outra parte
+t487;intoxicacao outras substancias nao especificadas atuam primariamente sobre aparelho respiratorio
+t49;intoxicacao substancias uso topico atuam primariamente sobre pele mucosas medicamentos utilizados oftalmologia otorrinolaringologia odontologia
+t490;intoxicacao antifungicos antiinfecciosos antiinflamatorios uso topico nao classificados outra parte
+t491;intoxicacao antipruriginosos
+t492;intoxicacao adstringentes detergentes uso local
+t493;intoxicacao emolientes demulcentes protetores
+t494;intoxicacao ceratoliticos ceratoplasticos outras drogas preparados tratamento cabelos
+t495;intoxicacao drogas preparacoes uso oftalmologico
+t496;intoxicacao drogas preparacoes uso otorrinolaringologico
+t497;intoxicacao drogas dentarias uso topico
+t498;intoxicacao outras drogas uso topico
+t499;intoxicacao preparado uso topico nao especificado
+t50;intoxicacao diureticos outras drogas medicamentos substancias biologicas nao especificadas
+t500;intoxicacao mineralocorticoides seus antagonistas
+t501;intoxicacao diureticos alca
+t502;intoxicacao inibidores anidrase carbonica benzotiazidas outros diureticos
+t503;intoxicacao produtos agem sobre equilibrio eletrolitico calorico hidrico
+t504;intoxicacao drogas agem sobre metabolismo acido urico
+t505;intoxicacao inibidores apetite
+t506;intoxicacao antidotos quelantes nao classificados outra parte
+t507;intoxicacao analepticos antagonistas receptores opiaceos
+t508;intoxicacao agentes diagnostico
+t509;intoxicacao outras drogas medicamentos substancias biologicas nao especificadas
+t51;efeito toxico alcool
+t510;efeito toxico etanol
+t511;efeito toxico metanol
+t512;efeito toxico 2 propanol
+t513;efeito toxico oleo fusel
+t518;efeito toxico outros alcoois
+t519;efeito toxico alcool nao especificado
+t52;efeito toxico solventes organicos
+t520;efeito toxico derivados petroleo
+t521;efeito toxico benzeno
+t522;efeito toxico homologos benzeno
+t523;efeito toxico glicois
+t524;efeito toxico cetonas
+t528;efeito toxico outros solventes organicos
+t529;efeito toxico solvente organico nao especificado
+t53;efeito toxico derivados halogenicos hidrocarbonetos alifaticos aromaticos
+t530;efeito toxico tetracloreto carbono
+t531;efeito toxico cloroformio
+t532;efeito toxico tricloroetileno
+t533;efeito toxico tetracloroetileno
+t534;efeito toxico diclorometano
+t535;efeito toxico clorofluorcarbono
+t536;efeito toxico outros derivados halogenicos hidrocarbonetos alifaticos
+t537;efeito toxico derivados halogenicos hidrocarbonetos aromaticos
+t539;efeito toxico derivados halogenicos hidrocarbonetos alifaticos aromaticos nao especificados
+t54;efeito toxico corrosivos
+t540;efeito toxico fenol homologos fenol
+t541;efeito toxico outros compostos corrosivos organicos
+t542;efeito toxico acidos corrosivos substancias semelhantes
+t543;efeito toxico bases alcalis causticas substancias semelhantes
+t549;efeito toxico substancia corrosiva nao especificada
+t55;efeito toxico saboes detergentes
+t56;efeito toxico metais
+t560;efeito toxico chumbo seus compostos
+t561;efeito toxico mercurio seus compostos
+t562;efeito toxico cromo seus compostos
+t563;efeito toxico cadmio seus compostos
+t564;efeito toxico cobre seus compostos
+t565;efeito toxico zinco seus compostos
+t566;efeito toxico estanho seus compostos
+t567;efeito toxico berilo seus compostos
+t568;efeito toxico outros metais
+t569;efeito toxico metal nao especificado
+t57;efeito toxico outras substancias inorganicas
+t570;efeito toxico arsenico seus compostos
+t571;efeito toxico fosforo seus compostos
+t572;efeito toxico manganes seus compostos
+t573;efeito toxico cianeto hidrogenio acido cianidrico
+t578;efeito toxico outras substancias inorganicas especificadas
+t579;efeito toxico substancia inorganica nao especificada
+t58;efeito toxico monoxido carbono
+t59;efeito toxico outros gases fumacas vapores
+t590;efeito toxico oxidos nitrogenio
+t591;efeito toxico dioxido enxofre
+t592;efeito toxico formaldeido
+t593;efeito toxico gas lacrimogeneo
+t594;efeito toxico cloro gasoso
+t595;efeito toxico fluoreto gasoso acido fluoridrico
+t596;efeito toxico acido sulfidrico
+t597;efeito toxico dioxido carbono
+t598;efeito toxico outros gases fumacas vapores especificados
+t599;efeito toxico gases fumacas vapores nao especificados
+t60;efeito toxico pesticidas
+t600;efeito toxico inseticidas organofosforados carbamatos
+t601;efeito toxico inseticidas halogenados
+t602;efeito toxico outros inseticidas
+t603;efeito toxico herbicidas fungicidas
+t604;efeito toxico rodenticidas
+t608;efeito toxico outros pesticidas
+t609;efeito toxico pesticida nao especificado
+t61;efeito toxico substancias nocivas consumidas como fruto mar
+t610;intoxicacao pelo peixe ciguatera
+t611;intoxicacao peixes escombrideos
+t612;outras intoxicacoes peixes mariscos
+t618;efeito toxico outros frutos mar
+t619;efeito toxico frutos mar nao especificados
+t62;efeito toxico outras substancias nocivas ingeridas como alimento
+t620;efeito toxico ingestao cogumelos
+t621;efeito toxico ingestao frutos
+t622;efeito toxico ingestao outras partes plantas
+t628;efeito toxico outras substancias nocivas ingeridas como alimento
+t629;efeito toxico substancias nocivas ingeridas como alimento nao especificadas
+t63;efeito toxico contato animais venenosos
+t630;efeito toxico veneno serpente
+t631;efeito toxico veneno outros repteis
+t632;efeito toxico veneno escorpiao
+t633;efeito toxico veneno aranha
+t634;efeito toxico veneno outros artropodes
+t635;efeito toxico contato peixe
+t636;efeito toxico contato outros animais marinhos
+t638;efeito toxico contato outros animais venenosos
+t639;efeito toxico contato animal venenoso nao especificado
+t64;efeito toxico aflatoxina outras micotoxinas contaminantes alimentos
+t65;efeito toxico outras substancias nao especificadas
+t650;efeito toxico cianetos
+t651;efeito toxico estricnina seus sais
+t652;efeito toxico tabaco nicotina
+t653;efeito toxico nitroderivados aminoderivados benzeno seus homologos
+t654;efeito toxico dissulfeto carbono
+t655;efeito toxico nitroglicerina outros acidos esteres nitricos
+t656;efeito toxico tinturas corantes nao classificadas outra parte
+t658;efeito toxico outras substancias especificadas
+t659;efeito toxico substancia nao especificada
+t66;efeitos nao especificados radiacao
+t67;efeitos calor luz
+t670;golpe calor insolacao
+t671;sincope devida ao calor
+t672;caibras devidas ao calor
+t673;exaustao devida ao calor perda hidrica
+t674;exaustao devida ao calor perda sal
+t675;exaustao devida ao calor sem especificacao
+t676;fadiga transitoria devida ao calor
+t677;edema devido ao calor
+t678;outros efeitos calor luz
+t679;efeito calor luz nao especificado
+t68;hipotermia
+t69;outros efeitos temperatura reduzida
+t690;mao pe imersao
+t691;congelamento chilblains
+t698;outros efeitos especificados temperatura reduzida
+t699;efeito nao especificado temperatura reduzida
+t70;efeitos pressao atmosferica pressao agua
+t700;otite barotraumatica
+t701;sinusite barotraumatica
+t702;outros efeitos grandes altitude nao especificados
+t703;mal caixoes doenca descompressao
+t704;efeito fluidos alta pressao
+t708;outros efeitos pressao atmosferica pressao agua
+t709;efeitos nao especificados pressao atmosferica pressao agua
+t71;asfixia
+t73;efeitos outras privacoes
+t730;efeitos fome
+t731;efeitos sede
+t732;exaustao devida intemperies
+t733;exaustao devido um esforco intenso
+t738;outros efeitos privacao
+t739;efeito nao especificado privacao
+t74;sindromes maus tratos
+t740;abandono
+t741;sevicias fisicas
+t742;abuso sexual
+t743;abuso psicologico
+t748;outras sindromes especificadas maus tratos
+t749;sindrome nao especificada maus tratos
+t75;efeitos outras causas externas
+t750;efeitos raio
+t751;afogamento submersao nao mortal
+t752;efeitos vibracao
+t753;doenca causada pelo movimento
+t754;efeitos corrente eletrica
+t758;outros efeitos especificados causas externas
+t78;efeitos adversos nao classificados outra parte
+t780;choque anafilatico devido intolerancia alimentar
+t781;outras reacoes intolerancia alimentar nao classificadas outra parte
+t782;choque anafilatico nao especificado
+t783;edema angioneurotico
+t784;alergia nao especificada
+t788;outros efeitos adversos nao classificados outra parte
+t789;efeito adverso nao especificado
+t79;algumas complicacoes precoces traumatismos nao classificadas outra parte
+t790;embolia gasosa traumatica
+t791;embolia gordurosa traumatica
+t792;hemorragia traumatica secundaria recidivante
+t793;infeccao pos traumatica ferimento nao classificada outra parte
+t794;choque traumatico
+t795;anuria traumatica
+t796;isquemia muscular traumatica
+t797;enfisema subcutaneo origem traumatica
+t798;outras complicacoes precoces traumatismo
+t799;complicacao precoce nao especificada traumatismo
+t80;complicacoes consequentes infusao transfusao injecao terapeutica
+t800;embolia aerea subsequentes infusao transfusao injecao terapeutica
+t801;complicacoes vasculares subsequentes infusao transfusao injecao terapeutica
+t802;infeccoes subsequentes infusao transfusao injecao terapeutica
+t803;reacao incompatibilidade abo
+t804;reacao incompatibilidade rh
+t805;choque anafilatico devido soro
+t806;outras reacoes ao soro
+t808;outras complicacoes subsequentes infusao transfusao injecao terapeutica
+t809;complicacao nao especificada subsequente infusao transfusao injecao terapeutica
+t81;complicacoes procedimentos nao classificadas outra parte
+t810;hemorragia hematoma complicando procedimento nao classificado outra parte
+t811;choque durante resultante procedimento nao classificado outra parte
+t812;perfuracao laceracao acidentais durante um procedimento nao classificado outra parte
+t813;deiscencia ferida cirurgica nao classificada outra parte
+t814;infeccao subsequente procedimento nao classificada outra parte
+t815;corpo estranho deixado acidentalmente cavidade corporal ferida operatoria subsequente procedimento
+t816;reacao aguda substancia estranha deixada acidentalmente durante um procedimento
+t817;complicacoes vasculares subsequentes um procedimento nao classificado outra parte
+t818;outras complicacoes procedimentos nao classificadas outra parte
+t819;complicacao nao especificada procedimento
+t82;complicacoes dispositivos proteticos implantes enxertos cardiacos vasculares
+t820;complicacao mecanica protese valvular cardiaca
+t821;complicacao mecanica dispositivo eletronico cardiaco
+t822;complicacao mecanica enxerto ponte coronaria implantes valvas
+t823;complicacoes mecanicas outros enxertos vasculares
+t824;complicacao mecanica cateter vascular dialise
+t825;complicacoes mecanicas outros dispositivos implantes cardiovasculares
+t826;infeccao reacao inflamatorias devidas protese valvular cardiaca
+t827;infeccao reacao inflamatorias devidas outros dispositivos implantes enxertos cardiacos vasculares
+t828;outras complicacoes dispositivos proteticos implantes enxertos cardiacos vasculares
+t829;complicacoes nao especificada dispositivo protetico implante enxerto cardiacos vasculares
+t83;complicacoes dispositivos proteticos implantes enxertos geniturinarios internos
+t830;complicacao mecanica cateter demora urinario
+t831;complicacao mecanica outros dispositivos implantes urinarios
+t832;complicacao mecanica enxerto orgao urinario
+t833;complicacao mecanica dispositivo intra uterino anticoncepcional
+t834;complicacao mecanica outros dispositivos proteticos implantes enxertos trato genital
+t835;infeccao reacao inflamatoria devidas dispositivo protetico implante enxerto aparelho urinario
+t836;infeccao reacao inflamatoria devidas dispositivo protetico implante enxerto trato genital
+t838;outras complicacoes dispositivos proteticos implantes enxertos geniturinarios
+t839;complicacao nao especificada protese implante enxerto geniturinarios
+t84;complicacoes dispositivos proteticos implantes enxertos ortopedicos internos
+t840;complicacao mecanica protese articular interna
+t841;complicacao mecanica dispositivo fixacao interna ossos membros
+t842;complicacao mecanica dispositivo fixacao interna outros ossos
+t843;complicacao mecanica outros dispositivos implantes enxertos osseos
+t844;complicacao mecanica outros dispositivos implantes enxertos ortopedicos internos
+t845;infeccao reacao inflamatoria devidas protese articular interna
+t846;infeccao reacao inflamatoria devidas dispositivo fixacao interna qualquer local
+t847;infeccao reacao inflamatoria devidas outros dispositivos proteticos implantes enxertos ortopedicos internos
+t848;outras complicacoes dispositivos proteticos implantes enxertos ortopedicos internos
+t849;complicacao nao especificada dispositivo protetico implante enxerto ortopedicos internos
+t85;complicacoes outros dispositivos proteticos implantes enxertos internos
+t850;complicacao mecanica shunt ventricular comunicacao intracraniano
+t851;complicacao mecanica estimulador eletronico implantado sistema nervoso
+t852;complicacao mecanica lente intraocular
+t853;complicacoes mecanicas outros dispositivos proteticos implantes enxertos oculares
+t854;complicacao mecanica protese implante mamarios
+t855;complicacao mecanica dispositivos proteticos implante enxerto gastrointestinais
+t856;complicacao mecanica outros dispositivos proteticos implantes enxertos internos especificados
+t857;infeccao reacao inflamatoria devida outros dispositivos proteticos implantes enxertos internos
+t858;outras complicacoes dispositivos proteticos implantes enxertos internos nao classificados outra parte
+t859;complicacao nao especificada outros dispositivos proteticos implantes enxertos internos
+t86;falha rejeicao orgaos tecidos transplantados
+t860;rejeicao transplante medula ossea
+t861;falencia rejeicao transplante rim
+t862;falencia rejeicao transplante coracao
+t863;falencia rejeicao transplante duplo coracao pulmao
+t864;falencia rejeicao transplante figado
+t868;outra insuficiencia rejeicao outros orgaos tecidos transplantados
+t869;falencia rejeicao transplante orgao tecido nao especificado
+t87;complicacoes proprias reimplante amputacao
+t870;complicacoes reimplante parte extremidade superior
+t871;complicacoes reimplante parte extremidade inferior
+t872;complicacoes outras partes reimplantadas corpo
+t873;neuroma coto amputacao
+t874;infeccao coto amputacao
+t875;necrose coto amputacao
+t876;outras complicacoes nao especificadas coto amputacao
+t88;outras complicacoes cuidados medicos cirurgicos nao classificadas outra parte
+t880;infeccao subsequente imunizacao
+t881;outras complicacoes subsequentes imunizacao nao classificadas outra parte
+t882;choque devido anestesia
+t883;hipertermia maligna devida anestesia
+t884;entubacao falha dificil
+t885;outras complicacoes anestesia
+t886;choque anafilatico devido efeito adverso droga medicamento corretos administrados maneira apropriada
+t887;efeito adverso nao especificado droga medicamento
+t888;outras complicacoes cuidados medicos cirurgicos especificados nao classificados outra parte
+t889;complicacao nao especificada cuidados medicos cirurgicos
+t90;sequelas traumatismo cabeca
+t900;sequelas traumatismo superficial cabeca
+t901;sequelas ferimento cabeca
+t902;sequelas fratura cranio ossos face
+t903;sequelas traumatismo nervos cranianos
+t904;sequelas traumatismo olho orbita
+t905;sequelas traumatismo intracraniano
+t908;sequelas outros traumatismos especificados cabeca
+t909;sequelas traumatismo nao especificado cabeca
+t91;sequelas traumatismos pescoco tronco
+t910;sequelas traumatismo superficial ferimento pescoco tronco
+t911;sequelas fratura coluna vertebral
+t912;sequelas outra fratura torax pelve
+t913;sequelas traumatismo medula espinhal
+t914;sequelas traumatismo orgaos intratoracicos
+t915;sequelas traumatismo orgaos intra abdominais orgaos pelvicos
+t918;sequelas outros traumatismos especificados pescoco tronco
+t919;sequelas traumatismo nao especificado pescoco tronco
+t92;sequelas traumatismos membro superior
+t920;sequelas ferimento membro superior
+t921;sequelas fratura braco
+t922;sequelas fratura ao nivel punho mao
+t923;sequelas luxacao entorse distensao membro superior
+t924;sequelas traumatismo nervo membro superior
+t925;sequelas traumatismo musculo tendao membro superior
+t926;sequelas esmagamento amputacao traumatica membro superior
+t928;sequelas outros traumatismos especificados membro superior
+t929;sequelas traumatismo nao especificado membro superior
+t93;sequelas traumatismos membro inferior
+t930;sequelas ferimento membro inferior
+t931;sequelas fratura femur
+t932;sequelas outras fraturas membro inferior
+t933;sequelas luxacao entorse distensao membro inferior
+t934;sequelas traumatismo nervo membro inferior
+t935;sequelas traumatismo musculo tendao membro inferior
+t936;sequelas esmagamento amputacao traumatica membro inferior
+t938;sequelas outros traumatismos especificados membro inferior
+t939;sequelas traumatismo nao especificado membro inferior
+t94;sequelas traumatismos envolvendo multiplas regioes corpo nao especificadas
+t940;sequelas traumatismos envolvendo regioes multiplas corpo
+t941;sequelas traumatismos nao especificados regioes corpo
+t95;sequelas queimaduras corrosoes geladuras
+t950;sequelas queimadura corrosao geladura cabeca pescoco
+t951;sequelas queimadura corrosao geladura tronco
+t952;sequelas queimadura corrosao geladura membro superior
+t953;sequelas queimadura corrosao geladura membro inferior
+t954;sequelas queimadura corrosao classificavel so acordo extensao area corporal envolvida
+t958;sequelas outra queimadura corrosoes geladuras especificadas
+t959;sequelas queimadura corrosao geladura local nao especificado
+t96;sequelas intoxicacao drogas medicamentos substancias biologicas
+t97;sequelas efeitos toxicos substancias origem predominantemente nao medicinal
+t98;sequelas outros efeitos causas externas nao especificados
+t980;sequelas efeitos penetracao corpo estranho atraves orificio natural
+t981;sequelas outros efeitos causas externas nao especificados
+t982;sequelas algumas complicacoes precoces traumatismos
+t983;sequelas complicacoes cuidados medicos cirurgicos nao classificados outra parte

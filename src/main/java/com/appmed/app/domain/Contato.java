@@ -1,7 +1,6 @@
 
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.perfil.pessoal.Dependente;
 import com.appmed.app.domain.perfil.pessoal.Dependente.Parentesco;
 import java.io.Serializable;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -17,18 +16,19 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
     private String email;
     private String relacao;//tipo de relacionamento com contato amigo, parente, medico
     private Parentesco familiar;
-    private Privacidade privacidade;
+    private NivelPermissao nivelPermissao;
+    
     @DBRef
     private Usuario contaContato;
    
     public Contato(String nome, String phone, String email, String relacao, 
-            Privacidade privacidade, Usuario createdBy) {
+            NivelPermissao privacidade, Usuario createdBy) {
         super(createdBy);
         this.nome = nome;
         this.phone = phone;
         this.email = email;
         this.relacao = relacao;
-        this.privacidade = privacidade;
+        this.nivelPermissao = privacidade;
     }
 
     public String getNome() {
@@ -63,12 +63,12 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
         this.relacao = relacao;
     }
 
-    public Privacidade getPrivacidade() {
-        return privacidade;
+    public NivelPermissao getNivelPermissao() {
+        return nivelPermissao;
     }
 
-    public void setPrivacidade(Privacidade privacidade) {
-        this.privacidade = privacidade;
+    public void setNivelPermissao(NivelPermissao privacidade) {
+        this.nivelPermissao = privacidade;
     }
     
     

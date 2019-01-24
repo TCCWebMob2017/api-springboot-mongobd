@@ -2,7 +2,7 @@ package com.appmed.app.exceptions;
 
 public class NotFound extends Exception {
 
-    private static final long serialVersionUID = -8613886387063802199L;
+    private static final long serialVersionUID = -1072101751492756852L;
 
     public NotFound() {
     }

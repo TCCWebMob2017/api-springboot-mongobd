@@ -22,6 +22,7 @@ public class Institucional extends Perfil implements Serializable {
     private String telefone;
     private String celular;
     private Area areaAtividade;
+    private Tipo tipo;
 
     private String descricao;
 
@@ -127,7 +128,7 @@ public class Institucional extends Perfil implements Serializable {
     public void setAreaAtividade(Area areaAtividade) {
         this.areaAtividade = areaAtividade;
     }
-/*
+
     public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
@@ -135,7 +136,7 @@ public class Institucional extends Perfil implements Serializable {
     public void setFuncionarios(List<Funcionario> funcionarios) {
         this.funcionarios = funcionarios;
     }
-*/
+
     public String getDescricao() {
         return descricao;
     }
@@ -144,13 +145,14 @@ public class Institucional extends Perfil implements Serializable {
         this.descricao = descricao;
     }
 
-    public enum Area {
+    public enum Tipo {
         HOSPITAL, ACADEMIA, CLINICA, FARMACIA, ESCOLA, CLUBE, OUTRA;
     }
 
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
+    public enum Area {
+        MEDICA, SAUDE, ACADEMICA, EDUCACAO, OUTRA;
     }
+
 
     public void addFuncionario(Funcionario element) {
         funcionarios.add(element);

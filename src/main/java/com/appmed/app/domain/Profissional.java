@@ -17,6 +17,7 @@ public class Profissional extends Perfil implements Serializable {
 
     private List<Formacao> formacoes;
     private List<Localidade> locaisTrabalho;
+    private List<Institucional> instituicoesTrabalho;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate nascimento;
@@ -137,6 +138,14 @@ public class Profissional extends Perfil implements Serializable {
 
     public void setPacientes(List<Pessoal> pacientes) {
         this.pacientes = pacientes;
+    }
+
+    public List<Institucional> getInstituicoesTrabalho() {
+        return instituicoesTrabalho;
+    }
+
+    public void setInstituicoesTrabalho(List<Institucional> instituicoesTrabalho) {
+        this.instituicoesTrabalho = instituicoesTrabalho;
     }
 
     public enum Profissao {

@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.appmed.app.domain.perfil.Droga;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
@@ -23,13 +23,13 @@ public class DrogaFicha extends InfoFichaMedica{
         this.frequecia = frequecia;
     }
     
-    public DrogaFicha(String quantidade, String frequecia, Privacidade privacidade) {
+    public DrogaFicha(String quantidade, String frequecia, NivelPermissao privacidade) {
         super(privacidade);
         this.quantidade = quantidade;
         this.frequecia = frequecia;
     }
 
-    public DrogaFicha(String quantidade, String frequecia, LocalDate desde, Privacidade privacidade) {
+    public DrogaFicha(String quantidade, String frequecia, LocalDate desde, NivelPermissao privacidade) {
         super(privacidade);
         this.quantidade = quantidade;
         this.frequecia = frequecia;

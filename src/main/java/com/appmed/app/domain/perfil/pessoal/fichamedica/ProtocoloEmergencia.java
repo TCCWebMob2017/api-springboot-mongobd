@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 
 public class ProtocoloEmergencia extends InfoFichaMedica{
     private String tipoEmergencia;
@@ -14,7 +14,7 @@ public class ProtocoloEmergencia extends InfoFichaMedica{
         this.descricao = descricao;
     }
 
-    public ProtocoloEmergencia(String tipoEmergencia, String descricao, Privacidade privacidade) {
+    public ProtocoloEmergencia(String tipoEmergencia, String descricao, NivelPermissao privacidade) {
         super(privacidade);
         this.tipoEmergencia = tipoEmergencia;
         this.descricao = descricao;

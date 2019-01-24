@@ -1,6 +1,7 @@
 package com.appmed.app.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "perfil")
@@ -10,7 +11,11 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
 
     private String nome;
     private TipoPerfil tipoPerfil;
-
+    private List<Contato> contatos;
+    private List<Visibilidade> privacidade;
+    
+    
+    
     public Perfil() {
         super();
     }
@@ -35,6 +40,10 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
         PESSOAL, PROFISSIONAL, ORGANIZACAO, DEPENDENTE;
     }
 
+    public enum Visibilidade {
+        RESTRITO, PUBLICO, USUARIOS_APLICATIVO, CONTATOS, ORGANIZACAO_SAUDE, PROFISSIONAIS_SAUDE;
+    }
+    
     public String getNome() {
 
         return nome;
@@ -52,8 +61,30 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
         this.tipoPerfil = tipoPerfil;
     }
 
-    
-    
+    public List<Contato> getContatos() {
+        return contatos;
+    }
+
+    public void setContatos(List<Contato> contatos) {
+        this.contatos = contatos;
+    }
+
+    public boolean add(Contato e) {
+        return contatos.add(e);
+    }
+
+    public boolean remove(Object o) {
+        return contatos.remove(o);
+    }
+
+    public List<Visibilidade> getPrivacidade() {
+        return privacidade;
+    }
+
+    public void setPrivacidade(List<Visibilidade> privacidade) {
+        this.privacidade = privacidade;
+    }
+
     
     @Override
     public int hashCode() {

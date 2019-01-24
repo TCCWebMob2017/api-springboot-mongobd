@@ -1,25 +1,24 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 
 
 public class InfoFichaMedica {
-    private Privacidade privacidade;
+    private NivelPermissao privacidade;
 
     public InfoFichaMedica() {
-        this.privacidade = new Privacidade (true,false);
     }
     
-    public InfoFichaMedica(Privacidade privacidade) {
+    public InfoFichaMedica(NivelPermissao privacidade) {
         this.privacidade = privacidade;
     }
 
-    public Privacidade getPrivacidade() {
+    public NivelPermissao getPrivacidade() {
         return privacidade;
     }
 
-    public void setPrivacidade(Privacidade privacidade) {
+    public void setPrivacidade(NivelPermissao privacidade) {
         this.privacidade = privacidade;
     }
         

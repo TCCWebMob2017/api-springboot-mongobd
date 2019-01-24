@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 
@@ -20,7 +20,7 @@ public class Acidente extends InfoFichaMedica{
         this.gravidade = gravidade;
     }
 
-    public Acidente(String descricao, String gravidade, LocalDate data, Privacidade privacidade) {
+    public Acidente(String descricao, String gravidade, LocalDate data, NivelPermissao privacidade) {
         super(privacidade);
         this.descricao = descricao;
         this.gravidade = gravidade;
@@ -28,7 +28,7 @@ public class Acidente extends InfoFichaMedica{
     }
 
     
-    public Acidente(String descricao, String sequela, String gravidade, Privacidade privacidade) {
+    public Acidente(String descricao, String sequela, String gravidade, NivelPermissao privacidade) {
         super(privacidade);
         this.descricao = descricao;
         this.gravidade = gravidade;

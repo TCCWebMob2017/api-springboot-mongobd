@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.appmed.app.domain.perfil.CondicaoEspecial;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
@@ -16,7 +16,7 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
         this.descricao = descricao;
     }    
 
-    public CondicaoEspecialFicha(String descricao, Privacidade privacidade) {
+    public CondicaoEspecialFicha(String descricao, NivelPermissao privacidade) {
         super(privacidade);
         this.descricao = descricao;
     }

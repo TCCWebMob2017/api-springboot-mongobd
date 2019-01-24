@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.appmed.app.service;
 
 import com.appmed.app.domain.perfil.Alergia;
@@ -34,8 +30,8 @@ public class AlergiaService implements Serializable {
         return this.alergiaRepository.findAll();
     }
 
-    public Iterable<Alergia> findByCreatorUser(String idUsuario) {
-        return this.alergiaRepository.findByCreatorUser(idUsuario);
+    public List<Alergia> findByCreatorUser(String idUsuario) {
+        return this.alergiaRepository.findByCreatedByUser(idUsuario);
     }
 
     public void delete(String id) {

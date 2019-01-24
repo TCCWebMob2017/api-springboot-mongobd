@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 
@@ -12,7 +12,7 @@ public class Cirurgia extends InfoFichaMedica{
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate data;
 
-    public Cirurgia(String nome, String regiaoCorpo, String descricao, Privacidade privacidade) {
+    public Cirurgia(String nome, String regiaoCorpo, String descricao, NivelPermissao privacidade) {
         super(privacidade);
         this.nome = nome;
         this.regiaoCorpo = regiaoCorpo;

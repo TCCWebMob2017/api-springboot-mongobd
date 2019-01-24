@@ -3,7 +3,7 @@ package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
 import com.appmed.app.domain.perfil.Doenca;
 import com.appmed.app.domain.perfil.Medicamento;
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -22,7 +22,7 @@ public class DoencaFicha extends InfoFichaMedica{
         this.doenca = doenca;
     }
 
-    public DoencaFicha(Doenca doenca, LocalDate desde, Medicamento medicamento, Privacidade privacidade) {
+    public DoencaFicha(Doenca doenca, LocalDate desde, Medicamento medicamento, NivelPermissao privacidade) {
         super(privacidade);
         this.doenca = doenca;
         this.desde = desde;

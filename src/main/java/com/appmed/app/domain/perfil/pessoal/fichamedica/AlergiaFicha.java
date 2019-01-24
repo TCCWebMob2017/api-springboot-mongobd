@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 import com.appmed.app.domain.perfil.Alergia;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
@@ -14,7 +14,7 @@ public class AlergiaFicha extends InfoFichaMedica{
     private LocalDate desde;
    
  
-    public AlergiaFicha(Alergia alergia, Privacidade privacidade) {
+    public AlergiaFicha(Alergia alergia, NivelPermissao privacidade) {
         super(privacidade);
         this.alergia = alergia;
     }
@@ -25,7 +25,7 @@ public class AlergiaFicha extends InfoFichaMedica{
         this.desde = desde;
     }
 
-    public AlergiaFicha(Alergia alergia, LocalDate desde, Privacidade privacidade) {
+    public AlergiaFicha(Alergia alergia, LocalDate desde, NivelPermissao privacidade) {
         super(privacidade);
         this.alergia = alergia;
         this.desde = desde;

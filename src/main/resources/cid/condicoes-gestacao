@@ -1,0 +1,491 @@
+o00;gravidez ectopica
+o000;gravidez abdominal
+o001;gravidez tubaria
+o002;gravidez ovariana
+o008;outras formas gravidez ectopica
+o009;gravidez ectopica nao especificada
+o01;mola hidatiforme
+o010;mola hidatiforme classica
+o011;mola hidatiforme incompleta parcial
+o019;mola hidatiforme nao especificada
+o02;outros produtos anormais concepcao
+o020;ovo claro mola nao hidatiforme
+o021;aborto retido
+o028;outros produtos anormais concepcao especificados
+o029;produto anormal concepcao nao especificado
+o03;aborto espontaneo
+o030;aborto espontaneo incompleto complicado infeccao trato genital orgaos pelvicos
+o031;aborto espontaneo incompleto complicado hemorragia excessiva tardia
+o032;aborto espontaneo incompleto complicado embolia
+o033;aborto espontaneo incompleto outras complicacoes complicacoes nao especificadas
+o034;aborto espontaneo incompleto sem complicacoes
+o035;aborto espontaneo completo nao especificado complicado infeccoes trato genital orgaos pelvicos
+o036;aborto espontaneo completo nao especificado complicado hemorragia excessiva tardia
+o037;aborto espontaneo completo nao especificado complicado embolia
+o038;aborto espontaneo completo nao especificado outras complicacoes complicacoes nao especificadas
+o039;aborto espontaneo completo nao especificado sem complicacoes
+o04;aborto razoes medicas legais
+o040;aborto razoes medicas legais incompleto complicado infeccao trato genital orgaos pelvicos
+o041;aborto razoes medicas legais incompleto complicado hemorragia excessiva tardia
+o042;aborto razoes medicas legais incompleto complicado embolia
+o043;aborto razoes medicas legais incompleto outras complicacoes complicacoes nao especificadas
+o044;aborto razoes medicas legais incompleto sem complicacoes
+o045;aborto razoes medicas legais completo nao especificado complicado infeccoes trato genital orgaos pelvicos
+o046;aborto razoes medicas legais completo nao especificado complicado hemorragia excessiva tardia
+o047;aborto razoes medicas legais completo nao especificado complicado embolia
+o048;aborto razoes medicas legais completo nao especificado outras complicacoes complicacoes nao especificadas
+o049;aborto razoes medicas legais completo nao especificado sem complicacoes
+o05;outros tipos aborto
+o050;outros tipos aborto incompleto complicado infeccao trato genital orgaos pelvicos
+o051;outros tipos aborto incompleto complicado hemorragia excessiva tardia
+o052;outros tipos aborto incompleto complicado embolia
+o053;outros tipos aborto incompleto outras complicacoes complicacoes nao especificadas
+o054;outros tipos aborto incompleto sem complicacoes
+o055;outros tipos aborto completo nao especificado complicado infeccoes trato genital orgaos pelvicos
+o056;outros tipos aborto completo nao especificado complicado hemorragia excessiva tardia
+o057;outros tipos aborto completo nao especificado complicado embolia
+o058;outros tipos aborto completo nao especificado outras complicacoes complicacoes nao especificadas
+o059;outros tipos aborto completo nao especificado sem complicacoes
+o06;aborto nao especificado
+o060;aborto nao especificado incompleto complicado infeccao trato genital orgaos pelvicos
+o061;aborto nao especificado incompleto complicado hemorragia excessiva tardia
+o062;aborto nao especificado incompleto complicado embolia
+o063;aborto nao especificado incompleto outras complicacoes complicacoes nao especificadas
+o064;aborto nao especificado incompleto sem complicacoes
+o065;aborto nao especificado completo nao especificado complicado infeccoes trato genital orgaos pelvicos
+o066;aborto nao especificado completo nao especificado complicado hemorragia excessiva tardia
+o067;aborto nao especificado completo nao especificado complicado embolia
+o068;aborto nao especificado completo nao especificado outras complicacoes complicacoes nao especificadas
+o069;aborto nao especificado completo nao especificado sem complicacoes
+o07;falha tentativa aborto
+o070;falha aborto provocado razoes medicas complicado infeccao trato genital orgaos pelvicos
+o071;falha aborto provocado razoes medicas complicado hemorragia tardia excessiva
+o072;falha aborto provocado razoes medicas complicado embolia
+o073;falha aborto provocado razoes medicas outras complicacoes complicacoes nao especificadas
+o074;falha aborto provocado razoes medicas sem complicacoes
+o075;outras formas nao especificadas falha provocacao aborto complicadas infeccao trato genital infeccao orgaos pelvicos
+o076;outras formas nao especificadas falha provocacao aborto complicadas hemorragia tardia excessiva
+o077;outras formas nao especificadas falha provocacao aborto complicadas embolia
+o078;outras formas nao especificadas falha provocacao aborto outras complicacoes complicacoes nao especificadas
+o079;outras formas nao especificadas falha provocacao aborto sem complicacao
+o08;complicacoes consequentes aborto gravidez ectopica molar
+o080;infeccao trato genital orgaos pelvicos consequente aborto gravidez ectopica molar
+o081;hemorragia tardia excessiva consequente aborto gravidez ectopica molar
+o082;embolia consequente aborto gravidez ectopica molar
+o083;choque consequente aborto gravidez ectopica molar
+o084;insuficiencia renal consequente aborto gravidez ectopica molar
+o085;disturbios metabolicos consequentes aborto gravidez ectopica molar
+o086;lesao orgaos tecidos pelvicos consequentes aborto gravidez ectopica molar
+o087;outras complicacoes venosas consequentes aborto gravidez ectopica molar
+o088;outras complicacoes consequentes aborto gravidez ectopica molar
+o089;complicacoes consequentes aborto gravidez ectopica molar nao especificadas
+o10;hipertensao pre existente complicando gravidez parto puerperio
+o100;hipertensao essencial pre existente complicando gravidez parto puerperio
+o101;doenca cardiaca hipertensiva pre existente complicando gravidez parto puerperio
+o102;doenca renal hipertensiva pre existente complicando gravidez parto puerperio
+o103;doenca cardiaca renal hipertensiva pre existente complicando gravidez parto puerperio
+o104;hipertensao secundaria pre existente complicando gravidez parto puerperio
+o109;hipertensao pre existente nao especificada complicando gravidez parto puerperio
+o11;disturbio hipertensivo pre existente proteinuria superposta
+o12;edema proteinuria gestacionais induzidos pela gravidez sem hipertensao
+o120;edema gestacional
+o121;proteinuria gestacional
+o122;edema gestacional proteinuria
+o13;hipertensao gestacional induzida pela gravidez sem proteinuria significativa
+o14;hipertensao gestacional induzida pela gravidez proteinuria significativa
+o140;pre eclampsia moderada
+o141;pre eclampsia grave
+o149;pre eclampsia nao especificada
+o15;eclampsia
+o150;eclampsia gravidez
+o151;eclampsia trabalho parto
+o152;eclampsia puerperio
+o159;eclampsia nao especificada quanto ao periodo
+o16;hipertensao materna nao especificada
+o20;hemorragia inicio gravidez
+o200;ameaca aborto
+o208;outras hemorragias inicio gravidez
+o209;hemorragia inicio gravidez nao especificada
+o21;vomitos excessivos gravidez
+o210;hiperemese gravidica leve
+o211;hiperemese gravidica disturbio metabolico
+o212;vomitos tardios gravidez
+o218;outras formas vomitos complicando gravidez
+o219;vomitos gravidez nao especificados
+o22;complicacoes venosas gravidez
+o220;varizes membros inferiores gravidez
+o221;varizes genitais gravidez
+o222;tromboflebite superficial gravidez
+o223;flebotrombose profunda gravidez
+o224;hemorroidas gravidez
+o225;trombose venosa cerebral gravidez
+o228;outras complicacoes venosas gravidez
+o229;complicacoes venosas gravidez nao especificadas
+o23;infeccoes trato geniturinario gravidez
+o230;infeccoes rim gravidez
+o231;infeccoes bexiga gravidez
+o232;infeccoes uretra gravidez
+o233;infeccoes outras partes trato urinario gravidez
+o234;infeccao nao especificada trato urinario gravidez
+o235;infeccoes trato genital gravidez
+o239;outras infeccoes nao especificadas trato urinario gravidez
+o24;diabetes mellitus gravidez
+o240;diabetes mellitus pre existente insulino dependente
+o241;diabetes mellitus pre existente nao insulino dependente
+o242;diabetes mellitus pre existente relacionado desnutricao
+o243;diabetes mellitus pre existente nao especificado
+o244;diabetes mellitus surge durante gravidez
+o249;diabetes mellitus gravidez nao especificado
+o25;desnutricao gravidez
+o26;assistencia materna outras complicacoes ligadas predominantemente gravidez
+o260;ganho excessivo peso gravidez
+o261;ganho peso insuficiente gravidez
+o262;assistencia gravidez motivo abortamento habitual
+o263;retencao dispositivo intra uterino contraceptivo diu gravidez
+o264;herpes gestacional
+o265;sindrome hipotensao materna
+o266;transtornos figado gravidez parto puerperio
+o267;subluxacao sinfise pubica gravidez parto puerperio
+o268;outras afeccoes especificadas ligadas gravidez
+o269;afeccoes ligadas gravidez nao especificadas
+o28;achados anormais rastreamento screening antenatal mae
+o280;achados hematologicos anormais rastreamento screening antenatal mae
+o281;achados bioquimicos anormais rastreamento screening antenatal mae
+o282;achados citologicos anormais rastreamento screening antenatal mae
+o283;achados ultrassonograficos anormais rastreamento screening antenatal mae
+o284;achados radiologicos anormais rastreamento screening antenatal mae
+o285;achados cromossomicos geneticos anormais rastreamento screening antenatal mae
+o288;outros achados anormais rastreamento screening antenatal mae
+o289;achados anormais rastreamento screening antenatal mae nao especificados
+o29;complicacoes anestesia administrada durante gravidez
+o290;complicacoes pulmonares anestesia administrada durante gravidez
+o291;complicacoes cardiacas anestesia administrada durante gravidez
+o292;complicacoes relativas ao sistema nervoso central devidas anestesia administrada durante gravidez
+o293;reacao toxica causada anestesia local administrada durante gravidez
+o294;cefaleia causada anestesia raquidiana peridural administradas durante gravidez
+o295;outras complicacoes anestesia raquidiana peridural administradas durante gravidez
+o296;falha dificuldade entubacao durante gravidez
+o298;outras complicacoes anestesia durante gravidez
+o299;complicacoes anestesia durante gravidez nao especificadas
+o30;gestacao multipla
+o300;gravidez dupla
+o301;gravidez trigemelar
+o302;gravidez quadrigemelar
+o308;outras gestacoes multiplas
+o309;gestacao multipla nao especificada
+o31;complicacoes especificas gestacao multipla
+o310;feto papiraceo
+o311;continuacao gravidez apos aborto um mais fetos
+o312;continuacao gravidez apos morte intra uterina um mais fetos
+o318;outras complicacoes especificas gestacao multipla
+o32;assistencia prestada mae motivo apresentacao anormal conhecida suspeitada feto
+o320;assistencia prestada mae posicao fetal instavel
+o321;assistencia prestada mae apresentacao pelvica
+o322;assistencia prestada mae posicao fetal transversa obliqua
+o323;assistencia prestada mae apresentacao face mento fronte
+o324;assistencia prestada mae polo cefalico alto gestacao termo
+o325;assistencia prestada mae gestacao multipla apresentacao anormal um mais fetos
+o326;assistencia prestada mae apresentacao composta
+o328;assistencia prestada mae outras formas apresentacao anormal feto
+o329;assistencia prestada mae apresentacao anormal feto nao especificada
+o33;assistencia prestada mae uma desproporcao conhecida suspeita
+o330;assistencia prestada mae uma desproporcao devida deformidade pelve ossea materna
+o331;assistencia prestada mae uma desproporcao devida contracao geral pelve
+o332;assistencia prestada mae uma desproporcao devida contracao estreito superior pelve
+o333;assistencia prestada mae uma desproporcao devida contracao estreito inferior pelve
+o334;assistencia prestada mae uma desproporcao origem mista materna fetal
+o335;assistencia prestada mae uma desproporcao devida feto excepcionalmente grande
+o336;assistencia prestada mae uma desproporcao devida feto hidrocefalico
+o337;assistencia prestada mae uma desproporcao devida outras deformidades fetais
+o338;assistencia prestada mae uma desproporcao outra origem
+o339;assistencia prestada mae uma desproporcao nao especificada
+o34;assistencia prestada mae anormalidade conhecida suspeita orgaos pelvicos maternos
+o340;assistencia mae malformacao congenita utero
+o341;assistencia prestada mae tumor corpo utero
+o342;assistencia prestada mae cicatriz uterina devida uma cirurgia anterior
+o343;assistencia prestada mae incompetencia cervical
+o344;assistencia prestada mae outras anormalidades colo utero
+o345;assistencia prestada mae outras anormalidades utero gravidico
+o346;assistencia prestada mae anormalidade vagina
+o347;assistencia prestada mae anormalidade vulva perineo
+o348;assistencia prestada mae outras anormalidades orgaos pelvicos
+o349;assistencia prestada mae anormalidade orgaos pelvicos nao especificada
+o35;assistencia prestada mae anormalidade lesao fetais conhecidas suspeitadas
+o350;assistencia prestada mae malformacao sistema nervoso central feto suspeitada
+o351;assistencia prestada mae anormalidade cromossomica suspeitada feto
+o352;assistencia prestada mae doenca hereditaria suspeitada feto
+o353;assistencia prestada mae lesao fetal suspeitada causada doenca viral materna
+o354;assistencia prestada mae lesao suspeitada causada ao feto alcoolismo materno
+o355;assistencia prestada mae lesao fetal suspeitada causada drogas
+o356;assistencia prestada mae lesao fetal suspeitada causada radiacao
+o357;assistencia prestada mae lesao fetal suspeitada causada outros procedimentos medicos
+o358;assistencia prestada mae outras anormalidades lesoes fetais suspeitadas
+o359;assistencia prestada mae lesao anormalidade fetais suspeitadas nao especificadas
+o36;assistencia prestada mae outros problemas fetais conhecidos suspeitados
+o360;assistencia prestada mae isoimunizacao rh
+o361;assistencia prestada mae outros tipos isoimunizacao
+o362;assistencia prestada mae hidropsia fetal
+o363;assistencia prestada mae sinais hipoxia fetal
+o364;assistencia prestada mae morte intra uterina
+o365;assistencia prestada mae insuficiencia crescimento fetal
+o366;assistencia prestada mae crescimento fetal excessivo
+o367;assistencia prestada mae feto viavel gravidez abdominal
+o368;assistencia prestada mae outros problemas fetais especificados
+o369;assistencia prestada mae problema fetal nao especificado
+o40;polihidramnio
+o41;outros transtornos membranas liquido amniotico
+o410;oligohidramnio
+o411;infeccao saco amniotico membranas
+o418;outros transtornos especificados liquido amniotico membranas
+o419;transtornos liquido amniotico membranas nao especificados
+o42;ruptura prematura membranas
+o420;ruptura prematura membranas inicio trabalho parto dentro 24 horas
+o421;ruptura prematura membranas inicio trabalho parto depois primeiras 24 horas
+o422;ruptura prematura membranas trabalho parto retardado terapeutica
+o429;ruptura prematura membranas nao especificada
+o43;transtornos placenta
+o430;sindromes transfusao placentaria
+o431;malformacao placenta
+o438;outros transtornos placenta
+o439;transtorno placenta nao especificado
+o44;placenta previa
+o440;placenta previa especificada como sem hemorragia
+o441;placenta previa hemorragia
+o45;descolamento prematuro placenta abruptio placentae
+o450;descolamento prematuro placenta deficiencia coagulacao
+o458;outro descolamento prematuro placenta
+o459;descolamento prematuro placenta nao especificado
+o46;hemorragia anteparto nao classificada outra parte
+o460;hemorragia anteparto deficiencia coagulacao
+o468;outra forma hemorragia anteparto
+o469;hemorragia anteparto nao especificada
+o47;falso trabalho parto
+o470;falso trabalho parto antes se completarem 37 semanas gestacao
+o471;falso trabalho parto 37a semana completa depois dela
+o479;falso trabalho parto nao especificado
+o48;gravidez prolongada
+o60;trabalho parto pre termo
+o600;trabalho parto pre termo sem parto
+o601;trabalho parto pre termo parto pre termo
+o602;trabalho parto pre termo parto termo
+o61;falha inducao trabalho parto
+o610;falha inducao medica trabalho parto
+o611;falha inducao instrumental trabalho parto
+o618;outras formas falha inducao trabalho parto
+o619;falha inducao trabalho parto nao especificada
+o62;anormalidades contracao uterina
+o620;contracoes iniciais inadequadas
+o621;inercia uterina secundaria
+o622;outras formas inercia uterina
+o623;trabalho parto precipitado
+o624;contracoes uterinas hipertonicas incoordenadas prolongadas
+o628;outras anormalidades contracao uterina
+o629;anormalidades contracao uterina nao especificadas
+o63;trabalho parto prolongado
+o630;prolongamento primeiro periodo dilatacao
+o631;prolongamento segundo periodo expulsao
+o632;parto retardado segundo gemeo terceiro gemeo etc
+o639;trabalho parto prolongado nao especificado
+o64;obstrucao trabalho parto devida ma posicao ma apresentacao feto
+o640;obstrucao trabalho parto devida rotacao incompleta polo cefalico fetal
+o641;obstrucao trabalho parto devida apresentacao pelvica
+o642;obstrucao trabalho parto devida apresentacao face
+o643;obstrucao trabalho parto devida apresentacao fronte
+o644;obstrucao trabalho parto devida apresentacao ombro
+o645;obstrucao trabalho parto devida apresentacao complexa
+o648;obstrucao trabalho parto devida outras formas ma apresentacao ma posicao
+o649;obstrucao trabalho parto devida ma posicao ma apresentacao nao especificadas
+o65;obstrucao trabalho parto devida anormalidade pelvica mae
+o650;obstrucao trabalho parto devida deformidade pelvica
+o651;obstrucao trabalho parto devida contracao geral pelve
+o652;obstrucao trabalho parto devida contracao estreito superior
+o653;obstrucao trabalho parto devida contracao estreito inferior cavidade mediana
+o654;obstrucao trabalho parto devida desproporcao feto pelvica nao especificada
+o655;obstrucao trabalho parto devida anormalidade orgaos pelvicos maternos
+o658;obstrucao trabalho parto devida outras anormalidades pelvicas maternas
+o659;obstrucao trabalho parto devida anormalidades pelvicas maternas nao especificadas
+o66;outras formas obstrucao trabalho parto
+o660;obstrucao trabalho parto devido distocia ombro
+o661;obstrucao trabalho parto colisao gemeos
+o662;obstrucao trabalho parto feto excepcionalmente grande
+o663;obstrucao trabalho parto devido outras anormalidades feto
+o664;falha tentativa trabalho parto nao especificada
+o665;falha aplicacao forceps vacuo extrator nao especificada
+o668;outras formas obstrucao trabalho parto especificadas
+o669;obstrucao trabalho parto nao especificado
+o67;trabalho parto parto complicados hemorragia intraparto nao classificados outra parte
+o670;hemorragia intraparto deficiencia coagulacao
+o678;outras hemorragias intraparto
+o679;hemorragia intraparto nao especificada
+o68;trabalho parto parto complicados sofrimento fetal
+o680;trabalho parto parto complicados anormalidade frequencia cardiaca fetal
+o681;trabalho parto parto complicados meconio liquido amniotico
+o682;trabalho parto parto complicados anormalidade frequencia cardiaca fetal meconio liquido amniotico
+o683;trabalho parto parto complicados evidencias bioquimicas sofrimento fetal
+o688;trabalho parto parto complicados outras evidencias sofrimento fetal
+o689;trabalho parto parto complicados sofrimento fetal nao especificado
+o69;trabalho parto parto complicados anormalidade cordao umbilical
+o690;trabalho parto parto complicados prolapso cordao
+o691;trabalho parto parto complicados circular cordao compressao
+o692;trabalho parto parto complicados outros enovelamentos cordao
+o693;trabalho parto parto complicados cordao curto
+o694;trabalho parto parto complicados vasa praevia
+o695;trabalho parto parto complicados lesao vascular cordao
+o698;trabalho parto parto complicados outras complicacoes cordao
+o699;trabalho parto parto complicados complicacoes cordao nao especificadas
+o70;laceracao perineo durante parto
+o700;laceracao perineo primeiro grau durante parto
+o701;laceracao perineo segundo grau durante parto
+o702;laceracao perineo terceiro grau durante parto
+o703;laceracao perineo quarto grau durante parto
+o709;laceracao perineo durante parto nao especificada
+o71;outros traumatismos obstetricos
+o710;ruptura utero antes inicio trabalho parto
+o711;ruptura utero durante trabalho parto
+o712;inversao utero pos parto
+o713;laceracao obstetrica colo utero
+o714;laceracao vaginal alta isolada origem obstetrica
+o715;outras lesoes obstetricas aos orgaos pelvicos
+o716;lesao obstetrica articulacoes ligamentos pelvicos
+o717;hematoma obstetrico pelve
+o718;outros traumatismos obstetricos especificados
+o719;traumatismo obstetrico nao especificado
+o72;hemorragia pos parto
+o720;hemorragia terceiro estagio
+o721;outras hemorragias pos parto imediato
+o722;hemorragias pos parto tardias secundarias
+o723;deficiencias coagulacao pos parto
+o73;retencao placenta membranas sem hemorragias
+o730;retencao placenta sem hemorragia
+o731;retencao partes placenta membranas sem hemorragia
+o74;complicacoes anestesia durante trabalho parto parto
+o740;pneumonite aspirativa devida anestesia durante trabalho parto parto
+o741;outras complicacoes pulmonares devidas anestesia durante trabalho parto parto
+o742;complicacoes cardiacas devidas anestesia durante trabalho parto parto
+o743;complicacoes sistema nervoso central devidas anestesia durante trabalho parto parto
+o744;reacao toxica anestesia local durante trabalho parto parto
+o745;cefaleia pos anestesia raquidiana peridural durante trabalho parto parto
+o746;outras complicacoes anestesia raquidiana peridural durante trabalho parto parto
+o747;falha dificuldade entubacao durante trabalho parto parto
+o748;outras complicacoes anestesia durante trabalho parto parto
+o749;complicacoes anestesia durante trabalho parto parto nao especificadas
+o75;outras complicacoes trabalho parto parto nao classificadas outra parte
+o750;sofrimento materno durante trabalho parto parto
+o751;choque durante subsequente ao trabalho parto parto
+o752;febre durante trabalho parto nao classificada outra parte
+o753;outras infeccoes durante trabalho parto
+o754;outras complicacoes procedimentos cirurgia obstetrica
+o755;demora parto apos ruptura artificial membranas
+o756;demora parto apos ruptura espontanea nao especificada membranas
+o757;parto vaginal subsequente cesariana anterior
+o758;outras complicacoes especificadas trabalho parto parto
+o759;complicacoes trabalho parto parto nao especificadas
+o80;parto unico espontaneo
+o800;parto espontaneo cefalico
+o801;parto espontaneo pelvico
+o808;outros tipos parto unico espontaneo
+o809;parto unico espontaneo nao especificado
+o81;parto unico forceps vacuo extrator
+o810;parto forceps baixo
+o811;parto forceps cavidade mediana
+o812;forceps cavidade mediana rotacao
+o813;outros tipos parto forceps nao especificados
+o814;parto vacuo extrator
+o815;parto combinacao forceps vacuo extrator
+o82;parto unico cesariana
+o820;parto cesariana eletiva
+o821;parto cesariana emergencia
+o822;parto cesariana histerectomia
+o828;outros tipos parto unico cesariana
+o829;parto cesariana nao especificada
+o83;outros tipos parto unico assistido
+o830;extracao pelvica
+o831;outros tipos parto pelvico assistido
+o832;outras formas parto auxilio manipulacao
+o833;parto gravidez intra abdominal feto viavel
+o834;cirurgia destrutiva facilitar parto
+o838;outros tipos especificados parto unico assistido
+o839;parto unico assistido nao especificado
+o84;parto multiplo
+o840;parto multiplo todos espontaneos
+o841;parto multiplo todos forceps vacuo extrator
+o842;parto multiplo todos cesariana
+o848;outro tipo parto multiplo
+o849;parto multiplo nao especificado
+o85;infeccao puerperal
+o86;outras infeccoes puerperais
+o860;infeccao incisao cirurgica origem obstetrica
+o861;outras infeccoes orgaos genitais subsequentes ao parto
+o862;infeccao vias urinarias subsequentes ao parto
+o863;outras infeccoes vias genitourinarias subsequentes ao parto
+o864;febre origem desconhecida subsequente ao parto
+o868;outras infeccoes puerperais especificadas
+o87;complicacoes venosas puerperio
+o870;tromboflebite superficial puerperio
+o871;tromboflebite profunda puerperio
+o872;hemorroidas puerperio
+o873;trombose venosa cerebral puerperio
+o878;outras complicacoes venosas puerperio
+o879;complicacoes venosas puerperio nao especificadas
+o88;embolia origem obstetrica
+o880;embolia gasosa origem obstetrica
+o881;embolia amniotica
+o882;embolia obstetrica coagulo sangue
+o883;embolia septica piemica origem obstetrica
+o888;outras embolias origem obstetrica
+o89;complicacoes anestesia administrada durante puerperio
+o890;complicacoes pulmonares anestesia durante puerperio
+o891;complicacoes cardiacas devidas anestesia durante puerperio
+o892;complicacoes relativas ao sistema nervoso central devidas anestesia durante puerperio
+o893;reacao toxica uma anestesia local durante puerperio
+o894;cefaleia provocada uma anestesia raquidiana peridural durante puerperio
+o895;outras complicacoes anestesia raquidiana peridural durante puerperio
+o896;falha dificuldade entubacao durante puerperio
+o898;outras complicacoes anestesia durante puerperio
+o899;complicacao devida anestesia durante puerperio nao especificada
+o90;complicacoes puerperio nao classificadas outra parte
+o900;ruptura incisao cesariana
+o901;ruptura incisao obstetrica perineo
+o902;hematoma incisao obstetrica
+o903;cardiomiopatia puerperio
+o904;insuficiencia renal aguda pos parto
+o905;tireoidite pos parto
+o908;outras complicacoes puerperio nao classificadas outra parte
+o909;complicacao puerperio nao especificada
+o91;infeccoes mamarias associadas ao parto
+o910;infeccao mamilo associada ao parto
+o911;abscesso mama associada ao parto
+o912;mastite nao purulenta associada ao parto
+o92;outras afeccoes mama lactacao associadas ao parto
+o920;mamilo retraido associado ao parto
+o921;fissuras mamilo associadas ao parto
+o922;outras afeccoes mama nao especificadas associadas ao parto
+o923;agalactia
+o924;hipogalactia
+o925;suspensao lactacao
+o926;galactorreia
+o927;outros disturbios lactacao nao especificados
+o94;sequelas complicacoes gravidez parto puerperio
+o95;morte obstetrica causa nao especificada
+o96;morte qualquer causa obstetrica ocorre mais 42 dias mas menos 1 ano apos parto
+o97;morte sequelas causas obstetricas diretas
+o98;doencas infecciosas parasitarias maternas classificaveis outra parte mas compliquem gravidez parto puerperio
+o980;tuberculose complicando gravidez parto puerperio
+o981;sifilis complicando gravidez parto puerperio
+o982;gonorreia complicando gravidez parto puerperio
+o983;outras infeccoes via transmissao predominantemente sexual complicando gravidez parto puerperio
+o984;hepatite viral complicando gravidez parto puerperio
+o985;outras doencas virais complicando gravidez parto puerperio
+o986;doencas causadas protozoarios complicando gravidez parto puerperio
+o988;outras doencas infecciosas parasitarias maternas complicando gravidez parto puerperio
+o989;doencas infecciosas parasitarias maternas nao especificadas complicando gravidez parto puerperio
+o99;outras doencas mae classificadas outra parte mas complicam gravidez parto puerperio
+o990;anemia complicando gravidez parto puerperio
+o991;outras doencas sangue orgaos hematopoeticos alguns transtornos comprometem sistema imunologico complicando gravidez parto puerperio
+o992;doencas endocrinas nutricionais metabolicas complicando gravidez parto puerperio
+o993;transtornos mentais doencas sistema nervoso complicando gravidez parto puerperio
+o994;doencas aparelho circulatorio complicando gravidez parto puerperio
+o995;doencas aparelho respiratorio complicando gravidez parto puerperio
+o996;doencas aparelho digestivo complicando gravidez parto puerperio
+o997;doencas pele tecido subcutaneo complicando gravidez parto puerperio
+o998;outras doencas afeccoes especificadas complicando gravidez parto puerperio

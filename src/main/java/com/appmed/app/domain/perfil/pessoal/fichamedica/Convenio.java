@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain.perfil.pessoal.fichamedica;
 
-import com.appmed.app.domain.Privacidade;
+import com.appmed.app.domain.NivelPermissao;
 
 
 public class Convenio extends InfoFichaMedica{
@@ -15,7 +15,7 @@ public class Convenio extends InfoFichaMedica{
         this.nomeConvenio = nomeConvenio;
     }
 
-    public Convenio(String codigoUsuarioConvenio, String nomeConvenio, Privacidade privacidade) {
+    public Convenio(String codigoUsuarioConvenio, String nomeConvenio, NivelPermissao privacidade) {
         super(privacidade);
         this.codigoUsuarioConvenio = codigoUsuarioConvenio;
         this.nomeConvenio = nomeConvenio;

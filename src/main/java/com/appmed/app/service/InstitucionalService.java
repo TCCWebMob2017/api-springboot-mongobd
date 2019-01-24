@@ -1,6 +1,7 @@
 package com.appmed.app.service;
 
 import com.appmed.app.domain.Institucional;
+import com.appmed.app.domain.perfil.instituicional.Funcionario;
 import com.appmed.app.repository.InstitucionalRepository;
 import java.io.Serializable;
 import java.util.List;
@@ -28,11 +29,16 @@ public class InstitucionalService implements Serializable {
         return this.institucionalRepository.findAll();
     }
 
-    public Iterable<Institucional> findByCreatorUser(String idUsuario) {
+    public List<Institucional> findByCreatorUser(String idUsuario) {
         return this.institucionalRepository.findByCreatorUser(idUsuario);
     }
 
     public void delete(String id) {
         this.institucionalRepository.delete(id);
     }
+    
+    public List<Funcionario> findAllFuncionarios() {
+        return this.institucionalRepository.findFuncionarios();
+    }
+
 }
