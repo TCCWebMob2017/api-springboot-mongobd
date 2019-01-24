@@ -57,7 +57,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         //insert cid
-        condicaoEspecialRepository.deleteAll();
+        //condicaoEspecialRepository.deleteAll();
         List<CondicaoEspecial> condicoesEspeciais = condicaoEspecialRepository.findAll();
         if (condicoesEspeciais.isEmpty()) {
 
@@ -77,7 +77,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             condicoesEspeciais = condicaoEspecialRepository.findAll();
         }
-        drogaRepository.deleteAll();
+        //drogaRepository.deleteAll();
         List<Droga> drogas = drogaRepository.findAll();
         if (drogas.isEmpty()) {
 
@@ -98,7 +98,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             drogas = drogaRepository.findAll();
         }
 
-        alergiaRepository.deleteAll();
+        //alergiaRepository.deleteAll();
         List<Alergia> alergias = alergiaRepository.findAll();
         if (alergias.isEmpty()) {
 
@@ -118,7 +118,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             alergias = alergiaRepository.findAll();
         }
-        doencaRepository.deleteAll();
+        //doencaRepository.deleteAll();
         List<Doenca> doencas = doencaRepository.findAll();
         if (doencas.isEmpty()) {
 
@@ -183,10 +183,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             usuarios = usuarioRepository.findAll();
         }
-         */
-        usuarioRepository.deleteAll();
-        pessoalRepository.deleteAll();
-        institucionalRepository.deleteAll();
+         
 
         List<Usuario> usuarios = this.usuarioRepository.findAll();
         if (usuarios.isEmpty()) {
@@ -297,6 +294,6 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                     "vai que você tenha uma overdose...", usuarios.get(1), "Jaque Casa Noturna"
             ));
 
-        }
+        }*/
     }
 }
