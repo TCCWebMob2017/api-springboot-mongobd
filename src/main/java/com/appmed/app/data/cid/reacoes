@@ -1,0 +1,13 @@
+u04;sindrome respiratoria aguda grave severe acute respiratory syndrome sars
+u049;sindrome respiratoria aguda grave severe acute respiratory syndrome sars nao especificada
+u80;agente resistente penicilina antibioticos relacionados
+u800;agente resistente penicilina
+u801;agente resistente meticilina
+u808;agente resistente outro antibiotico relacionado penicilina
+u81;agente resistente vancomicina antibioticos relacionados
+u810;agente resistente vancomicina
+u818;agente resistente outros antibioticos relacionado vancomicina
+u88;agente resistente multiplos antibioticos
+u89;agente resistente outros antibioticos antibioticos nao especificados
+u898;agente resistente outro antibiotico especificado unico
+u899;agente resistente antibiotico nao especificado

@@ -5,7 +5,7 @@ import com.appmed.app.domain.Usuario;
 import java.io.Serializable;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "alergia")
+@Document(collection = "condicaoespecial")
 public class CondicaoEspecial  extends AbstractEntityNetwork implements Serializable {
 
     private static final long serialVersionUID = 2667988402856702030L;

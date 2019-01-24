@@ -57,17 +57,17 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         //insert cid
-        //condicaoEspecialRepository.deleteAll();
+        condicaoEspecialRepository.deleteAll();
         List<CondicaoEspecial> condicoesEspeciais = condicaoEspecialRepository.findAll();
         if (condicoesEspeciais.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/resources/demo/condicoes-especiais");
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/condicoes-especiais");
             List contents;
             try {
                 contents = Files.readAllLines(path);
                 contents.forEach((Object content) -> {
-                    String linha[] = content.toString().split(";");
-                    CondicaoEspecial e = new CondicaoEspecial(linha[0]);
+                    //String linha[] = content.toString().split(";");
+                    CondicaoEspecial e = new CondicaoEspecial(content.toString());
                     System.out.println(e.getNome());// print the line
                     this.condicaoEspecialRepository.save(e);
                 });
@@ -77,11 +77,11 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             condicoesEspeciais = condicaoEspecialRepository.findAll();
         }
-        //drogaRepository.deleteAll();
+        drogaRepository.deleteAll();
         List<Droga> drogas = drogaRepository.findAll();
         if (drogas.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/resources/demo/drogas");
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/drogas");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -98,11 +98,11 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             drogas = drogaRepository.findAll();
         }
 
-        //alergiaRepository.deleteAll();
+        alergiaRepository.deleteAll();
         List<Alergia> alergias = alergiaRepository.findAll();
         if (alergias.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/resources/demo/alergias");
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/alergias");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -118,12 +118,11 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             alergias = alergiaRepository.findAll();
         }
-        //doencaRepository.deleteAll();
+        doencaRepository.deleteAll();
         List<Doenca> doencas = doencaRepository.findAll();
-        Scanner ler = new Scanner(System.in);
         if (doencas.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/resources/cid/doencas");
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/cid/doencas");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -185,7 +184,6 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             usuarios = usuarioRepository.findAll();
         }
          */
-/*
         usuarioRepository.deleteAll();
         pessoalRepository.deleteAll();
         institucionalRepository.deleteAll();
@@ -299,6 +297,6 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                     "vai que você tenha uma overdose...", usuarios.get(1), "Jaque Casa Noturna"
             ));
 
-        }*/
+        }
     }
 }
