@@ -1,6 +1,5 @@
 package com.appmed.app.config;
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,20 +9,21 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import com.appmed.app.domain.*;
-import com.appmed.app.domain.Institucional.Area;
-import com.appmed.app.domain.Perfil.*;
 import com.appmed.app.domain.perfil.*;
 import com.appmed.app.domain.perfil.pessoal.Dependente;
 import com.appmed.app.domain.perfil.pessoal.Dependente.Parentesco;
+import com.appmed.app.domain.perfil.pessoal.fichamedica.AlergiaFicha;
+import com.appmed.app.domain.perfil.pessoal.fichamedica.CondicaoEspecialFicha;
+import com.appmed.app.domain.perfil.pessoal.fichamedica.DoencaFicha;
+import com.appmed.app.domain.perfil.pessoal.fichamedica.DrogaFicha;
+import com.appmed.app.domain.perfil.pessoal.fichamedica.MedicamentoFicha;
 import com.appmed.app.repository.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -51,34 +51,50 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
     @Autowired
     private CondicaoEspecialRepository condicaoEspecialRepository;
 
+    @Autowired
+    private MedicamentoRepository medicamentoRepository;
+
+    List<Usuario> usuarios = new ArrayList<Usuario>();
+    List<CondicaoEspecial> condicoesEspeciais = new ArrayList<>();
+    List<Doenca> doencas = new ArrayList<>();
+    List<Droga> drogas = new ArrayList<>();
+    List<Alergia> alergias = new ArrayList<>();
+    List<Medicamento> medicamentos = new ArrayList<>();
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent argument) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        condicoesEspeciais = condicaoEspecialRepository.findAll();
+        doencas = doencaRepository.findAll();
+        drogas = drogaRepository.findAll();
+        medicamentos = medicamentoRepository.findAll();
+        alergias = alergiaRepository.findAll();
+        
+        List<Pessoal>perfisPessoas = pessoalRepository.findAll();
 
         //insert cid
         //condicaoEspecialRepository.deleteAll();
-        List<CondicaoEspecial> condicoesEspeciais = condicaoEspecialRepository.findAll();
         if (condicoesEspeciais.isEmpty()) {
 
             java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/condicoes-especiais");
-            List contents;
+            List<String> contents;
             try {
                 contents = Files.readAllLines(path);
-                contents.forEach((Object content) -> {
+                for (int i = 0; i < 10; i++) {
+                    String content = contents.get(i);
                     //String linha[] = content.toString().split(";");
                     CondicaoEspecial e = new CondicaoEspecial(content.toString());
                     System.out.println(e.getNome());// print the line
                     this.condicaoEspecialRepository.save(e);
-                });
-
+                }
             } catch (IOException ex) {
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
+
             condicoesEspeciais = condicaoEspecialRepository.findAll();
         }
-        //drogaRepository.deleteAll();
-        List<Droga> drogas = drogaRepository.findAll();
+
         if (drogas.isEmpty()) {
 
             java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/drogas");
@@ -86,8 +102,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             try {
                 contents = Files.readAllLines(path);
                 contents.forEach((Object content) -> {
-                    String linha = content.toString();
-                    Droga e = new Droga(linha);
+                    Droga e = new Droga(content.toString());
                     System.out.println(e.getNome());// print the line
                     this.drogaRepository.save(e);
                 });
@@ -97,9 +112,31 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             drogas = drogaRepository.findAll();
         }
+        //drogaRepository.deleteAll();
+
+        if (medicamentos.isEmpty()) {
+
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/medicamentos");
+            List contents;
+            try {
+                contents = Files.readAllLines(path);
+                contents.forEach((Object content) -> {
+
+                    String linha[] = content.toString().split(";");
+                    Medicamento medicamento = new Medicamento(linha[0], linha[1],
+                            linha[2], linha[3]);
+                    medicamento = this.medicamentoRepository.save(medicamento);
+                    System.out.println(medicamento.getNome());
+
+                });
+
+            } catch (IOException ex) {
+                Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.medicamentos = medicamentoRepository.findAll();
+        }
 
         //alergiaRepository.deleteAll();
-        List<Alergia> alergias = alergiaRepository.findAll();
         if (alergias.isEmpty()) {
 
             java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/alergias");
@@ -119,19 +156,17 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             alergias = alergiaRepository.findAll();
         }
         //doencaRepository.deleteAll();
-        List<Doenca> doencas = doencaRepository.findAll();
+
         if (doencas.isEmpty()) {
 
             java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/cid/doencas");
             List contents;
             try {
                 contents = Files.readAllLines(path);
-                //Read from the stream
                 contents.forEach((Object content) -> {
-                    //for each line of content in contents
                     String linha[] = content.toString().split(";");
                     Doenca doenca = new Doenca(linha[0], linha[1]);
-                    System.out.println(doenca.getCID() + " " + doenca.getNome());// print the line
+                    System.out.println(doenca.getCID() + " " + doenca.getNome());
                     this.doencaRepository.save(doenca);
                 });
 
@@ -140,160 +175,188 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             }
             doencas = doencaRepository.findAll();
         }
-/*
-        List<Usuario> usuarios = this.usuarioRepository.findAll();
-        if (usuarios.isEmpty()) {
-            java.nio.file.Path path = Paths.get("src/main/resources/cid/doencas");
+
+        if (perfisPessoas.isEmpty()) {
+            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/usuarios");
             List contents;
             try {
                 contents = Files.readAllLines(path);
                 contents.forEach((Object content) -> {
-                    String linha[] = content.toString().split(";");
+                    String linha[] = content.toString().split(",");
 
-                    System.out.println(linha.toString());// print the line
-
-                    this.usuarioRepository.save(new Usuario(linha[0], linha[1],
+                    Usuario usuario = this.usuarioRepository.save(new Usuario(linha[0], linha[1],
                             linha[2], linha[3], linha[4], linha[5]));
+                    System.out.println(usuario.getNome());
+                    usuarios.add(usuario);
                 });
 
             } catch (IOException ex) {
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
-            usuarios = usuarioRepository.findAll();
-        }*/
-        /*
-        List<Pessoal> pessoais = this.pessoalRepository.findAll();
-        if (usuarios.isEmpty()) {
-            java.nio.file.Path path = Paths.get("src/main/resources/cid/perfil-pessoal");
-            List contents;
+            // usuarios = usuarioRepository.findAll();
+
+            List<Localidade> locaisResidencia = new ArrayList();
+            path = Paths.get("src/main/java/com/appmed/app/data/demo/localidades-pessoal");
             try {
                 contents = Files.readAllLines(path);
                 contents.forEach((Object content) -> {
-                    String linha[] = content.toString().split(";");
-
-                    System.out.println(linha.toString());// print the line
-                    
-                    this.pessoalRepository.save( new Pessoal(
-                            linha[0], linha[1],
-                            linha[2],linha[3],linha[4],linha[5]));
+                    String linha[] = content.toString().split(",");
+                    locaisResidencia.add(new Localidade(linha[0], linha[1],
+                            linha[2], linha[3], linha[4], linha[5]));
+                    System.out.println(content.toString());// print the line
                 });
-
             } catch (IOException ex) {
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
-            usuarios = usuarioRepository.findAll();
+
+            path = Paths.get("src/main/java/com/appmed/app/data/demo/perfil-pessoal");
+            List<Pessoal> perfispessoais = new ArrayList();
+
+            try {
+                contents = Files.readAllLines(path);
+                for (int i = 0; i < 10; i++) {
+                    String linha[] = contents.get(i).toString().split(",");
+                    Random rn = new Random();
+                    //rn.nextInt(locaisResidencia.size()
+                    Pessoal perfil = new Pessoal(
+                            locaisResidencia.get(i),
+                            LocalDate.parse(linha[0], formatter), linha[1],
+                            rn.nextBoolean(), rn.nextBoolean(), rn.nextBoolean(),
+                            linha[2], Double.parseDouble(linha[3]), Double.parseDouble(linha[4]),
+                            usuarios.get(i)
+                    );
+                    perfil.add(
+                            new CondicaoEspecialFicha(
+                                    condicoesEspeciais.get(rn.nextInt(condicoesEspeciais.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new CondicaoEspecialFicha(
+                                    condicoesEspeciais.get(rn.nextInt(condicoesEspeciais.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DoencaFicha(
+                                    doencas.get(rn.nextInt(doencas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DoencaFicha(
+                                    doencas.get(rn.nextInt(doencas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new DrogaFicha(
+                                    drogas.get(rn.nextInt(drogas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DrogaFicha(
+                                    drogas.get(rn.nextInt(drogas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new AlergiaFicha(
+                                    alergias.get(rn.nextInt(alergias.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new MedicamentoFicha(
+                                    medicamentos.get(rn.nextInt(medicamentos.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new MedicamentoFicha(
+                                    medicamentos.get(rn.nextInt(medicamentos.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil = this.pessoalRepository.save(perfil);
+                    Usuario usuario = usuarios.get(i);
+                    usuario.setPerfilPessoal(perfil);
+                    this.usuarioRepository.save(usuario);
+                    System.out.println("PerfilPessoal" + usuario.getNome());
+                    perfispessoais.add(perfil);
+
+                };
+            } catch (IOException ex) {
+                Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            path = Paths.get("src/main/java/com/appmed/app/data/demo/perfil-dependente");
+            List<Pessoal> perfisDependentes = new ArrayList();
+
+            try {
+                contents = Files.readAllLines(path);
+                for (int i = 0; i < 8; i++) {
+                    String linha[] = contents.get(i).toString().split(",");
+                    
+                    Random rn = new Random();
+                    //rn.nextInt(locaisResidencia.size()
+
+                    Usuario usuario = usuarios.get(i);
+                    Pessoal perfilDependente = new Pessoal(
+                            linha[0], linha[1], linha[2], linha[3],
+                            LocalDate.parse(linha[4], formatter),
+                            linha[5], linha[6], linha[7], linha[8], linha[9], linha[10],
+                            linha[11],
+                            Double.parseDouble(linha[12]), Double.parseDouble(linha[13]), linha[14],
+                            rn.nextBoolean(), rn.nextBoolean(), rn.nextBoolean(),
+                            usuario);
+
+                    Pessoal perfil = this.pessoalRepository.save(perfilDependente);;
+
+                    perfil.add(
+                            new CondicaoEspecialFicha(
+                                    condicoesEspeciais.get(rn.nextInt(condicoesEspeciais.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new CondicaoEspecialFicha(
+                                    condicoesEspeciais.get(rn.nextInt(condicoesEspeciais.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DoencaFicha(
+                                    doencas.get(rn.nextInt(doencas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DoencaFicha(
+                                    doencas.get(rn.nextInt(doencas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new DrogaFicha(
+                                    drogas.get(rn.nextInt(drogas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+                    perfil.add(
+                            new DrogaFicha(
+                                    drogas.get(rn.nextInt(drogas.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new AlergiaFicha(
+                                    alergias.get(rn.nextInt(alergias.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new MedicamentoFicha(
+                                    medicamentos.get(rn.nextInt(medicamentos.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfil.add(
+                            new MedicamentoFicha(
+                                    medicamentos.get(rn.nextInt(medicamentos.size())),
+                                    new NivelPermissao(rn.nextInt(3))));
+
+                    perfilDependente = this.pessoalRepository.save(perfil);
+                    perfisDependentes.add(perfilDependente);
+                    Dependente dependente = new Dependente(perfilDependente);
+                    usuario = this.usuarioRepository.findOne(usuario.getId());
+                    Pessoal perfilPessoal = usuario.getPerfilPessoal();
+                    perfilPessoal.add(dependente);
+                    perfilPessoal = this.pessoalRepository.save(perfilPessoal);
+                    System.out.println(perfilPessoal.getDependentes().size());
+                };
+            } catch (IOException ex) {
+                Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
-         
 
-        List<Usuario> usuarios = this.usuarioRepository.findAll();
-        if (usuarios.isEmpty()) {
-            usuarios = new ArrayList<>();
-            //String nome, String email, String password, String tefefone, String cpf
-            usuarios.add(
-                    this.usuarioRepository.save(
-                            new Usuario(
-                                    "Rafael Heitor Moreira",
-                                    "rrafaelheitormoreira@accent.com.br",
-                                    "F3DDrn104U",
-                                    "(12) 99474-0150",
-                                    "985.812.418-08",
-                                    "10.408.727-4"
-                            )));
-            usuarios.add(
-                    this.usuarioRepository.save(
-                            new Usuario(
-                                    "Samuel Danilo Baptista",
-                                    "ssamueldanilobaptista@cvc.com.br",
-                                    "frLzuohzKc",
-                                    "(12) 99984-9322",
-                                    "304.705.968-30",
-                                    "10.408.727-4"
-                            )));
-            usuarios.add(
-                    this.usuarioRepository.save(
-                            new Usuario(
-                                    "Enrico Iago Theo da Rosa",
-                                    "enricoiagotheodarosa__enricoiagotheodarosa@brf-br.com",
-                                    "BMFCBU250r",
-                                    "(12) 99481-3256",
-                                    "774.082.888-21",
-                                    "10.408.727-4"
-                            )));
-
-            usuarios.add(
-                    this.usuarioRepository.save(
-                            new Usuario(
-                                    "Tereza Bruna Márcia da Rosa",
-                                    "enricoiagotheodarosa__enricoiagotheodarosa@brf-br.com",
-                                    "BMFCBU250r",
-                                    "(12) 99481-3256",
-                                    "997.565.338-38",
-                                    "10.408.727-4"
-                            )));
-
-            Localidade residencia = new Localidade("Avenida Major Hermenegildo Antônio Aquino",
-                    "Parque das Rodovias", "Lorena", "SP", "732", "12605-610");
-            Localidade trabalho = new Localidade("Geraldo e Raquel Pizzaria Delivery ME",
-                    "Praça dos Artesãos Calabreses", "Bela Vista", "São Paulo", "SP", "867", "01316-090");
-
-            this.pessoalRepository.save(new Pessoal(
-                    usuarios.get(0), TipoPerfil.PESSOAL, residencia, trabalho,
-                    LocalDate.parse("08/04/1997", formatter),
-                    "F", true, false,
-                    true, "O-", 1.73, 47.0));
-
-            Usuario usuario = new Usuario(
-                    "Tereza Bruna Márcia da Rosa",
-                    "enricoiagotheodarosa__enricoiagotheodarosa@brf-br.com",
-                    "BMFCBU250r",
-                    "(12) 99481-3256",
-                    "997.565.338-38",
-                    "10.408.727-4");
-            usuario = this.usuarioRepository.save(usuario);
-
-            Pessoal perfilPessoal = new Pessoal(
-                    usuario, TipoPerfil.PESSOAL,
-                    new Localidade("Avenida Major Hermenegildo Antônio Aquino",
-                            "Parque das Rodovias", "Lorena", "SP", "732", "12605-610"),
-                    new Localidade("Geraldo e Raquel Pizzaria Delivery ME",
-                            "Praça dos Artesãos Calabreses", "Bela Vista", "São Paulo", "SP", "867", "01316-090"),
-                    LocalDate.parse("08/04/1997", formatter),
-                    "F", true, false,
-                    true, "O-", 1.73, 47.0
-            );
-
-            perfilPessoal = this.pessoalRepository.save(perfilPessoal);
-
-            Pessoal perfilDependente = new Pessoal(
-                    usuario, TipoPerfil.DEPENDENTE, "nome", "rg", "cpf",
-                    new Localidade("Avenida Major Hermenegildo Antônio Aquino",
-                            "Parque das Rodovias", "Lorena", "SP", "732", "12605-610"),
-                    null,
-                    LocalDate.parse("08/04/1997", formatter),
-                    "F", true, false,
-                    true, "O-", 1.73, 47.0
-            );
-            perfilDependente = this.pessoalRepository.save(perfilDependente);
-            List<Dependente> dependentes = new ArrayList();
-
-            Dependente dependente = new Dependente(Parentesco.FILHA, perfilDependente);
-            //Dependente dependente = new Dependente();
-
-            //dependentes.add(dependente);
-            perfilPessoal.add(dependente);
-
-            perfilPessoal = this.pessoalRepository.save(perfilPessoal);
-
-            this.institucionalRepository.save(new Institucional("62.887.344/0001-11",
-                    "742.812.551.727", LocalDate.parse("23/09/2009", formatter),
-                    "www.jaquelineemarcosviniciuscasanoturnaltda.com.br",
-                    "ouvidoria@jaquelineemarcosviniciuscasanoturnaltda.com.br",
-                    new Localidade("Salão", "Avenida Presidente Wilson", "Centro",
-                            "São Vicente", "SP", "888", "11320-903"),
-                    "(13) 3641-3143", "(13) 99155-8383", Area.ACADEMICA,
-                    "vai que você tenha uma overdose...", usuarios.get(1), "Jaque Casa Noturna"
-            ));
-
-        }*/
     }
 }

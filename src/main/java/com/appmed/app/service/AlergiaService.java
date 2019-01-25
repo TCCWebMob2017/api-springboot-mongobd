@@ -30,9 +30,9 @@ public class AlergiaService implements Serializable {
         return this.alergiaRepository.findAll();
     }
 
-    public List<Alergia> findByCreatorUser(String idUsuario) {
-        return this.alergiaRepository.findByCreatedByUser(idUsuario);
-    }
+  //  public List<Alergia> findByCreatorUser(String idUsuario) {
+  //      return this.alergiaRepository.findByCreatedByUser(idUsuario);
+  //  }
 
     public void delete(String id) {
         this.alergiaRepository.delete(id);

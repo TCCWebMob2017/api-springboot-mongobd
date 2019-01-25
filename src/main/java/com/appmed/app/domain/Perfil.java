@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "perfil")
-public class Perfil extends AbstractEntityNetwork  implements Serializable {
+public class Perfil extends AbstractEntityNetwork implements Serializable {
 
     private static final long serialVersionUID = -5049451532148876620L;
 
@@ -13,17 +12,15 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
     private TipoPerfil tipoPerfil;
     private List<Contato> contatos;
     private List<Visibilidade> privacidade;
-    
-    
-    
+
     public Perfil() {
-        super();
+
     }
 
+    /*
     public Perfil(Usuario createdBy) {
         super(createdBy);
     }
-
     public Perfil(Usuario createdBy, TipoPerfil tipoPerfil) {
         super(createdBy);
         this.tipoPerfil = tipoPerfil;
@@ -35,6 +32,12 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
         this.nome = nome;
         this.tipoPerfil = tipoPerfil;
     }
+     */
+    public Perfil(TipoPerfil tipoPerfil, String nome) {
+        super();
+        this.nome = nome;
+        this.tipoPerfil = tipoPerfil;
+    }
 
     public enum TipoPerfil {
         PESSOAL, PROFISSIONAL, ORGANIZACAO, DEPENDENTE;
@@ -43,7 +46,7 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
     public enum Visibilidade {
         RESTRITO, PUBLICO, USUARIOS_APLICATIVO, CONTATOS, ORGANIZACAO_SAUDE, PROFISSIONAIS_SAUDE;
     }
-    
+
     public String getNome() {
 
         return nome;
@@ -85,7 +88,6 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
         this.privacidade = privacidade;
     }
 
-    
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -93,7 +95,7 @@ public class Perfil extends AbstractEntityNetwork  implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

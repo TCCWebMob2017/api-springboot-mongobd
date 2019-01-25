@@ -21,11 +21,6 @@ public class CondicaoEspecial  extends AbstractEntityNetwork implements Serializ
         this.nome = nome;
     }
 
-    public CondicaoEspecial(String nome, Usuario createdByUser) {
-        super(createdByUser);
-        this.nome = nome;
-    }
-
     public String getNome() {
         return nome;
     }

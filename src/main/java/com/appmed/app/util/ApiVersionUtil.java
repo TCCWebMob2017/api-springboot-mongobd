@@ -13,7 +13,7 @@ public class ApiVersionUtil {
     public final static String USUARIO = "usuario";
     public final static String PERFILPESSOAL = "pessoal";
     public final static String PERFILINSTITUCIONAL = "instituicao";
-    public final static String PERFILPROFISSIONAL = "prifissional";
+    public final static String PERFILPROFISSIONAL = "profissional";
     public final static String ALERGIA = "alergia";
     public final static String DOENCA = "doenca";
     public final static String MEDICAMENTO = "medicamento";

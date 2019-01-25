@@ -10,5 +10,5 @@ public interface DrogaRepository extends MongoRepository<Droga, String> {
 
     public List<Droga> findByNome(String nome);
 
-    public List<Droga> findByCreatedByUser(String id);
+    //public List<Droga> findByCreatedByUser(String id);
 }

@@ -26,11 +26,6 @@ public class Droga  extends AbstractEntityNetwork implements Serializable {
         this.nome = nome;
     }
     
-    public Droga(String nome, Usuario createdByUser) {
-        super(createdByUser);
-        this.nome = nome;
-    }
-
     public String getNome() {
         return nome;
     }

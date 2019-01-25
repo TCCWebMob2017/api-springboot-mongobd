@@ -7,6 +7,9 @@ public class ProtocoloEmergencia extends InfoFichaMedica{
     private String tipoEmergencia;
     private String descricao;
 
+    public ProtocoloEmergencia() {
+    }
+
 
     public ProtocoloEmergencia(String tipoEmergencia, String descricao) {
         super();

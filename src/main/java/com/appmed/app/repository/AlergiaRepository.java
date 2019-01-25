@@ -13,6 +13,6 @@ public interface AlergiaRepository extends MongoRepository<Alergia, String> {
     //public Iterable<Alergia> findByCreatorUser(String createdBy);
     public List<Alergia> findByNome(String nome);
     
-    public List<Alergia> findByCreatedByUser(String id);
+    //public List<Alergia> findByCreatedByUser(String id);
      
 }

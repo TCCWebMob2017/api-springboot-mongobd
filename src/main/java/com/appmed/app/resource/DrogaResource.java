@@ -61,14 +61,14 @@ public class DrogaResource implements Serializable {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(droga);
     }
-
+/*
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Droga>> getDrogaByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<Droga> droga = (List<Droga>) this.drogaService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(droga);
     }
-
+*/
     @PutMapping(value = "/{id}")
     public ResponseEntity<Droga> updateDroga(@PathVariable("id") String id, @Valid @RequestBody Droga droga) {
         droga.setId(id);

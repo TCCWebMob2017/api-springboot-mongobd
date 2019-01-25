@@ -54,12 +54,12 @@ public class AlergiaResource implements Serializable {
                 .body(alergia);
     }
 
-    @GetMapping("/usercreator/{id}")
+   /* @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Alergia>> getAlergiaByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<Alergia> alergia = (List<Alergia>) this.alergiaService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(alergia);
-    }
+    }*/
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Alergia> updateAlergia(@PathVariable("id") String id, @Valid @RequestBody Alergia alergia) {

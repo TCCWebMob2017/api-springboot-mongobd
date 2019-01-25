@@ -13,26 +13,28 @@ public class DoencaFicha extends InfoFichaMedica{
     private Doenca doenca;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate desde;
-    @DBRef
-    private Medicamento medicamento;
+
+    public DoencaFicha() {
+    }
 
 
-    public DoencaFicha(Doenca doenca, LocalDate desde) {
+    public DoencaFicha(Doenca doenca) {
         super();
         this.doenca = doenca;
     }
 
-    public DoencaFicha(Doenca doenca, LocalDate desde, Medicamento medicamento, NivelPermissao privacidade) {
+    public DoencaFicha(Doenca doenca, NivelPermissao privacidade) {
         super(privacidade);
         this.doenca = doenca;
-        this.desde = desde;
-        this.medicamento = medicamento;
     }
 
     
-    public DoencaFicha(Doenca doenca) {
+    public DoencaFicha(Doenca doenca, LocalDate desde,NivelPermissao privacidade) {
+        super(privacidade);
         this.doenca = doenca;
+        this.desde = desde;
     }
+        
 
     public Doenca getDoenca() {
         return doenca;
@@ -49,15 +51,6 @@ public class DoencaFicha extends InfoFichaMedica{
     public void setDesde(LocalDate desde) {
         this.desde = desde;
     }
-
-    public Medicamento getMedicamento() {
-        return medicamento;
-    }
-
-    public void setMedicamento(Medicamento medicamento) {
-        this.medicamento = medicamento;
-    }
-
 
     
 }

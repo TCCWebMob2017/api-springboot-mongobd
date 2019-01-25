@@ -10,12 +10,27 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
     private CondicaoEspecial condicaoEpecial;
 
     private String descricao;
+
+    public CondicaoEspecialFicha() {
+    }
+    
     
     public CondicaoEspecialFicha(String descricao) {
         super();
         this.descricao = descricao;
     }    
 
+    public CondicaoEspecialFicha(CondicaoEspecial condicaoEpecial) {
+        super();
+        this.condicaoEpecial = condicaoEpecial;
+    }
+
+    public CondicaoEspecialFicha(CondicaoEspecial condicaoEpecial, NivelPermissao privacidade) {
+        super(privacidade);
+        this.condicaoEpecial = condicaoEpecial;
+    }
+    
+   
     public CondicaoEspecialFicha(String descricao, NivelPermissao privacidade) {
         super(privacidade);
         this.descricao = descricao;

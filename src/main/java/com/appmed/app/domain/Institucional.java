@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@Document(collection = "instituicao")
 public class Institucional extends Perfil implements Serializable {
 
     private static final long serialVersionUID = -1092737089860131982L;
@@ -33,7 +33,7 @@ public class Institucional extends Perfil implements Serializable {
     }
 
     public Institucional(String CNPJ, String inscricaoEstadual, LocalDate dataAbertura, String email, Localidade endereco, String telefone, Area areaAtividade, Usuario createdBy, String nome) {
-        super(createdBy, TipoPerfil.ORGANIZACAO, nome);
+        super(TipoPerfil.ORGANIZACAO, nome);
         this.CNPJ = CNPJ;
         this.inscricaoEstadual = inscricaoEstadual;
         this.dataAbertura = dataAbertura;
@@ -44,7 +44,7 @@ public class Institucional extends Perfil implements Serializable {
     }
 
     public Institucional(String CNPJ, String inscricaoEstadual, LocalDate dataAbertura, String site, String email, Localidade endereco, String telefone, String celular, Area areaAtividade, String descricao, Usuario createdBy, String nome) {
-        super(createdBy, TipoPerfil.ORGANIZACAO, nome);
+        super(TipoPerfil.ORGANIZACAO, nome);
         this.CNPJ = CNPJ;
         this.inscricaoEstadual = inscricaoEstadual;
         this.dataAbertura = dataAbertura;

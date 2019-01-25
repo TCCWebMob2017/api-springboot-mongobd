@@ -12,6 +12,9 @@ public class MedicamentoFicha extends InfoFichaMedica{
     private String periodicidade;
     private String viaAdministracao;
 
+    public MedicamentoFicha() {
+    }
+    
     public MedicamentoFicha(Medicamento medicamento, String dosagem, String frequencia, String viaAdministracao, NivelPermissao privacidade) {
         super(privacidade);
         this.medicamento = medicamento;
@@ -20,10 +23,10 @@ public class MedicamentoFicha extends InfoFichaMedica{
         this.viaAdministracao = viaAdministracao;
     }
 
-
-
-
-
+    public MedicamentoFicha(Medicamento medicamento, NivelPermissao privacidade) {
+        super(privacidade);
+        this.medicamento = medicamento;
+    }
 
     public String getDosagem() {
         return dosagem;
@@ -56,8 +59,5 @@ public class MedicamentoFicha extends InfoFichaMedica{
     public void setMedicamento(Medicamento medicamento) {
         this.medicamento = medicamento;
     }
-    
-    
-    
     
 }

@@ -8,6 +8,9 @@ public class Convenio extends InfoFichaMedica{
     private String codigoUsuarioConvenio;
     private String nomeConvenio;
 
+    public Convenio() {
+    }
+
 
     public Convenio(String codigousuarioConvenio, String nomeConvenio) {
         super();

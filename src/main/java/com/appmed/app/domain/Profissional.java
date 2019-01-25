@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "profissional")
 public class Profissional extends Perfil implements Serializable {
 
     private static final long serialVersionUID = 4426284080596900227L;
@@ -30,19 +31,23 @@ public class Profissional extends Perfil implements Serializable {
 
     private List<Pessoal> pacientes;
 
+    public Profissional() {
+    }
+
+    
     public Profissional(Usuario createdBy, String nome) {
-        super(createdBy, TipoPerfil.PROFISSIONAL, nome);
+        super(TipoPerfil.PROFISSIONAL, nome);
     }
 
     public Profissional(LocalDate nascimento, String sexo, Usuario createdBy, String nome) {
-        super(createdBy, TipoPerfil.PROFISSIONAL, nome);
+        super(TipoPerfil.PROFISSIONAL, nome);
         this.nascimento = nascimento;
         this.sexo = sexo;
     }
 
     public Profissional(String RG, String CPF, LocalDate nascimento, String sexo,
             Profissao profissao, Area areaAtuacao, String descricao, Usuario createdBy, String nome) {
-        super(createdBy, TipoPerfil.PROFISSIONAL, nome);
+        super(TipoPerfil.PROFISSIONAL, nome);
         this.RG = RG;
         this.CPF = CPF;
         this.nascimento = nascimento;

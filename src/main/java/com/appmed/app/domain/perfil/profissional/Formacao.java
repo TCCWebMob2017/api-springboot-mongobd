@@ -13,6 +13,10 @@ public class Formacao {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataConclusao;
 
+    public Formacao() {
+    }
+
+    
     public Formacao(NivelCurso nivel, String nomeCurso, String cargaHoraria,
             String titulo, String localCurso, LocalDate dataConclusao) {
         this.nivel = nivel;

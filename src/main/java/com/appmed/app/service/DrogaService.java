@@ -26,9 +26,9 @@ public class  DrogaService implements Serializable {
         return this.drogaRepository.findAll();
     }
 
-    public List<Droga> findByCreatorUser(String idUsuario) {
-        return this.drogaRepository.findByCreatedByUser(idUsuario);
-    }
+ //   public List<Droga> findByCreatorUser(String idUsuario) {
+ //       return this.drogaRepository.findByCreatedByUser(idUsuario);
+ //   }
 
     public void delete(String id) {
         this.drogaRepository.delete(id);

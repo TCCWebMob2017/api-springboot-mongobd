@@ -15,13 +15,20 @@ public class DrogaFicha extends InfoFichaMedica{
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate desde;
 
-
+    public DrogaFicha() {
+    }
 
     public DrogaFicha(String quantidade, String frequecia) {
         super();
         this.quantidade = quantidade;
         this.frequecia = frequecia;
     }
+
+    public DrogaFicha(Droga droga, NivelPermissao privacidade) {
+        super(privacidade);
+        this.droga = droga;
+    }
+
     
     public DrogaFicha(String quantidade, String frequecia, NivelPermissao privacidade) {
         super(privacidade);

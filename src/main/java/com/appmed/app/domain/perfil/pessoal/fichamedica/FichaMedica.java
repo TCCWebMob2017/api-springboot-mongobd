@@ -30,6 +30,7 @@ public class FichaMedica {
     private List<Convenio> convenios;
     private List<DrogaFicha> drogas;
 
+   
     public LocalDateTime getNascimento() {
         return nascimento;
     }

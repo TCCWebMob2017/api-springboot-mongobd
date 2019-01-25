@@ -22,8 +22,7 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
     private Usuario contaContato;
    
     public Contato(String nome, String phone, String email, String relacao, 
-            NivelPermissao privacidade, Usuario createdBy) {
-        super(createdBy);
+            NivelPermissao privacidade) {
         this.nome = nome;
         this.phone = phone;
         this.email = email;

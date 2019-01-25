@@ -29,9 +29,9 @@ public class InstitucionalService implements Serializable {
         return this.institucionalRepository.findAll();
     }
 
-    public List<Institucional> findByCreatorUser(String idUsuario) {
-        return this.institucionalRepository.findByCreatorUser(idUsuario);
-    }
+   // public List<Institucional> findByCreatorUser(String idUsuario) {
+   //     return this.institucionalRepository.findByCreatorUser(idUsuario);
+   // }
 
     public void delete(String id) {
         this.institucionalRepository.delete(id);

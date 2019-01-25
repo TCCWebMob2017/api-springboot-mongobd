@@ -27,9 +27,9 @@ public class CondicaoEspecialService implements Serializable {
         return this.condicaoEspecialRepository.findAll();
     }
 
-    public List<CondicaoEspecial> findByCreatorUser(String idUsuario) {
-        return this.condicaoEspecialRepository.findByCreatedByUser(idUsuario);
-    }
+  //  public List<CondicaoEspecial> findByCreatorUser(String idUsuario) {
+  //      return this.condicaoEspecialRepository.findByCreatedByUser(idUsuario);
+  //  }
 
     public void delete(String id) {
         this.condicaoEspecialRepository.delete(id);

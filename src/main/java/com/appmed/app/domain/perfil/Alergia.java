@@ -20,8 +20,8 @@ public class Alergia extends AbstractEntityNetwork implements Serializable {
         super();
     }
 
-    public Alergia(String nome, Usuario createdByUser) {
-        super(createdByUser);
+    public Alergia(String nome) {
+        super();
         this.nome = nome;
     }
 

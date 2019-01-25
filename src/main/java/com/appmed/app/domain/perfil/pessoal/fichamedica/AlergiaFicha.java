@@ -12,6 +12,9 @@ public class AlergiaFicha extends InfoFichaMedica{
     private Alergia alergia;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate desde;
+
+    public AlergiaFicha() {
+    }
    
  
     public AlergiaFicha(Alergia alergia, NivelPermissao privacidade) {

@@ -28,9 +28,9 @@ public class DoencaService implements Serializable {
         return this.doencaRepository.findAll();
     }
 
-    public List<Doenca> findByCreatorUser(String idUsuario) {
-        return this.doencaRepository.findByCreatedByUser(idUsuario);
-    }
+   // public List<Doenca> findByCreatorUser(String idUsuario) {
+   //     return this.doencaRepository.findByCreatedByUser(idUsuario);
+   // }
 
     public void delete(String id) {
         this.doencaRepository.delete(id);

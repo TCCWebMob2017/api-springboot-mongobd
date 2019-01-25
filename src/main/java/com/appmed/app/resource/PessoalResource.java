@@ -100,7 +100,7 @@ public class PessoalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(pessoal);
     }
-
+/*
     @GetMapping("/usercreator/{id}")
         public ResponseEntity<List<Pessoal>> getPerfilPessoal(@Valid
         @PathVariable(name = "id") String idUsuario
@@ -109,7 +109,7 @@ public class PessoalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(pessoal);
     }
-
+*/
     @PutMapping(value = "/{id}")
         public ResponseEntity<Pessoal> updateUsuario(@PathVariable("id") String id,
             @Valid

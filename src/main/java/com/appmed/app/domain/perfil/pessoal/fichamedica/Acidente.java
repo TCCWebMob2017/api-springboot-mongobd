@@ -13,7 +13,11 @@ public class Acidente extends InfoFichaMedica{
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate data;
 
+    public Acidente() {
+    }
 
+
+    
     public Acidente(String descricao, String gravidade) {
         super();
         this.descricao = descricao;

@@ -1,4 +1,3 @@
-
 package com.appmed.app.domain.perfil;
 
 import com.appmed.app.domain.AbstractEntityNetwork;
@@ -12,7 +11,7 @@ public class Medicamento extends AbstractEntityNetwork implements Serializable {
     private static final long serialVersionUID = 621849506322915908L;
 
     private String nome;
-    
+
     private boolean generico;
     private String principioAtivo;
     private String concentracao;
@@ -29,13 +28,44 @@ public class Medicamento extends AbstractEntityNetwork implements Serializable {
     private String lactacao;
     private String contraindicacao;
     private String efeitosColaterais;
-    
+    private String codigoATC;
+
+    public Medicamento() {
+    }
 
     
-    public Medicamento(String nome, Usuario createdByUser) {
-        super(createdByUser);
+    public Medicamento(String nome, String concentracao, String formaFarmaceutica, String codigoATC) {
+        super();
         this.nome = nome;
+        this.concentracao = concentracao;
+        this.formaFarmaceutica = formaFarmaceutica;
+        this.codigoATC = codigoATC;
     }
+
+    public String getContraindicacao() {
+        return contraindicacao;
+    }
+
+    public void setContraindicacao(String contraindicacao) {
+        this.contraindicacao = contraindicacao;
+    }
+
+    public String getEfeitosColaterais() {
+        return efeitosColaterais;
+    }
+
+    public void setEfeitosColaterais(String efeitosColaterais) {
+        this.efeitosColaterais = efeitosColaterais;
+    }
+
+    public String getCodigoATC() {
+        return codigoATC;
+    }
+
+    public void setCodigoATC(String codigoATC) {
+        this.codigoATC = codigoATC;
+    }
+
 
     public String getNome() {
         return nome;
@@ -156,7 +186,5 @@ public class Medicamento extends AbstractEntityNetwork implements Serializable {
     public void setLactacao(String lactacao) {
         this.lactacao = lactacao;
     }
-    
-    
-    
+
 }

@@ -10,6 +10,6 @@ public interface CondicaoEspecialRepository extends MongoRepository<CondicaoEspe
 
     public List<CondicaoEspecial> findByNome(String nome);
 
-    public List<CondicaoEspecial> findByCreatedByUser(String id);
+   // public List<CondicaoEspecial> findByCreatedByUser(String id);
 
 }

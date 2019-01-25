@@ -60,14 +60,14 @@ public class CondicaoEspecialResource implements Serializable {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(condicaoEspecial);
     }
-
+/*
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<CondicaoEspecial>> getCondicaoEspecialByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<CondicaoEspecial> condicaoEspecial = (List<CondicaoEspecial>) this.condicaoEspecialService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(condicaoEspecial);
     }
-
+*/
     @PutMapping(value = "/{id}")
     public ResponseEntity<CondicaoEspecial> updateCondicaoEspecial(@PathVariable("id") String id, @Valid @RequestBody CondicaoEspecial condicaoEspecial) {
         condicaoEspecial.setId(id);

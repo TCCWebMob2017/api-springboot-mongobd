@@ -31,13 +31,6 @@ public class Doenca extends AbstractEntityNetwork implements Serializable {
         this.CID = CID;
     }
 
-    
-    public Doenca(String nome, String CID, Usuario createdByUser) {
-        super(createdByUser);
-        this.nome = nome;
-        this.CID = CID;
-    }
-
     public String getNome() {
         return nome;
     }

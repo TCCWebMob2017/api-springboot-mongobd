@@ -103,7 +103,7 @@ public class InstitucionalResource implements Serializable {
                 .body(institucional.getFuncionarios());
     }
 
-    
+ /*   
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Institucional>> getPerfilInstitucional(
             @Valid @PathVariable(name = "id") String idUsuario) {
@@ -111,5 +111,5 @@ public class InstitucionalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(institucional);
     }
-
+*/
 }

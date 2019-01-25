@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface InstitucionalRepository extends MongoRepository<Institucional, String>{
-    @Query("{'createdBy.$id': ?0}")
-    public List<Institucional> findByCreatorUser(String createdBy);
+   // @Query("{'createdBy.$id': ?0}")
+   // public List<Institucional> findByCreatorUser(String createdBy);
     
     @Query("{'cnpj': ?0}")
     public Institucional findByCPF(String cnpj);

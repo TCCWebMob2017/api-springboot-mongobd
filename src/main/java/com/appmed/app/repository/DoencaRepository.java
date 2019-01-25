@@ -10,5 +10,5 @@ public interface DoencaRepository extends MongoRepository<Doenca, String> {
 
     public List<Doenca> findByNome(String nome);
 
-    public List<Doenca> findByCreatedByUser(String id);
+    //public List<Doenca> findByCreatedByUser(String id);
 }
