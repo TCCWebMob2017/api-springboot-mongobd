@@ -29,10 +29,9 @@ public class PessoalService implements Serializable {
         return this.pessoalRepository.findAll();
     }
 
-   // public Iterable<Pessoal> findByCreatorUser(String idUsuario) {
-   //     return this.pessoalRepository.findByCreatorUser(idUsuario);
-   // }
-
+    // public Iterable<Pessoal> findByCreatorUser(String idUsuario) {
+    //     return this.pessoalRepository.findByCreatorUser(idUsuario);
+    // }
     public void delete(String id) {
         this.pessoalRepository.delete(id);
     }

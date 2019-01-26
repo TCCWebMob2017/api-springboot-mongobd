@@ -63,15 +63,14 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent argument) {
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         condicoesEspeciais = condicaoEspecialRepository.findAll();
         doencas = doencaRepository.findAll();
         drogas = drogaRepository.findAll();
         medicamentos = medicamentoRepository.findAll();
         alergias = alergiaRepository.findAll();
-        
-        List<Pessoal>perfisPessoas = pessoalRepository.findAll();
+
+        List<Pessoal> perfisPessoas = pessoalRepository.findAll();
 
         //insert cid
         //condicaoEspecialRepository.deleteAll();
@@ -285,7 +284,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                 contents = Files.readAllLines(path);
                 for (int i = 0; i < 8; i++) {
                     String linha[] = contents.get(i).toString().split(",");
-                    
+
                     Random rn = new Random();
                     //rn.nextInt(locaisResidencia.size()
 

@@ -38,6 +38,7 @@ public class QRCodeReader {
 
         Path path = FileSystems.getDefault().getPath(filePath);
         MatrixToImageWriter.writeToPath(bitMatrix, "PNG", path);
+        
     }
 
     public static void main(String[] args) {
