@@ -35,7 +35,7 @@ public class CondicaoEspecialResource implements Serializable {
     private CondicaoEspecialService condicaoEspecialService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<CondicaoEspecial>> getAll() {
+    public ResponseEntity<List<CondicaoEspecial>> getAllCondicaoEspecial() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.condicaoEspecialService.findAll());

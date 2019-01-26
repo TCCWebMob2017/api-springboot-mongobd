@@ -32,7 +32,7 @@ public class UsuarioResource implements Serializable {
     private PessoalService pessoalService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Usuario>> getAll() {
+    public ResponseEntity<List<Usuario>> getAllUsuarios() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.usuarioService.findAll());

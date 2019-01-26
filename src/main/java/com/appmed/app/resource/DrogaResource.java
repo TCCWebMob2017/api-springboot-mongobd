@@ -36,7 +36,7 @@ public class DrogaResource implements Serializable {
     private DrogaService drogaService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Droga>> getAll() {
+    public ResponseEntity<List<Droga>> getAllDrogas() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.drogaService.findAll());

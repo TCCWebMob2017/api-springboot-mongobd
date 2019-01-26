@@ -30,14 +30,14 @@ public class InstitucionalResource implements Serializable {
     private InstitucionalService institucionalService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Institucional>> getAll() {
+    public ResponseEntity<List<Institucional>> getAllPerfisInstituicoes() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.institucionalService.findAll());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Institucional> getInstitucionalById(@PathVariable(name = "id") String id) throws NotFound {
+    public ResponseEntity<Institucional> getPerfilInstitucionalById(@PathVariable(name = "id") String id) throws NotFound {
         Institucional institucional = this.institucionalService.findById(id);
 
         if (institucional == null) {
@@ -50,7 +50,7 @@ public class InstitucionalResource implements Serializable {
     }
 
     @PostMapping
-    public ResponseEntity<Institucional> saveInstitucional(@Valid @RequestBody Institucional institucional) {
+    public ResponseEntity<Institucional> savePerfilInstitucional(@Valid @RequestBody Institucional institucional) {
         institucional = this.institucionalService.save(institucional);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(institucional);

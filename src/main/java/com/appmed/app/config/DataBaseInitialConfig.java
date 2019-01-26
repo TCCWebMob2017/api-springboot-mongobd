@@ -77,7 +77,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         //condicaoEspecialRepository.deleteAll();
         if (condicoesEspeciais.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/condicoes-especiais");
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/condicoes-especiais");
             List<String> contents;
             try {
                 contents = Files.readAllLines(path);
@@ -97,7 +97,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
 
         if (drogas.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/drogas");
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/drogas");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -116,7 +116,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
 
         if (medicamentos.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/medicamentos");
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/medicamentos");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -139,7 +139,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         //alergiaRepository.deleteAll();
         if (alergias.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/alergias");
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/alergias");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -159,7 +159,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
 
         if (doencas.isEmpty()) {
 
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/cid/doencas");
+            java.nio.file.Path path = Paths.get("src/main/java/data/cid/doencas");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -177,7 +177,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         }
 
         if (perfisPessoas.isEmpty()) {
-            java.nio.file.Path path = Paths.get("src/main/java/com/appmed/app/data/demo/usuarios");
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/usuarios");
             List contents;
             try {
                 contents = Files.readAllLines(path);
@@ -196,7 +196,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
             // usuarios = usuarioRepository.findAll();
 
             List<Localidade> locaisResidencia = new ArrayList();
-            path = Paths.get("src/main/java/com/appmed/app/data/demo/localidades-pessoal");
+            path = Paths.get("src/main/java/data/demo/localidades-pessoal");
             try {
                 contents = Files.readAllLines(path);
                 contents.forEach((Object content) -> {
@@ -209,7 +209,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            path = Paths.get("src/main/java/com/appmed/app/data/demo/perfil-pessoal");
+            path = Paths.get("src/main/java/data/demo/perfil-pessoal");
             List<Pessoal> perfispessoais = new ArrayList();
 
             try {
@@ -278,7 +278,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            path = Paths.get("src/main/java/com/appmed/app/data/demo/perfil-dependente");
+            path = Paths.get("src/main/java/data/demo/perfil-dependente");
             List<Pessoal> perfisDependentes = new ArrayList();
 
             try {

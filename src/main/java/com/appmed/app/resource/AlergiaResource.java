@@ -28,7 +28,7 @@ public class AlergiaResource implements Serializable {
     private AlergiaService alergiaService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Alergia>> getAll() {
+    public ResponseEntity<List<Alergia>> getAllAlegias() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.alergiaService.findAll());

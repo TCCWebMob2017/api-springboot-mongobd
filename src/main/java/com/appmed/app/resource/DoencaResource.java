@@ -28,7 +28,7 @@ public class DoencaResource implements Serializable {
     private DoencaService doencaService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Doenca>> getAll() {
+    public ResponseEntity<List<Doenca>> getAllDoencas() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.doencaService.findAll());

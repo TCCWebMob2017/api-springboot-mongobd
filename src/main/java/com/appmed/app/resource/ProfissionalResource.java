@@ -32,14 +32,14 @@ public class ProfissionalResource implements Serializable {
     private PessoalService pessoalService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Profissional>> getAll() {
+    public ResponseEntity<List<Profissional>> getAllPerfisProfissionais() {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.profissionalService.findAll());
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Profissional> getProfissionalById(@PathVariable(name = "id") String id) throws NotFound {
+    public ResponseEntity<Profissional> getPerfilProfissionalById(@PathVariable(name = "id") String id) throws NotFound {
         Profissional profissional = this.profissionalService.findById(id);
 
         if (profissional == null) {
@@ -52,14 +52,14 @@ public class ProfissionalResource implements Serializable {
     }
 
     @PostMapping
-    public ResponseEntity<Profissional> saveProfissional(@Valid @RequestBody Profissional profissional) {
+    public ResponseEntity<Profissional> savePerfilProfissional(@Valid @RequestBody Profissional profissional) {
         profissional = this.profissionalService.save(profissional);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(profissional);
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Profissional> updateProfissional(@PathVariable("id") String id, @Valid @RequestBody Profissional profissional) {
+    public ResponseEntity<Profissional> updatePerfilProfissional(@PathVariable("id") String id, @Valid @RequestBody Profissional profissional) {
         profissional.setId(id);
         profissional = this.profissionalService.save(profissional);
         return ResponseEntity.status(HttpStatus.OK)
@@ -67,7 +67,7 @@ public class ProfissionalResource implements Serializable {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity deleteProfissional(@PathVariable String id) {
+    public ResponseEntity deletePerfilProfissional(@PathVariable String id) {
         this.profissionalService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("Profissional removido");
     }

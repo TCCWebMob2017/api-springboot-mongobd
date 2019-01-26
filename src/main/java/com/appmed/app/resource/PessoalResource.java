@@ -1,8 +1,7 @@
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.Perfil;
-import com.appmed.app.domain.Perfil.Visibilidade;
 import static com.appmed.app.util.ApiVersionUtil.*;
+import static com.appmed.app.util.QRCodeReader.*;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,10 +14,14 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.appmed.app.domain.Pessoal;
-import com.appmed.app.domain.Profissional;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.InstitucionalService;
 import com.appmed.app.service.PessoalService;
+import com.google.zxing.WriterException;
+import java.io.File;
+import java.io.IOException;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.InputStreamResource;
 
 @RestController
 @RequestMapping(value = {
@@ -34,7 +37,7 @@ public class PessoalResource implements Serializable {
     private InstitucionalService instituicaoService;
 
     @GetMapping("/all")
-    public ResponseEntity<List<Pessoal>> getAll() {
+    public ResponseEntity<List<Pessoal>> getAllPerfisPessoais() {
 
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
@@ -42,25 +45,23 @@ public class PessoalResource implements Serializable {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Pessoal> getPessoalById(@PathVariable(name = "id") String id) throws NotFound {
+    public ResponseEntity<Pessoal> getPerfilPessoalById(@PathVariable(name = "id") String id) throws NotFound {
 
         Pessoal pessoal = this.pessoalService.findById(id);
 
         if (pessoal == null) {
             throw new NotFound("There is no profile with this id!");
         }
-        
+
         /*
         Pessoal perfilPaciente = pessoal;
         
         Perfil visitanteLogado = null;
-        if (visitante == null && perfilPaciente.getPrivacidade().equals(Visibilidade.PUBLICO)   {
+        if (perfilPaciente.getPrivacidade().equals(Visibilidade.PUBLICO))   {
             return perfilPaciente;
         } else if (visitanteLogado && perfilPaciente.getPrivacidade().equals(Visibilidade.USUARIOS_APLICATIVO)   {
             return perfilPaciente;
         } else if (visitanteLogado.equals(perfilPaciente)) {
-            return perfilPaciente;
-        } else if (perfilPaciente.getPrivacidade().equals(Visibilidade.PUBLICO)) {
             return perfilPaciente;
         } else if (perfilPaciente.getPrivacidade().equals(Visibilidade.ORGANIZACAO_SAUDE)) {
             if (visitanteLogado.getTipoPerfil().equals(TipoPerfil.PROFISSIONAL)) {
@@ -85,22 +86,21 @@ public class PessoalResource implements Serializable {
             }
         }
     }*/
-
-    return ResponseEntity.status (HttpStatus.OK)
-
-.cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(pessoal);
     }
 
     @PostMapping
-        public ResponseEntity<Pessoal> savePessoal(@Valid
-        @RequestBody Pessoal pessoal
+    public ResponseEntity<Pessoal> savePerfilPessoal(@Valid
+            @RequestBody Pessoal pessoal
     ) {
         pessoal = this.pessoalService.save(pessoal);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(pessoal);
     }
-/*
+
+    /*
     @GetMapping("/usercreator/{id}")
         public ResponseEntity<List<Pessoal>> getPerfilPessoal(@Valid
         @PathVariable(name = "id") String idUsuario
@@ -109,11 +109,11 @@ public class PessoalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(pessoal);
     }
-*/
+     */
     @PutMapping(value = "/{id}")
-        public ResponseEntity<Pessoal> updateUsuario(@PathVariable("id") String id,
+    public ResponseEntity<Pessoal> updatePerfilPessoal(@PathVariable("id") String id,
             @Valid
-        @RequestBody Pessoal pessoal
+            @RequestBody Pessoal pessoal
     ) {
         pessoal.setId(id);
         pessoal = this.pessoalService.save(pessoal);
@@ -122,9 +122,28 @@ public class PessoalResource implements Serializable {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-        public ResponseEntity deleteProfissional(@PathVariable String id
+    public ResponseEntity deletePerfilPessoal(@PathVariable String id
     ) {
         this.pessoalService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("perfil pessoal removido");
     }
+
+    @GetMapping(value = "{id}/qrcode", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<InputStreamResource> getQRCode(@PathVariable(name = "id") String id) throws NotFound, IOException {
+         try {
+            generateQRCodeImage("https://bioup.herokuapp.com/api/v1/pessoal/{id}", 350, 350, "image/qrcode_" + id + ".png");
+        } catch (WriterException e) {
+            System.out.println("Could not generate QR Code, WriterException :: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Could not generate QR Code, IOException :: " + e.getMessage());
+        }
+         
+//        ClassPathResource imgFile = new ClassPathResource("src/java/image/qrcode_" + id + ".png");
+        ClassPathResource imgFile = new ClassPathResource("image/qrcode_" + id + ".png");
+        return ResponseEntity
+                .ok()
+                .contentType(MediaType.IMAGE_PNG)
+                .body(new InputStreamResource(imgFile.getInputStream()));
+    }
+
 }
