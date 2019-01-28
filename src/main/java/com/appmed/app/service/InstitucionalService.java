@@ -1,7 +1,7 @@
 package com.appmed.app.service;
 
 import com.appmed.app.domain.Institucional;
-import com.appmed.app.domain.perfil.instituicional.Funcionario;
+import com.appmed.app.domain.Funcionario;
 import com.appmed.app.repository.InstitucionalRepository;
 import java.io.Serializable;
 import java.util.List;

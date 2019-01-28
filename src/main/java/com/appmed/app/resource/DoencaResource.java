@@ -1,6 +1,6 @@
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.perfil.Doenca;
+import com.appmed.app.domain.Doenca;
 import static com.appmed.app.util.ApiVersionUtil.*;
 
 import java.io.Serializable;

@@ -1,5 +1,5 @@
 
-package com.appmed.app.domain.perfil.pessoal.fichamedica;
+package com.appmed.app.domain;
 
 import com.appmed.app.domain.Localidade;
 import com.fasterxml.jackson.annotation.JsonFormat;

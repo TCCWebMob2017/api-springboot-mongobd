@@ -1,4 +1,4 @@
-package com.appmed.app.domain.perfil.profissional;
+package com.appmed.app.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;

@@ -1,6 +1,6 @@
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.perfil.CondicaoEspecial;
+import com.appmed.app.domain.CondicaoEspecial;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.CondicaoEspecialService;
 import static com.appmed.app.util.ApiVersionUtil.CONDICAOESPECIAL;

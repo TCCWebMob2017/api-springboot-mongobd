@@ -1,5 +1,6 @@
 package com.appmed.app.resource;
 
+import com.appmed.app.domain.Pessoal;
 import static com.appmed.app.util.ApiVersionUtil.*;
 
 import java.io.Serializable;
@@ -66,15 +67,71 @@ public class UsuarioResource implements Serializable {
                 .body(usuario);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteUsuario(@PathVariable String id) {
         this.usuarioService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("Usuario removido");
     }
 
+    @PostMapping(value = "/{id}/perfil/pessoal")
+    public ResponseEntity<Usuario> addPerfilPessoalUsuario(@Valid @PathVariable(name = "id") String id, @Valid @RequestBody Pessoal pessoal) throws NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+        Pessoal perfilPessoal = this.pessoalService.save(pessoal);
+        usuario.setPerfilPessoal(perfilPessoal);
+        usuario = this.usuarioService.save(usuario);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(usuario);
+    }
+
+    @GetMapping(value = "/{id}/perfil/pessoal")
+    public ResponseEntity<Pessoal> addPerfilPessoalUsuario(@PathVariable(name = "id") String id) throws NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuario com este id!");
+        }
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(perfilPessoal);
+    }
+
+    @PutMapping(value = "/{id}/perfil/pessoal")
+    public ResponseEntity<Pessoal> updatePerfilPessoalUsuario(@Valid @PathVariable(name = "id") String id, @Valid @RequestBody Pessoal pessoal) throws NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+
+        pessoal.setId(perfilPessoal.getId());
+
+        pessoal = this.pessoalService.save(pessoal);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(pessoal);
+    }
+
+    @DeleteMapping(value = "/{id}/perfil/pessoal")
+    public ResponseEntity deletePerfilPessoalUsuario(@PathVariable String id) {
+        Usuario usuario = usuarioService.findById(id);
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        usuario.setPerfilPessoal(null);
+        this.usuarioService.save(usuario);
+        this.pessoalService.delete(perfilPessoal.getId());
+        return ResponseEntity.status(HttpStatus.OK).body("Perfil Pessoal do usuario removido");
+    }
+
     @PostMapping("/authenticate")
     public ResponseEntity<Usuario> authenticate(@Valid @RequestBody Usuario login) throws NotFound {
-        Usuario usuario = this.usuarioService.authenticate(login.getEmail(), 
+        Usuario usuario = this.usuarioService.authenticate(login.getEmail(),
                 login.getPassword());
 
         if (usuario == null) {
@@ -103,8 +160,5 @@ public class UsuarioResource implements Serializable {
                 .body(usuarios);
 
     }
-    
-
- 
 
 }

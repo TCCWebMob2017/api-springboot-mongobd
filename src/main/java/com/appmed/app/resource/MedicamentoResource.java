@@ -1,6 +1,6 @@
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.perfil.Medicamento;
+import com.appmed.app.domain.Medicamento;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.MedicamentoService;
 import static com.appmed.app.util.ApiVersionUtil.MEDICAMENTO;

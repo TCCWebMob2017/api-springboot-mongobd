@@ -1,7 +1,7 @@
 
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.perfil.pessoal.Dependente.Parentesco;
+import com.appmed.app.domain.Dependente.Parentesco;
 import java.io.Serializable;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;

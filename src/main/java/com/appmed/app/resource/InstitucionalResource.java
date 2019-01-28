@@ -1,6 +1,6 @@
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.perfil.instituicional.Funcionario;
+import com.appmed.app.domain.Funcionario;
 import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.TimeUnit;

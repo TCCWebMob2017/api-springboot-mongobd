@@ -1,7 +1,7 @@
 
-package com.appmed.app.domain.perfil.pessoal.fichamedica;
+package com.appmed.app.domain;
 
-import com.appmed.app.domain.perfil.Medicamento;
+import com.appmed.app.domain.Medicamento;
 import com.appmed.app.domain.NivelPermissao;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 

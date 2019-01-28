@@ -1,4 +1,4 @@
-package com.appmed.app.domain.perfil;
+package com.appmed.app.domain;
 
 import com.appmed.app.domain.AbstractEntityNetwork;
 import com.appmed.app.domain.Usuario;

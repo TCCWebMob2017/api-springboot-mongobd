@@ -1,8 +1,8 @@
 
-package com.appmed.app.domain.perfil.pessoal.fichamedica;
+package com.appmed.app.domain;
 
 import com.appmed.app.domain.NivelPermissao;
-import com.appmed.app.domain.perfil.Droga;
+import com.appmed.app.domain.Droga;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;

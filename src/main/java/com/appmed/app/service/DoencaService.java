@@ -1,7 +1,7 @@
 
 package com.appmed.app.service;
 
-import com.appmed.app.domain.perfil.Doenca;
+import com.appmed.app.domain.Doenca;
 import com.appmed.app.repository.DoencaRepository;
 import java.io.Serializable;
 import java.util.List;

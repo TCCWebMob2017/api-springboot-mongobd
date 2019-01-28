@@ -1,7 +1,6 @@
-package com.appmed.app.domain.perfil.pessoal;
+package com.appmed.app.domain;
 
 import com.appmed.app.domain.Pessoal;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.InfoFichaMedica;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class Dependente extends InfoFichaMedica{

@@ -142,6 +142,13 @@ public class Usuario extends AbstractDocument implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "Usuario{" + "nome=" + nome + ", email=" + email + ", tefefone=" + tefefone + ", cpf=" + cpf + ", rg=" + rg + ", enabled=" + enabled + '}';
+    }
+
+    
+    
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;

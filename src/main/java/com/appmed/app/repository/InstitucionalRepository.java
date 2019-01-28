@@ -1,7 +1,7 @@
 package com.appmed.app.repository;
 
 import com.appmed.app.domain.Institucional;
-import com.appmed.app.domain.perfil.instituicional.Funcionario;
+import com.appmed.app.domain.Funcionario;
 import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

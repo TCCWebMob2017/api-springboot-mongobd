@@ -1,4 +1,4 @@
-package com.appmed.app.domain.perfil.instituicional;
+package com.appmed.app.domain;
 
 import com.appmed.app.domain.Profissional;
 import org.springframework.data.mongodb.core.mapping.DBRef;

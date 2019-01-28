@@ -1,7 +1,7 @@
 
 package com.appmed.app.service;
 
-import com.appmed.app.domain.perfil.Alergia;
+import com.appmed.app.domain.Alergia;
 import com.appmed.app.repository.AlergiaRepository;
 import java.io.Serializable;
 import java.util.List;

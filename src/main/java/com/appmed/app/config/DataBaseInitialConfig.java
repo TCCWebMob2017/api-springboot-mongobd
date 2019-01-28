@@ -1,5 +1,10 @@
 package com.appmed.app.config;
 
+import com.appmed.app.domain.Alergia;
+import com.appmed.app.domain.CondicaoEspecial;
+import com.appmed.app.domain.Medicamento;
+import com.appmed.app.domain.Droga;
+import com.appmed.app.domain.Doenca;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,14 +14,13 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import com.appmed.app.domain.*;
-import com.appmed.app.domain.perfil.*;
-import com.appmed.app.domain.perfil.pessoal.Dependente;
-import com.appmed.app.domain.perfil.pessoal.Dependente.Parentesco;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.AlergiaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.CondicaoEspecialFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.DoencaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.DrogaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.MedicamentoFicha;
+import com.appmed.app.domain.Dependente;
+import com.appmed.app.domain.Dependente.Parentesco;
+import com.appmed.app.domain.AlergiaFicha;
+import com.appmed.app.domain.CondicaoEspecialFicha;
+import com.appmed.app.domain.DoencaFicha;
+import com.appmed.app.domain.DrogaFicha;
+import com.appmed.app.domain.MedicamentoFicha;
 import com.appmed.app.repository.*;
 import java.io.IOException;
 import java.nio.file.Files;

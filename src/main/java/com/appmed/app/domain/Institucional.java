@@ -1,6 +1,5 @@
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.perfil.instituicional.Funcionario;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.time.LocalDate;

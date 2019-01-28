@@ -1,16 +1,6 @@
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.perfil.pessoal.fichamedica.AlergiaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.Cirurgia;
-import com.appmed.app.domain.perfil.pessoal.Dependente;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.Acidente;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.CondicaoEspecialFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.DoencaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.DrogaFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.MedicamentoFicha;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.ProtocoloEmergencia;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.appmed.app.domain.perfil.pessoal.fichamedica.Convenio;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;

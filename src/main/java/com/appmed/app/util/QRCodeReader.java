@@ -40,7 +40,7 @@ public class QRCodeReader {
         MatrixToImageWriter.writeToPath(bitMatrix, "PNG", path);
         
     }
-
+/*
     public static void main(String[] args) {
 
         try {
@@ -62,5 +62,5 @@ public class QRCodeReader {
         } catch (IOException e) {
             System.out.println("Could not decode QR Code, IOException :: " + e.getMessage());
         }
-    }
+    }*/
 }

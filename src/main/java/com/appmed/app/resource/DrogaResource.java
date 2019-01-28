@@ -1,7 +1,7 @@
 
 package com.appmed.app.resource;
 
-import com.appmed.app.domain.perfil.Droga;
+import com.appmed.app.domain.Droga;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.DrogaService;
 import static com.appmed.app.util.ApiVersionUtil.DROGA;

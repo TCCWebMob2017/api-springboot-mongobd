@@ -1,6 +1,6 @@
 package com.appmed.app.repository;
 
-import com.appmed.app.domain.perfil.Droga;
+import com.appmed.app.domain.Droga;
 import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

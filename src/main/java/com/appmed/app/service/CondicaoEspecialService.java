@@ -1,6 +1,6 @@
 package com.appmed.app.service;
 
-import com.appmed.app.domain.perfil.CondicaoEspecial;
+import com.appmed.app.domain.CondicaoEspecial;
 import com.appmed.app.repository.CondicaoEspecialRepository;
 import java.io.Serializable;
 import java.util.List;
