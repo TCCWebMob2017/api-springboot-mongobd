@@ -17,6 +17,16 @@ import com.appmed.app.domain.Usuario;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.PessoalService;
 import com.appmed.app.service.UsuarioService;
+import static com.appmed.app.util.QRCodeReader.generateQRCodeImage;
+import com.google.zxing.WriterException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping(value = {
@@ -31,6 +41,8 @@ public class UsuarioResource implements Serializable {
 
     @Autowired
     private PessoalService pessoalService;
+
+    private final Path rootLocation = Paths.get("src/main/resources/image/");
 
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
@@ -159,6 +171,99 @@ public class UsuarioResource implements Serializable {
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(usuarios);
 
+    }
+
+    @PostMapping(value = "{id}/perfil/pessoal/avatar")
+    public ResponseEntity<String> saveAvatarPerfilPessoal(@PathVariable String id, @RequestParam("file") MultipartFile file) throws IOException, NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+
+        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+        Files.copy(file.getInputStream(), this.rootLocation.resolve(filename));
+        return ResponseEntity.status(HttpStatus.CREATED).body("imagem salva");
+    }
+
+    @PutMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<String> updateAvatarPerfilPessoal(@PathVariable String id, @RequestParam("file") MultipartFile file) throws IOException, NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+
+        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+        Files.copy(file.getInputStream(), this.rootLocation.resolve(filename));
+        return ResponseEntity.status(HttpStatus.OK).body("imagem salva");
+    }
+
+    @GetMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<InputStreamResource> getAvatarPerfilPessoal(@PathVariable String id) throws IOException, NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+
+        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+        Path path = rootLocation.resolve(filename);
+        Resource resource = new UrlResource(path.toUri());
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG)
+                .body(new InputStreamResource(resource.getInputStream()));
+    }
+
+    @GetMapping(value = "{id}/perfil/pessoal/qrcode", produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<InputStreamResource> getQRCodePerfilPessoal(@PathVariable(name = "id") String id) throws NotFound, WriterException, IOException {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+
+        String filename = "qrcode_" + perfilPessoal.getId() + ".png";
+        Path path = rootLocation.resolve(filename);
+        if (!Files.exists(path)) {
+            generateQRCodeImage(id, 350, 350, "src/main/resources/image/qrcode_" + perfilPessoal.getId() + ".png");
+        }
+        Resource resource = new UrlResource(path.toUri());
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG)
+                .body(new InputStreamResource(resource.getInputStream()));
+    }
+
+    @DeleteMapping(value = "{id}/perfil/pessoal/avatar")
+    public ResponseEntity deleteAvatarPerfilPessoal(@PathVariable(name = "id") String id) throws IOException, NotFound {
+        Usuario usuario = this.usuarioService.findById(id);
+        if (usuario == null) {
+            throw new NotFound("Não existe usuário com este id!");
+        }
+
+        Pessoal perfilPessoal = usuario.getPerfilPessoal();
+        if (perfilPessoal == null) {
+            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
+        }
+        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+
+        Path path = rootLocation.resolve(filename);
+        Files.deleteIfExists(path);
+        return ResponseEntity.status(HttpStatus.OK).body("avatar do perfil pessoal removido");
     }
 
 }

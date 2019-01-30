@@ -1,7 +1,6 @@
 
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.NivelPermissao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 
@@ -15,8 +14,6 @@ public class Acidente extends InfoFichaMedica{
 
     public Acidente() {
     }
-
-
     
     public Acidente(String descricao, String gravidade) {
         super();
@@ -71,9 +68,5 @@ public class Acidente extends InfoFichaMedica{
     public void setData(LocalDate data) {
         this.data = data;
     }
-    
-    
-
-    
     
 }

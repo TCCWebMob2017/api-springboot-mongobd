@@ -12,8 +12,8 @@ public interface PessoalRepository extends MongoRepository<Pessoal, String>{
    // @Query("{'createdBy.$id': ?0}")
    // public Iterable<Pessoal> findByCreatorUser(String createdBy);
     
-    @Query("{$and:[{'createdBy.$id': ?0}, {'tipoPerfil':'PESSOAL'}]}")
-    public Iterable<Pessoal> findByUser(String createdBy);
+   // @Query("{$and:[{'createdBy.$id': ?0}, {'tipoPerfil':'PESSOAL'}]}")
+   // public Iterable<Pessoal> findByUser(String createdBy);
     
     @Query("{'cpf': ?0}")
     public Pessoal findByCPF(String cpf);
