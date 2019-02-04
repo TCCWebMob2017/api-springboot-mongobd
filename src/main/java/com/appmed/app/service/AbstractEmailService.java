@@ -58,7 +58,7 @@ public abstract class AbstractEmailService implements EmailService {
     private MimeMessage prepareMimeMessageFromUsuario(Usuario usuario) throws MessagingException {
         MimeMessage mimeMessage = this.javaMailSender.createMimeMessage();
         MimeMessageHelper mmh = new MimeMessageHelper(mimeMessage, true);
-        mmh.setTo(sender);
+        mmh.setTo(usuario.getEmail());
         mmh.setFrom(sender);
         mmh.setSubject("Conta de usuario Q-Life Criada");
         mmh.setSentDate(new Date(System.currentTimeMillis()));
