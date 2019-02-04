@@ -12,24 +12,38 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
     private static final long serialVersionUID = 4907054172477100446L;
 
     private String nome;
-    private String phone;
+    private String telefone;
     private String email;
     private String relacao;//tipo de relacionamento com contato amigo, parente, medico
-    private Parentesco familiar;
     private NivelPermissao nivelPermissao;
-    
-    @DBRef
-    private Usuario contaContato;
-   
-    public Contato(String nome, String phone, String email, String relacao, 
-            NivelPermissao privacidade) {
-        this.nome = nome;
-        this.phone = phone;
-        this.email = email;
-        this.relacao = relacao;
-        this.nivelPermissao = privacidade;
+    private String tipoContato;
+
+    public Contato() {
+    super();
     }
 
+    public Contato(String nome, String telefone) {
+        super();
+        this.nome = nome;
+        this.telefone = telefone;
+    }
+
+    public Contato(String relacao, NivelPermissao nivelPermissao) {
+        super();
+        this.relacao = relacao;
+        this.nivelPermissao = nivelPermissao;
+    }
+
+    public Contato(String relacao, NivelPermissao nivelPermissao, String tipoContato) {
+        super();
+        this.relacao = relacao;
+        this.nivelPermissao = nivelPermissao;
+        this.tipoContato = tipoContato;
+    }
+    
+
+    
+    
     public String getNome() {
         return nome;
     }
@@ -38,12 +52,12 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
         this.nome = nome;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -66,9 +80,10 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
         return nivelPermissao;
     }
 
-    public void setNivelPermissao(NivelPermissao privacidade) {
-        this.nivelPermissao = privacidade;
+    public void setNivelPermissao(NivelPermissao nivelPermissao) {
+        this.nivelPermissao = nivelPermissao;
     }
     
+
     
 }

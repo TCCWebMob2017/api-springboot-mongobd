@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,15 +14,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario extends AbstractDocument implements Serializable {
 
     private static final long serialVersionUID = -8703831001278409915L;
-
+    
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String nome;
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @Indexed(unique=true)
+    @Email
     private String email;
-
     private String password;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;
     @JsonInclude(JsonInclude.Include.NON_NULL)
+    @Indexed(unique=true)
+    @CPF
     private String cpf;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String rg;
@@ -131,8 +138,8 @@ public class Usuario extends AbstractDocument implements Serializable {
     }
 
     public boolean add(Institucional e) {
-        if (perfisInstituicoes.isEmpty()) {
-            perfisInstituicoes = new ArrayList<Institucional>();
+        if (this.perfisInstituicoes==null) {
+            this.perfisInstituicoes = new ArrayList<Institucional>();
         };
         return perfisInstituicoes.add(e);
     }

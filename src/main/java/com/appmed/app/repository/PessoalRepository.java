@@ -17,7 +17,10 @@ public interface PessoalRepository extends MongoRepository<Pessoal, String>{
     
     @Query("{'cpf': ?0}")
     public Pessoal findByCPF(String cpf);
-    
+
+    @Query("{'telefone': ?0}")
+    public Pessoal findByTelefone(String telefone);
+        
     @Query("{'nome': ?0}")
     public Iterable<Pessoal> findByNome(String cpf);
     

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.appmed.app.domain.Usuario;
 import com.appmed.app.exceptions.NotFound;
+import com.appmed.app.service.EmailService;
 import com.appmed.app.service.PessoalService;
 import com.appmed.app.service.UsuarioService;
 import static com.appmed.app.util.QRCodeReader.generateQRCodeImage;
@@ -41,6 +42,9 @@ public class UsuarioResource implements Serializable {
 
     @Autowired
     private PessoalService pessoalService;
+    
+    @Autowired
+    private EmailService emailService;
 
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
@@ -67,6 +71,7 @@ public class UsuarioResource implements Serializable {
     @PostMapping
     public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario) {
         usuario = this.usuarioService.save(usuario);
+        this.emailService.sendCreatedAccount(usuario);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(usuario);
     }

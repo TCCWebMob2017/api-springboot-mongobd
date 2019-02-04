@@ -31,6 +31,23 @@ public class Institucional extends Perfil implements Serializable {
         this.setTipoPerfil(TipoPerfil.ORGANIZACAO);
     }
 
+    public Institucional( String nome,String CNPJ, String inscricaoEstadual,
+            LocalDate dataAbertura, String site, String email, 
+            String CEP, String logradouro, String numero, String bairro, String cidade, String estado, 
+            String telefone, Area areaAtividade) {
+        super(TipoPerfil.ORGANIZACAO, nome);
+        this.CNPJ = CNPJ;
+        this.inscricaoEstadual = inscricaoEstadual;
+        this.dataAbertura = dataAbertura;
+        this.site = site;
+        this.email = email;
+        this.endereco = new Localidade( logradouro,  bairro,  cidade,  estado,  numero,  CEP);
+        this.celular = telefone;
+        this.areaAtividade = areaAtividade;
+    }
+
+    
+    
     public Institucional(String CNPJ, String inscricaoEstadual, LocalDate dataAbertura, String email, Localidade endereco, String telefone, Area areaAtividade, Usuario createdBy, String nome) {
         super(TipoPerfil.ORGANIZACAO, nome);
         this.CNPJ = CNPJ;
@@ -149,7 +166,7 @@ public class Institucional extends Perfil implements Serializable {
     }
 
     public enum Area {
-        MEDICA, SAUDE, ACADEMICA, EDUCACAO, OUTRA;
+        MEDICA, SAUDE, ACADEMICA, OUTRA;
     }
 
 

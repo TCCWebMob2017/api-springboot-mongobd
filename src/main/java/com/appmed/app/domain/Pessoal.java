@@ -35,7 +35,7 @@ public class Pessoal extends Perfil implements Serializable {
     private List<Cirurgia> cirurgias;
     private List<Contato> contatoEmergencia;
     private List<ProtocoloEmergencia> protocolosEmergencias;
-    private List<Contato> profissionais;//medicos
+    private List<Contato> profissionais;//medicos,terapeutas,enfermeiros
     private List<Convenio> convenios;
     private List<DrogaFicha> drogas;
     private List<Acidente> acidentes;
@@ -45,10 +45,9 @@ public class Pessoal extends Perfil implements Serializable {
         super();
     }
 
-   
     //perfil pessoal de usuario
-    public Pessoal(Localidade residencia, LocalDate nascimento, String sexo, 
-            boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue, 
+    public Pessoal(Localidade residencia, LocalDate nascimento, String sexo,
+            boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue,
             String tipoSangue, Double altura, Double peso, Usuario createdBy) {
         super(TipoPerfil.PESSOAL, createdBy.getNome());
         this.residencia = residencia;
@@ -62,22 +61,22 @@ public class Pessoal extends Perfil implements Serializable {
         this.peso = peso;
         this.RG = createdBy.getRg();
         this.CPF = createdBy.getCpf();
-        this.telefone=createdBy.getTefefone();
-        this.dependentes=new ArrayList<>();
+        this.telefone = createdBy.getTefefone();
+        this.dependentes = new ArrayList<>();
     }
 
 //Perfil Dependente
     public Pessoal(String sexo, String nome, String CPF, String RG,
             LocalDate nascimento,
-            String CEP, String logradouro, String numero, String bairro, String cidade, String estado, 
+            String CEP, String logradouro, String numero, String bairro, String cidade, String estado,
             String telefone,
-            Double altura, Double peso,String tipoSangue, 
+            Double altura, Double peso, String tipoSangue,
             boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue,
             Usuario createdBy) {
         super(TipoPerfil.DEPENDENTE, nome);
         this.RG = RG;
         this.CPF = CPF;
-        this.residencia = new Localidade( logradouro,  bairro,  cidade,  estado,  numero,  CEP);
+        this.residencia = new Localidade(logradouro, bairro, cidade, estado, numero, CEP);
         this.nascimento = nascimento;
         this.sexo = sexo;
         this.praticaEsporte = praticaEsporte;
@@ -86,8 +85,8 @@ public class Pessoal extends Perfil implements Serializable {
         this.tipoSangue = tipoSangue;
         this.altura = altura;
         this.peso = peso;
-        this.telefone=telefone;
-       
+        this.telefone = telefone;
+
     }
 
     public String getRG() {
@@ -301,33 +300,82 @@ public class Pessoal extends Perfil implements Serializable {
         this.condicoesEspeciais = condicoesEspeciais;
     }
 
-    
-    
     public boolean add(DoencaFicha e) {
-        if(this.doencas==null){this.doencas=new ArrayList();};
+        if (this.doencas == null) {
+            this.doencas = new ArrayList();
+        };
         return doencas.add(e);
     }
 
     public boolean add(DrogaFicha e) {
-        if(this.drogas==null){this.drogas=new ArrayList();};
+        if (this.drogas == null) {
+            this.drogas = new ArrayList();
+        };
         return drogas.add(e);
     }
 
     public boolean add(AlergiaFicha e) {
-        if(this.alergias==null){this.alergias=new ArrayList();};
+        if (this.alergias == null) {
+            this.alergias = new ArrayList();
+        };
         return alergias.add(e);
     }
 
     public boolean add(MedicamentoFicha e) {
-        if(this.medicamentos==null){this.medicamentos=new ArrayList();};
+        if (this.medicamentos == null) {
+            this.medicamentos = new ArrayList();
+        };
         return medicamentos.add(e);
     }
 
     public boolean add(CondicaoEspecialFicha e) {
-        if(this.condicoesEspeciais ==null){this.condicoesEspeciais=new ArrayList();}
+        if (this.condicoesEspeciais == null) {
+            this.condicoesEspeciais = new ArrayList();
+        }
         return condicoesEspeciais.add(e);
     }
-    
+
+    public boolean add(Cirurgia e) {
+        if (this.cirurgias == null) {
+            this.cirurgias = new ArrayList();
+        }
+        return cirurgias.add(e);
+    }
+
+    public boolean add(Contato e) {
+        if (this.contatoEmergencia == null) {
+            this.contatoEmergencia = new ArrayList();
+        }
+        return contatoEmergencia.add(e);
+    }
+
+    public boolean add(ProtocoloEmergencia e) {
+        if (this.protocolosEmergencias == null) {
+            this.protocolosEmergencias = new ArrayList();
+        }
+        return protocolosEmergencias.add(e);
+    }
+
+    public boolean addContatoProfissional(Contato e) {
+        if (this.profissionais == null) {
+            this.profissionais = new ArrayList();
+        }
+        return profissionais.add(e);
+    }
+
+    public boolean add(Convenio e) {
+        if (this.convenios == null) {
+            this.convenios = new ArrayList();
+        }
+        return convenios.add(e);
+    }
+
+    public boolean add(Acidente e) {
+        if (this.acidentes == null) {
+            this.acidentes = new ArrayList();
+        }
+        return acidentes.add(e);
+    }
 
     @Override
     public int hashCode() {

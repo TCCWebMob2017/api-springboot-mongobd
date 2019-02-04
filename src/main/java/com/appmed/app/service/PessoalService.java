@@ -1,5 +1,7 @@
 package com.appmed.app.service;
 
+import com.appmed.app.domain.Contato;
+import com.appmed.app.domain.Perfil;
 import java.io.Serializable;
 import java.util.List;
 
@@ -28,11 +30,19 @@ public class PessoalService implements Serializable {
     public List<Pessoal> findAll() {
         return this.pessoalRepository.findAll();
     }
-
+    public Pessoal findByTelefone(String telefone) {
+        return this.pessoalRepository.findByTelefone(telefone);
+    }
     // public Iterable<Pessoal> findByCreatorUser(String idUsuario) {
     //     return this.pessoalRepository.findByCreatorUser(idUsuario);
     // }
     public void delete(String id) {
         this.pessoalRepository.delete(id);
     }
+    
+   // public List<Pessoal> addContato(Contato e) {
+     ///   Perfil contato = this.pessoalRepository.findByTelefone(e.getPhone());
+      //  contato.setTipoPerfil(Perfil.TipoPerfil.PESSOAL);
+       // return this.pessoalRepository.;
+    //}
 }

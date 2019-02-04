@@ -1,6 +1,5 @@
 package com.appmed.app.service;
 
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -18,13 +17,12 @@ public class UsuarioService implements Serializable {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private EmailService emailService;
 
     public Usuario save(Usuario usuario) {
-
-        usuario.setEnabled(true);
-        usuarioRepository.save(usuario);
-
-        return this.usuarioRepository.save(usuario);
+        usuario = this.usuarioRepository.save(usuario);
+        return usuario;
     }
 
     public Usuario findById(String id) {
@@ -38,13 +36,15 @@ public class UsuarioService implements Serializable {
     public void delete(String id) {
         this.usuarioRepository.delete(id);
     }
-    
+
     public List<Usuario> findUserByNome(String nome) {
         return (List<Usuario>) usuarioRepository.findByNome(nome);
     }
-     
-    public Usuario authenticate(String nome, String password) {
-        return usuarioRepository.authenticate(nome, password) ;
+
+    public Usuario authenticate(String email, String password) {
+        Usuario usuario = usuarioRepository.authenticate(email, password);
+        this.emailService.sendUsuarioConfirmationHtmlEmail(usuario);
+        return usuario;
     }
-    
+
 }

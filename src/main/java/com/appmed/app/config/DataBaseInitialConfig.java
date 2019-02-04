@@ -13,6 +13,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import com.appmed.app.domain.*;
 import com.appmed.app.domain.Dependente;
 import com.appmed.app.domain.Dependente.Parentesco;
@@ -20,6 +22,7 @@ import com.appmed.app.domain.AlergiaFicha;
 import com.appmed.app.domain.CondicaoEspecialFicha;
 import com.appmed.app.domain.DoencaFicha;
 import com.appmed.app.domain.DrogaFicha;
+import com.appmed.app.domain.Institucional.Area;
 import com.appmed.app.domain.MedicamentoFicha;
 import com.appmed.app.repository.*;
 import java.io.IOException;
@@ -59,11 +62,12 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
     private MedicamentoRepository medicamentoRepository;
 
     List<Usuario> usuarios = new ArrayList<Usuario>();
-    List<CondicaoEspecial> condicoesEspeciais = new ArrayList<>();
-    List<Doenca> doencas = new ArrayList<>();
-    List<Droga> drogas = new ArrayList<>();
-    List<Alergia> alergias = new ArrayList<>();
-    List<Medicamento> medicamentos = new ArrayList<>();
+    List<CondicaoEspecial> condicoesEspeciais = new ArrayList<CondicaoEspecial>();
+    List<Doenca> doencas = new ArrayList<Doenca>();
+    List<Droga> drogas = new ArrayList<Droga>();
+    List<Alergia> alergias = new ArrayList<Alergia>();
+    List<Medicamento> medicamentos = new ArrayList<Medicamento>();
+    List<Institucional> instituicoes = new ArrayList<Institucional>();
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent argument) {
@@ -73,6 +77,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
         drogas = drogaRepository.findAll();
         medicamentos = medicamentoRepository.findAll();
         alergias = alergiaRepository.findAll();
+        instituicoes = institucionalRepository.findAll();
 
         List<Pessoal> perfisPessoas = pessoalRepository.findAll();
 
@@ -359,6 +364,33 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                 Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
             }
 
+        }
+        if (instituicoes.isEmpty()) {
+            usuarios = this.usuarioRepository.findAll();
+            java.nio.file.Path path = Paths.get("src/main/java/data/demo/perfil-instituicao");
+            List<String> contents;
+            try {
+                contents = Files.readAllLines(path);
+                for (int i = 0; i < 10; i++) {
+                    String content = contents.get(i);
+                    String linha[] = content.toString().split(",");
+                    Institucional e = new Institucional(
+                            linha[0], linha[1], linha[2],
+                            LocalDate.parse(linha[3], formatter), linha[4], linha[5],
+                            linha[6], linha[7], linha[8], linha[9], linha[10], linha[11],
+                            linha[12], Area.valueOf(linha[13]));
+                    System.out.println(e.getNome());// print the line
+                    Institucional perfilInstituicao = this.institucionalRepository.save(e);
+                    int randomNum = ThreadLocalRandom.current().nextInt(2, usuarios.size());
+                    Usuario usuario = usuarios.get(randomNum);
+                    usuario.add(perfilInstituicao);
+                    this.usuarioRepository.save(usuario);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(DataBaseInitialConfig.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            instituicoes = institucionalRepository.findAll();
         }
 
     }

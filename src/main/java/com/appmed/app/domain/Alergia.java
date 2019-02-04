@@ -14,7 +14,7 @@ public class Alergia extends AbstractEntityNetwork implements Serializable {
     private String categoria;
     private String descricao;
     private String agenteCausador;
-    private String reaçõesAdversas;
+    private String reacoesAdversas;
 
     public Alergia() {
         super();
@@ -70,12 +70,12 @@ O = Outros*/
         this.agenteCausador = agenteCausador;
     }
 
-    public String getReaçõesAdversas() {
-        return reaçõesAdversas;
+    public String getReacoesAdversas() {
+        return reacoesAdversas;
     }
 
-    public void setReaçõesAdversas(String reaçõesAdversas) {
-        this.reaçõesAdversas = reaçõesAdversas;
+    public void setReacoesAdversas(String reacoesAdversas) {
+        this.reacoesAdversas = reacoesAdversas;
     }
 
 }
