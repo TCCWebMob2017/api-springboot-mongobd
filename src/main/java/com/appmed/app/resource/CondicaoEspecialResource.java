@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -54,6 +55,7 @@ public class CondicaoEspecialResource implements Serializable {
                 .body(condicaoEspecial);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PostMapping
     public ResponseEntity<CondicaoEspecial> saveCondicaoEspecial(@Valid @RequestBody CondicaoEspecial condicaoEspecial) {
         condicaoEspecial = this.condicaoEspecialService.save(condicaoEspecial);
@@ -68,6 +70,8 @@ public class CondicaoEspecialResource implements Serializable {
                 .body(condicaoEspecial);
     }
 */
+    
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<CondicaoEspecial> updateCondicaoEspecial(@PathVariable("id") String id, @Valid @RequestBody CondicaoEspecial condicaoEspecial) {
         condicaoEspecial.setId(id);
@@ -76,6 +80,7 @@ public class CondicaoEspecialResource implements Serializable {
                 .body(condicaoEspecial);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteCondicaoEspecial(@PathVariable String id) {
         this.condicaoEspecialService.delete(id);

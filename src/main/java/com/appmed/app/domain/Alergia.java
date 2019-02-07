@@ -1,15 +1,18 @@
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.AbstractEntityNetwork;
-import com.appmed.app.domain.Usuario;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import javax.validation.constraints.NotNull;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "alergia")
+
 public class Alergia extends AbstractEntityNetwork implements Serializable {
 
     private static final long serialVersionUID = -7137539624241707176L;
 
+    @NotNull(message = "Name is required")
+    @ApiModelProperty(notes = "Name of the alergia")
     private String nome;
     private String categoria;
     private String descricao;

@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,6 +56,7 @@ public class DrogaResource implements Serializable {
                 .body(droga);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PostMapping
     public ResponseEntity<Droga> saveDroga(@Valid @RequestBody Droga droga) {
         droga = this.drogaService.save(droga);
@@ -69,6 +71,8 @@ public class DrogaResource implements Serializable {
                 .body(droga);
     }
 */
+    
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Droga> updateDroga(@PathVariable("id") String id, @Valid @RequestBody Droga droga) {
         droga.setId(id);
@@ -77,6 +81,7 @@ public class DrogaResource implements Serializable {
                 .body(droga);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteDroga(@PathVariable String id) {
         this.drogaService.delete(id);

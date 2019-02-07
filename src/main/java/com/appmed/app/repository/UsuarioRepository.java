@@ -16,6 +16,4 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     @Transactional(readOnly=true)
     public Usuario findByEmail(String email);
 
-    @Query("{$and:[{'email': ?0}, {'password': ?1}]}")
-    public  Usuario authenticate(String email, String password);
 }

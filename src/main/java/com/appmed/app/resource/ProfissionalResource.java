@@ -16,6 +16,7 @@ import com.appmed.app.domain.Profissional;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.PessoalService;
 import com.appmed.app.service.ProfissionalService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 @RequestMapping(value = {
@@ -31,6 +32,8 @@ public class ProfissionalResource implements Serializable {
     @Autowired
     private PessoalService pessoalService;
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Profissional>> getAllPerfisProfissionais() {
         return ResponseEntity.status(HttpStatus.OK)
@@ -38,6 +41,8 @@ public class ProfissionalResource implements Serializable {
                 .body(this.profissionalService.findAll());
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("{id}")
     public ResponseEntity<Profissional> getPerfilProfissionalById(@PathVariable(name = "id") String id) throws NotFound {
         Profissional profissional = this.profissionalService.findById(id);
@@ -51,6 +56,7 @@ public class ProfissionalResource implements Serializable {
                 .body(profissional);
     }
 
+    
     @PostMapping
     public ResponseEntity<Profissional> savePerfilProfissional(@Valid @RequestBody Profissional profissional) {
         profissional = this.profissionalService.save(profissional);
@@ -58,6 +64,8 @@ public class ProfissionalResource implements Serializable {
                 .body(profissional);
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Profissional> updatePerfilProfissional(@PathVariable("id") String id, @Valid @RequestBody Profissional profissional) {
         profissional.setId(id);
@@ -66,6 +74,8 @@ public class ProfissionalResource implements Serializable {
                 .body(profissional);
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deletePerfilProfissional(@PathVariable String id) {
         this.profissionalService.delete(id);

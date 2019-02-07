@@ -27,6 +27,8 @@ import java.nio.file.Paths;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
@@ -36,7 +38,9 @@ import org.springframework.web.multipart.MultipartFile;
 public class UsuarioResource implements Serializable {
 
     private static final long serialVersionUID = -2827532105824714138L;
-
+    @Autowired
+    private BCryptPasswordEncoder re;
+    
     @Autowired
     private UsuarioService usuarioService;
 
@@ -48,6 +52,8 @@ public class UsuarioResource implements Serializable {
 
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
         return ResponseEntity.status(HttpStatus.OK)
@@ -55,6 +61,8 @@ public class UsuarioResource implements Serializable {
                 .body(this.usuarioService.findAll());
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable(name = "id") String id) throws NotFound {
         Usuario usuario = this.usuarioService.findById(id);
@@ -70,20 +78,26 @@ public class UsuarioResource implements Serializable {
 
     @PostMapping
     public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario) {
+        usuario.setPassword(re.encode(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         this.emailService.sendCreatedAccount(usuario);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(usuario);
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
+        usuario.setPassword(re.encode(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(usuario);
     }
 
+    
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteUsuario(@PathVariable String id) {
         this.usuarioService.delete(id);
@@ -144,24 +158,6 @@ public class UsuarioResource implements Serializable {
         this.usuarioService.save(usuario);
         this.pessoalService.delete(perfilPessoal.getId());
         return ResponseEntity.status(HttpStatus.OK).body("Perfil Pessoal do usuario removido");
-    }
-
-    @PostMapping("/authenticate")
-    public ResponseEntity<Usuario> authenticate(@Valid @RequestBody Usuario login) throws NotFound {
-        Usuario usuario = this.usuarioService.authenticate(login.getEmail(),
-                login.getPassword());
-
-        if (usuario == null) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
-                    .body(usuario);
-        } else {
-
-            return ResponseEntity.status(HttpStatus.OK)
-                    .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
-                    .body(usuario);
-        }
-
     }
 
     @GetMapping("/nome/{nome}")

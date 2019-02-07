@@ -24,7 +24,9 @@ import com.appmed.app.domain.DoencaFicha;
 import com.appmed.app.domain.DrogaFicha;
 import com.appmed.app.domain.Institucional.Area;
 import com.appmed.app.domain.MedicamentoFicha;
+import com.appmed.app.domain.enums.TipoUsuario;
 import com.appmed.app.repository.*;
+import com.appmed.app.service.UsuarioService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -33,10 +35,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Component
 public class DataBaseInitialConfig implements ApplicationListener<ContextRefreshedEvent> {
 
+    @Autowired
+    private BCryptPasswordEncoder re;
+    
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -193,7 +199,7 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
                     String linha[] = content.toString().split(",");
 
                     Usuario usuario = this.usuarioRepository.save(new Usuario(linha[0], linha[1],
-                            linha[2], linha[3], linha[4], linha[5]));
+                            re.encode(linha[2]), linha[3], linha[4], linha[5]));
                     System.out.println(usuario.getNome());
                     usuarios.add(usuario);
                 });
@@ -392,6 +398,10 @@ public class DataBaseInitialConfig implements ApplicationListener<ContextRefresh
 
             instituicoes = institucionalRepository.findAll();
         }
+
+       // Usuario admin = new Usuario("Admin", "borgesdemeirelles@gmail.com",re.encode("admin"), null, "42307363807", "489233363");
+       //admin.addTipo(TipoUsuario.ADMIN);
+       //this.usuarioRepository.save(admin);
 
     }
 }

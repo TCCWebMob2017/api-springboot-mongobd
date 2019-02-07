@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.appmed.app.domain.Usuario;
+import com.appmed.app.domain.enums.TipoUsuario;
 import com.appmed.app.repository.UsuarioRepository;
+import com.appmed.app.security.UserSS;
+import com.appmed.app.exceptions.AuthorizationException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Service
 public class UsuarioService implements Serializable {
@@ -26,6 +31,11 @@ public class UsuarioService implements Serializable {
     }
 
     public Usuario findById(String id) {
+        UserSS user;
+        user = authenticated();
+        if (user == null || !user.hasRole(TipoUsuario.ADMIN) && !id.equals(user.getId())) {
+            throw new AuthorizationException("Acesso negado");
+        }
         return this.usuarioRepository.findOne(id);
     }
 
@@ -41,10 +51,11 @@ public class UsuarioService implements Serializable {
         return (List<Usuario>) usuarioRepository.findByNome(nome);
     }
 
-    public Usuario authenticate(String email, String password) {
-        Usuario usuario = usuarioRepository.authenticate(email, password);
-        this.emailService.sendUsuarioConfirmationHtmlEmail(usuario);
-        return usuario;
+    public static UserSS authenticated() {
+        try {
+            return (UserSS) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        } catch (Exception e) {
+            return null;
+        }
     }
-
 }

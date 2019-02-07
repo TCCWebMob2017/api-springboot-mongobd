@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.DoencaService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 @RequestMapping(value = {
@@ -47,6 +48,7 @@ public class DoencaResource implements Serializable {
                 .body(doenca);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PostMapping
     public ResponseEntity<Doenca> saveDoenca(@Valid @RequestBody Doenca doenca) {
         doenca = this.doencaService.save(doenca);
@@ -61,6 +63,8 @@ public class DoencaResource implements Serializable {
                 .body(doenca);
     }
 */
+    
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Doenca> updateDoenca(@PathVariable("id") String id, @Valid @RequestBody Doenca doenca) {
         doenca.setId(id);
@@ -69,6 +73,7 @@ public class DoencaResource implements Serializable {
                 .body(doenca);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteDoenca(@PathVariable String id) {
         this.doencaService.delete(id);

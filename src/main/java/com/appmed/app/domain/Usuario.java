@@ -1,9 +1,17 @@
 package com.appmed.app.domain;
 
+import com.appmed.app.domain.enums.TipoUsuario;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
+import javax.persistence.FetchType;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -21,6 +29,8 @@ public class Usuario extends AbstractDocument implements Serializable {
     @Indexed(unique=true)
     @Email
     private String email;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonIgnore
     private String password;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;
@@ -31,6 +41,11 @@ public class Usuario extends AbstractDocument implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String rg;
     private boolean enabled;
+    
+    @ElementCollection(fetch=FetchType.EAGER)
+    @CollectionTable(name="TIPOUSUARIOS")
+    private Set<Integer> tipos =new HashSet<>();
+    
 
     @DBRef
     private Pessoal perfilPessoal;
@@ -45,6 +60,7 @@ public class Usuario extends AbstractDocument implements Serializable {
     //private Set<Role> roles;
     public Usuario() {
         super();
+        addTipo(TipoUsuario.PACIENTE);
     }
 
     public Usuario(String nome, String email, String password, String tefefone, String cpf, String rg) {
@@ -55,6 +71,7 @@ public class Usuario extends AbstractDocument implements Serializable {
         this.tefefone = tefefone;
         this.cpf = cpf;
         this.rg = rg;
+         addTipo(TipoUsuario.PACIENTE);
     }
 
     public String getNome() {
@@ -137,6 +154,15 @@ public class Usuario extends AbstractDocument implements Serializable {
         this.perfisInstituicoes = perfisInstituicoes;
     }
 
+    public Set<TipoUsuario> getTipos(){
+        return tipos.stream().map(x -> TipoUsuario.toEnum(x)).collect(Collectors.toSet());
+    }
+    
+    public void addTipo(TipoUsuario tipo){
+        tipos.add(tipo.getCod());
+    }
+    
+    
     public boolean add(Institucional e) {
         if (this.perfisInstituicoes==null) {
             this.perfisInstituicoes = new ArrayList<Institucional>();

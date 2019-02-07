@@ -1,16 +1,18 @@
 package com.appmed.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class AbstractEntityNetwork extends AbstractDocument{
-   // @DBRef
-   // private Usuario createdByUser;
+    @DBRef
+    @JsonIgnore
+    private Usuario createdByUser;
 
     public AbstractEntityNetwork() {
         super();
     }
 
- /*   public AbstractEntityNetwork(Usuario createdByUser) {
+   public AbstractEntityNetwork(Usuario createdByUser) {
         super();
         this.createdByUser = createdByUser;
     }
@@ -22,6 +24,6 @@ public class AbstractEntityNetwork extends AbstractDocument{
     public void setCreatedByUser(Usuario createdByUser) {
         this.createdByUser = createdByUser;
     }
-    */
+    
     
 }

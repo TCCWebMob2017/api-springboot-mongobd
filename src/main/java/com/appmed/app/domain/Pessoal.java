@@ -49,7 +49,7 @@ public class Pessoal extends Perfil implements Serializable {
     public Pessoal(Localidade residencia, LocalDate nascimento, String sexo,
             boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue,
             String tipoSangue, Double altura, Double peso, Usuario createdBy) {
-        super(TipoPerfil.PESSOAL, createdBy.getNome());
+        super(createdBy,TipoPerfil.PESSOAL, createdBy.getNome());
         this.residencia = residencia;
         this.nascimento = nascimento;
         this.sexo = sexo;
@@ -73,7 +73,7 @@ public class Pessoal extends Perfil implements Serializable {
             Double altura, Double peso, String tipoSangue,
             boolean praticaEsporte, boolean doadorOrgao, boolean doadorSangue,
             Usuario createdBy) {
-        super(TipoPerfil.DEPENDENTE, nome);
+        super(createdBy,TipoPerfil.DEPENDENTE, nome);
         this.RG = RG;
         this.CPF = CPF;
         this.residencia = new Localidade(logradouro, bairro, cidade, estado, numero, CEP);

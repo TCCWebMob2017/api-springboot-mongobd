@@ -26,8 +26,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +49,7 @@ public class PessoalResource implements Serializable {
     @Autowired
     private InstitucionalService instituicaoService;
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Pessoal>> getAllPerfisPessoais() {
 
@@ -55,6 +58,7 @@ public class PessoalResource implements Serializable {
                 .body(this.pessoalService.findAll());
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("{id}")
     public ResponseEntity<Pessoal> getPerfilPessoalById(@PathVariable(name = "id") String id) throws NotFound {
 
@@ -111,6 +115,7 @@ public class PessoalResource implements Serializable {
                 .body(pessoal);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Pessoal> updatePerfilPessoal(@PathVariable("id") String id,
             @Valid @RequestBody Pessoal pessoal) {
@@ -120,6 +125,7 @@ public class PessoalResource implements Serializable {
                 .body(pessoal);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deletePerfilPessoal(@PathVariable String id) {
         this.pessoalService.delete(id);
@@ -172,4 +178,13 @@ public class PessoalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK).body("avatar do perfil pessoal removido");
     }
 
+    @GetMapping
+    public ResponseEntity<Page<Pessoal>> findPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "instante") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "DESC") String direction) {
+        Page<Pessoal> list = pessoalService.findPage(page, linesPerPage, orderBy, direction);
+        return ResponseEntity.ok().body(list);
+    }
 }

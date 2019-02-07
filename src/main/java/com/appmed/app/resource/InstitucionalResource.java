@@ -17,6 +17,7 @@ import com.appmed.app.service.InstitucionalService;
 import static com.appmed.app.util.ApiVersionUtil.PERFILINSTITUCIONAL;
 import static com.appmed.app.util.ApiVersionUtil.REST_APP;
 import static com.appmed.app.util.ApiVersionUtil.VERSION_V1;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 @RestController
 @RequestMapping(value = {
@@ -49,6 +50,7 @@ public class InstitucionalResource implements Serializable {
                 .body(institucional);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('INSTITUICAO')")
     @PostMapping
     public ResponseEntity<Institucional> savePerfilInstitucional(@Valid @RequestBody Institucional institucional) {
         institucional = this.institucionalService.save(institucional);
@@ -56,6 +58,7 @@ public class InstitucionalResource implements Serializable {
                 .body(institucional);
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('INSTITUICAO')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Institucional> updatePerfilInstituicao(@PathVariable("id") String id,
             @Valid @RequestBody Institucional institucional) {
@@ -64,7 +67,7 @@ public class InstitucionalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(institucional);
     }
-
+    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('INSTITUICAO')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deletePerfilInstituicao(@PathVariable String id) {
         this.institucionalService.delete(id);
@@ -72,7 +75,6 @@ public class InstitucionalResource implements Serializable {
                 .body("perfil institucional removido");
     }
 
-    
     @PostMapping("{id}/funcionario")
     public ResponseEntity<Institucional> addFuncionario(@Valid
             @PathVariable(name = "id") String id, @Valid @RequestBody Funcionario funcionario) throws NotFound {
@@ -103,7 +105,7 @@ public class InstitucionalResource implements Serializable {
                 .body(institucional.getFuncionarios());
     }
 
- /*   
+    /*   
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Institucional>> getPerfilInstitucional(
             @Valid @PathVariable(name = "id") String idUsuario) {
@@ -111,5 +113,5 @@ public class InstitucionalResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(institucional);
     }
-*/
+     */
 }

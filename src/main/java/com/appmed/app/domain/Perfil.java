@@ -2,7 +2,6 @@ package com.appmed.app.domain;
 
 import java.io.Serializable;
 import java.util.List;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Perfil extends AbstractEntityNetwork implements Serializable {
 
@@ -17,7 +16,7 @@ public class Perfil extends AbstractEntityNetwork implements Serializable {
 
     }
 
-    /*
+    
     public Perfil(Usuario createdBy) {
         super(createdBy);
     }
@@ -32,7 +31,7 @@ public class Perfil extends AbstractEntityNetwork implements Serializable {
         this.nome = nome;
         this.tipoPerfil = tipoPerfil;
     }
-     */
+   
     public Perfil(TipoPerfil tipoPerfil, String nome) {
         super();
         this.nome = nome;
