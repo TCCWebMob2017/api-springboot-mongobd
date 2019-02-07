@@ -1,5 +1,6 @@
 package com.appmed.app.service;
 
+import com.appmed.app.domain.Pessoal;
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,6 +12,9 @@ import com.appmed.app.domain.enums.TipoUsuario;
 import com.appmed.app.repository.UsuarioRepository;
 import com.appmed.app.security.UserSS;
 import com.appmed.app.exceptions.AuthorizationException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -57,5 +61,15 @@ public class UsuarioService implements Serializable {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public Page<Usuario> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+        UserSS user = UsuarioService.authenticated();
+        if (user == null) {
+            throw new AuthorizationException("Acesso negado");
+        }
+        PageRequest pageRequest = new PageRequest(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
+        Usuario usuario = this.findById(user.getId());
+        return this.usuarioRepository.findById(usuario, pageRequest);
     }
 }

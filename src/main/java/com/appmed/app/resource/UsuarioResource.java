@@ -27,6 +27,7 @@ import java.nio.file.Paths;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
+import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
@@ -264,4 +265,15 @@ public class UsuarioResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK).body("avatar do perfil pessoal removido");
     }
 
+    
+    
+    @GetMapping
+    public ResponseEntity<Page<Pessoal>> findPage(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
+            @RequestParam(value = "orderBy", defaultValue = "instante") String orderBy,
+            @RequestParam(value = "direction", defaultValue = "DESC") String direction) {
+        Page<Pessoal> list = pessoalService.findPage(page, linesPerPage, orderBy, direction);
+        return ResponseEntity.ok().body(list);
+    }
 }
