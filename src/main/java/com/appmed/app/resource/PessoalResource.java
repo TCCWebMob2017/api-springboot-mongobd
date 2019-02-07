@@ -49,7 +49,6 @@ public class PessoalResource implements Serializable {
     @Autowired
     private InstitucionalService instituicaoService;
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Pessoal>> getAllPerfisPessoais() {
 
@@ -58,7 +57,6 @@ public class PessoalResource implements Serializable {
                 .body(this.pessoalService.findAll());
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("{id}")
     public ResponseEntity<Pessoal> getPerfilPessoalById(@PathVariable(name = "id") String id) throws NotFound {
 
@@ -115,7 +113,6 @@ public class PessoalResource implements Serializable {
                 .body(pessoal);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Pessoal> updatePerfilPessoal(@PathVariable("id") String id,
             @Valid @RequestBody Pessoal pessoal) {
@@ -125,7 +122,6 @@ public class PessoalResource implements Serializable {
                 .body(pessoal);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deletePerfilPessoal(@PathVariable String id) {
         this.pessoalService.delete(id);

@@ -53,7 +53,6 @@ public class UsuarioResource implements Serializable {
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
     
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
         return ResponseEntity.status(HttpStatus.OK)
@@ -62,7 +61,6 @@ public class UsuarioResource implements Serializable {
     }
 
     
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping("{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable(name = "id") String id) throws NotFound {
         Usuario usuario = this.usuarioService.findById(id);
@@ -86,7 +84,6 @@ public class UsuarioResource implements Serializable {
     }
 
     
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
