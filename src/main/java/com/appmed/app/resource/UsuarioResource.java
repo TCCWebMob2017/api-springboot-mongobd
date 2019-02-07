@@ -41,19 +41,18 @@ public class UsuarioResource implements Serializable {
     private static final long serialVersionUID = -2827532105824714138L;
     @Autowired
     private BCryptPasswordEncoder re;
-    
+
     @Autowired
     private UsuarioService usuarioService;
 
     @Autowired
     private PessoalService pessoalService;
-    
+
     @Autowired
     private EmailService emailService;
 
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
-    
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
         return ResponseEntity.status(HttpStatus.OK)
@@ -61,7 +60,6 @@ public class UsuarioResource implements Serializable {
                 .body(this.usuarioService.findAll());
     }
 
-    
     @GetMapping("{id}")
     public ResponseEntity<Usuario> getUsuarioById(@PathVariable(name = "id") String id) throws NotFound {
         Usuario usuario = this.usuarioService.findById(id);
@@ -84,7 +82,6 @@ public class UsuarioResource implements Serializable {
                 .body(usuario);
     }
 
-    
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
@@ -94,7 +91,6 @@ public class UsuarioResource implements Serializable {
                 .body(usuario);
     }
 
-    
     @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteUsuario(@PathVariable String id) {
@@ -265,15 +261,15 @@ public class UsuarioResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK).body("avatar do perfil pessoal removido");
     }
 
-    
-    
+    @GetMapping(value = "/pessoal")
+    public ResponseEntity<Pessoal> findPerfilPessoal() {
+        Pessoal perfil = usuarioService.find().getPerfilPessoal();
+        return ResponseEntity.ok().body(perfil);
+    }
+
     @GetMapping
-    public ResponseEntity<Page<Pessoal>> findPage(
-            @RequestParam(value = "page", defaultValue = "0") Integer page,
-            @RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage,
-            @RequestParam(value = "orderBy", defaultValue = "instante") String orderBy,
-            @RequestParam(value = "direction", defaultValue = "DESC") String direction) {
-        Page<Pessoal> list = pessoalService.findPage(page, linesPerPage, orderBy, direction);
-        return ResponseEntity.ok().body(list);
+    public ResponseEntity<Usuario> find() {
+        Usuario user = usuarioService.find();
+        return ResponseEntity.ok().body(user);
     }
 }

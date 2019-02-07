@@ -35,11 +35,11 @@ public class UsuarioService implements Serializable {
     }
 
     public Usuario findById(String id) {
-        UserSS user;
-        user = authenticated();
-        if (user == null || !user.hasRole(TipoUsuario.ADMIN) && !id.equals(user.getId())) {
-            throw new AuthorizationException("Acesso negado");
-        }
+        //UserSS user;
+        //user = authenticated();
+        //if (user == null || !user.hasRole(TipoUsuario.ADMIN) && !id.equals(user.getId())) {
+        //    throw new AuthorizationException("Acesso negado");
+        //}
         return this.usuarioRepository.findOne(id);
     }
 
@@ -63,13 +63,12 @@ public class UsuarioService implements Serializable {
         }
     }
 
-    public Page<Usuario> findPage(Integer page, Integer linesPerPage, String orderBy, String direction) {
+    public Usuario find() {
         UserSS user = UsuarioService.authenticated();
         if (user == null) {
             throw new AuthorizationException("Acesso negado");
         }
-        PageRequest pageRequest = new PageRequest(page, linesPerPage, Sort.Direction.valueOf(direction), orderBy);
         Usuario usuario = this.findById(user.getId());
-        return this.usuarioRepository.findById(usuario, pageRequest);
+        return usuario;
     }
 }
