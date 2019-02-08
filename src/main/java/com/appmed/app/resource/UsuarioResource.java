@@ -53,6 +53,13 @@ public class UsuarioResource implements Serializable {
 
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
+    public String gerarBCrypt(String senha) {
+        if (senha == null) {
+            return senha;
+        }
+        return re.encode(senha);
+    }
+
     @GetMapping("/all")
     public ResponseEntity<List<Usuario>> getAllUsuarios() {
         return ResponseEntity.status(HttpStatus.OK)
@@ -75,7 +82,7 @@ public class UsuarioResource implements Serializable {
 
     @PostMapping
     public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario) {
-        usuario.setPassword(re.encode(usuario.getPassword()));
+        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         this.emailService.sendCreatedAccount(usuario);
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -85,7 +92,7 @@ public class UsuarioResource implements Serializable {
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
-        usuario.setPassword(re.encode(usuario.getPassword()));
+        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(usuario);

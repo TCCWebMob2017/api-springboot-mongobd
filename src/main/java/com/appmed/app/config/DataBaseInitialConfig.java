@@ -26,7 +26,6 @@ import com.appmed.app.domain.Institucional.Area;
 import com.appmed.app.domain.MedicamentoFicha;
 import com.appmed.app.domain.enums.TipoUsuario;
 import com.appmed.app.repository.*;
-import com.appmed.app.service.UsuarioService;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

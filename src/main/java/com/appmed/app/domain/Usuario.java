@@ -30,7 +30,6 @@ public class Usuario extends AbstractDocument implements Serializable {
     @Email
     private String email;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @JsonIgnore
     private String password;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;

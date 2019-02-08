@@ -1,6 +1,5 @@
 package com.appmed.app.service;
 
-import com.appmed.app.domain.Pessoal;
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,20 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.appmed.app.domain.Usuario;
-import com.appmed.app.domain.enums.TipoUsuario;
 import com.appmed.app.repository.UsuarioRepository;
 import com.appmed.app.security.UserSS;
 import com.appmed.app.exceptions.AuthorizationException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Service
 public class UsuarioService implements Serializable {
 
     private static final long serialVersionUID = 7398419783021583351L;
+
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -30,8 +25,7 @@ public class UsuarioService implements Serializable {
     private EmailService emailService;
 
     public Usuario save(Usuario usuario) {
-        usuario = this.usuarioRepository.save(usuario);
-        return usuario;
+        return this.usuarioRepository.save(usuario);
     }
 
     public Usuario findById(String id) {
