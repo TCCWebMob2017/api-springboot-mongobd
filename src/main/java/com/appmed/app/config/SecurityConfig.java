@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         "/v2/api-docs",
         "/configuration/ui",
         "/swagger-resources/**",
+        "/api/v1/usuario/**/perfil/pessoal/avatar",
         "/configuration/**",
         "/swagger-ui.html",
         "/webjars/**"};
@@ -52,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         "/api/v1/condicaoespecial/**",
         "/api/v1/droga/**",
         "/api/v1/instituicao/**",
-        "/api/v1/profissional/**"
+        "/api/v1/profissional/**",
+        "/api/v1/pessoal/**"
     };
 
     private static final String[] PUBLIC_MATCHERS_POST = {
