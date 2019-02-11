@@ -175,8 +175,8 @@ public class UsuarioResource implements Serializable {
 
     }
 
-    @GetMapping("/email/{email}")
-    public ResponseEntity<Usuario> getUsuarioByEmail(@PathVariable(name = "email") String email) throws NotFound {
+    @GetMapping("/email")
+    public ResponseEntity<Usuario> getUsuarioByEmail(@RequestParam(value = "value") String email) throws NotFound {
         Usuario usuario = this.usuarioService.findByEmail(email);
 
         if (usuario == null) {
