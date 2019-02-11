@@ -17,7 +17,6 @@ public class UsuarioService implements Serializable {
 
     private static final long serialVersionUID = 7398419783021583351L;
 
-
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -47,6 +46,10 @@ public class UsuarioService implements Serializable {
 
     public List<Usuario> findUserByNome(String nome) {
         return (List<Usuario>) usuarioRepository.findByNome(nome);
+    }
+
+    public Usuario findByEmail(String email) {
+        return (Usuario) usuarioRepository.findByEmail(email);
     }
 
     public static UserSS authenticated() {

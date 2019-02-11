@@ -175,6 +175,20 @@ public class UsuarioResource implements Serializable {
 
     }
 
+    @GetMapping("/email/{email}")
+    public ResponseEntity<Usuario> getUsuarioByEmail(@PathVariable(name = "email") String email) throws NotFound {
+        Usuario usuario = this.usuarioService.findByEmail(email);
+
+        if (usuario == null) {
+            throw new NotFound("There is no user with this email!");
+        }
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(usuario);
+
+    }
+
     @PostMapping(value = "{id}/perfil/pessoal/avatar")
     public ResponseEntity<String> saveAvatarPerfilPessoal(@PathVariable String id, @RequestParam("file") MultipartFile file) throws IOException, NotFound {
         Usuario usuario = this.usuarioService.findById(id);

@@ -17,6 +17,7 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     public  Iterable<Usuario>  findByNome(String nome);
     
     @Transactional(readOnly=true)
+    @Query("{'email': ?0}")
     public Usuario findByEmail(String email);
     
     @Transactional(readOnly = true)
