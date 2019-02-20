@@ -127,6 +127,7 @@ public class PessoalResource implements Serializable {
         this.pessoalService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("perfil pessoal removido");
     }
+    
     private final Path rootLocation = Paths.get("src/main/resources/image/");
 
     @PostMapping(value = "{id}/avatar")

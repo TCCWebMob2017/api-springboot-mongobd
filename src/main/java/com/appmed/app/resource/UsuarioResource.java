@@ -111,8 +111,11 @@ public class UsuarioResource implements Serializable {
         if (usuario == null) {
             throw new NotFound("Não existe usuário com este id!");
         }
-        Pessoal perfilPessoal = this.pessoalService.save(pessoal);
+        Pessoal perfilPessoal = new Pessoal(pessoal,usuario);
+        perfilPessoal = this.pessoalService.save(perfilPessoal);
+        
         usuario.setPerfilPessoal(perfilPessoal);
+        
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(usuario);
