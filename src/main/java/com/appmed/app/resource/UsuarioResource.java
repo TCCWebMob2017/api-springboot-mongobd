@@ -98,7 +98,6 @@ public class UsuarioResource implements Serializable {
                 .body(usuario);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteUsuario(@PathVariable String id) {
         this.usuarioService.delete(id);

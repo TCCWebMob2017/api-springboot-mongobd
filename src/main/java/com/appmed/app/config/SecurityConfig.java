@@ -3,11 +3,13 @@ package com.appmed.app.config;
 import com.appmed.app.security.JWTAuthenticationFilter;
 import com.appmed.app.security.JWTAuthorizationFilter;
 import com.appmed.app.security.JWTUtil;
+import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -20,6 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -60,8 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_MATCHERS_POST = {
         "/api/v1/usuario/**",
         "/usuarios/**",
-        "/auth/forgot/**",
-    };
+        "/auth/forgot/**",};
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -83,8 +85,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration().applyPermitDefaultValues();
+        configuration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+        source.registerCorsConfiguration("/**", configuration);
         return source;
     }
 
