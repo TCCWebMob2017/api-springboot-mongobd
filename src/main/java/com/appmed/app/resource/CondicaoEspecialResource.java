@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -40,6 +41,15 @@ public class CondicaoEspecialResource implements Serializable {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.condicaoEspecialService.findAll());
+    }
+
+    @GetMapping("/nome")
+    public ResponseEntity<List<CondicaoEspecial>> getCondicaoEspecialByNome(@RequestParam(value = "value") String nome) throws NotFound {
+        List<CondicaoEspecial> e = this.condicaoEspecialService.findByNome(nome);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(e);
     }
 
     @GetMapping("{id}")
@@ -62,15 +72,16 @@ public class CondicaoEspecialResource implements Serializable {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(condicaoEspecial);
     }
-/*
+
+    /*
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<CondicaoEspecial>> getCondicaoEspecialByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<CondicaoEspecial> condicaoEspecial = (List<CondicaoEspecial>) this.condicaoEspecialService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(condicaoEspecial);
     }
-*/
-    
+     */
+
     @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<CondicaoEspecial> updateCondicaoEspecial(@PathVariable("id") String id, @Valid @RequestBody CondicaoEspecial condicaoEspecial) {

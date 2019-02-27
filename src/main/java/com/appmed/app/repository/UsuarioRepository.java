@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UsuarioRepository extends MongoRepository<Usuario, String> {
-
+    @Transactional(readOnly=true)
     @Query("{'nome': ?0}")
     public  Iterable<Usuario>  findByNome(String nome);
     

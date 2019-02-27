@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -31,7 +32,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MedicamentoResource implements Serializable {
 
     private static final long serialVersionUID = 5045458477382988334L;
-
 
     @Autowired
     private MedicamentoService medicamentoService;
@@ -56,22 +56,21 @@ public class MedicamentoResource implements Serializable {
                 .body(medicamento);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PostMapping
     public ResponseEntity<Medicamento> saveMedicamento(@Valid @RequestBody Medicamento medicamento) {
         medicamento = this.medicamentoService.save(medicamento);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(medicamento);
     }
-/*
+
+    /*
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Medicamento>> getMedicamentoByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<Medicamento> medicamento = (List<Medicamento>) this.medicamentoService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(medicamento);
     }
-*/
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
+     */
     @PutMapping(value = "/{id}")
     public ResponseEntity<Medicamento> updateMedicamento(@PathVariable("id") String id, @Valid @RequestBody Medicamento medicamento) {
         medicamento.setId(id);
@@ -80,11 +79,19 @@ public class MedicamentoResource implements Serializable {
                 .body(medicamento);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteMedicamento(@PathVariable String id) {
         this.medicamentoService.delete(id);
         return ResponseEntity.status(HttpStatus.OK).body("Medicamento removido da base de dados");
     }
 
+    @GetMapping("/nome")
+    public ResponseEntity<List<Medicamento>> getMedicamentoByNome(@RequestParam(value = "value") String nome) throws NotFound {
+        List<Medicamento> medicamentos = this.medicamentoService.findByNome(nome);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(medicamentos);
+
+    }
 }

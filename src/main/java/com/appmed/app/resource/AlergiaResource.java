@@ -33,6 +33,15 @@ public class AlergiaResource implements Serializable {
                 .body(this.alergiaService.findAll());
     }
 
+    @GetMapping("/nome")
+    public ResponseEntity<List<Alergia>> getAlergiaByNome(@RequestParam(value = "value") String nome) throws NotFound {
+        List<Alergia> e = this.alergiaService.findByNome(nome);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(e);
+    }
+
     @ApiOperation(value = "finding the alergia by id")
     @GetMapping("{id}")
     public ResponseEntity<Alergia> getAlergiaById(@PathVariable(name = "id") String id) throws NotFound {
@@ -61,7 +70,6 @@ public class AlergiaResource implements Serializable {
 	 * this.alergiaService.findByCreatorUser(idUsuario); return
 	 * ResponseEntity.status(HttpStatus.OK) .body(alergia); }
      */
-    
     @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<Alergia> updateAlergia(@PathVariable("id") String id, @Valid @RequestBody Alergia alergia) {

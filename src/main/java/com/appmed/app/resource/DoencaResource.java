@@ -35,6 +35,15 @@ public class DoencaResource implements Serializable {
                 .body(this.doencaService.findAll());
     }
 
+    @GetMapping("/nome")
+    public ResponseEntity<List<Doenca>> getDoencaByNome(@RequestParam(value = "value") String nome) throws NotFound {
+        List<Doenca> e = this.doencaService.findByNome(nome);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(e);
+    }
+
     @GetMapping("{id}")
     public ResponseEntity<Doenca> getDoencaById(@PathVariable(name = "id") String id) throws NotFound {
         Doenca doenca = this.doencaService.findById(id);
@@ -48,23 +57,22 @@ public class DoencaResource implements Serializable {
                 .body(doenca);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @PostMapping
     public ResponseEntity<Doenca> saveDoenca(@Valid @RequestBody Doenca doenca) {
         doenca = this.doencaService.save(doenca);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(doenca);
     }
-/*
+
+    /*
     @GetMapping("/usercreator/{id}")
     public ResponseEntity<List<Doenca>> getDoencaByUserCreator(@Valid @PathVariable(name = "id") String idUsuario) {
         List<Doenca> doenca = (List<Doenca>) this.doencaService.findByCreatorUser(idUsuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(doenca);
     }
-*/
-    
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
+     */
+
     @PutMapping(value = "/{id}")
     public ResponseEntity<Doenca> updateDoenca(@PathVariable("id") String id, @Valid @RequestBody Doenca doenca) {
         doenca.setId(id);
@@ -73,7 +81,6 @@ public class DoencaResource implements Serializable {
                 .body(doenca);
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN') or hasAnyRole('PROFISSIONAL')")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteDoenca(@PathVariable String id) {
         this.doencaService.delete(id);

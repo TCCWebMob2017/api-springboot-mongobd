@@ -1,4 +1,3 @@
-
 package com.appmed.app.service;
 
 import com.appmed.app.domain.Alergia;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 public class AlergiaService implements Serializable {
 
     private static final long serialVersionUID = -6539811239928176414L;
-
 
     @Autowired
     private AlergiaRepository alergiaRepository;
@@ -30,10 +28,13 @@ public class AlergiaService implements Serializable {
         return this.alergiaRepository.findAll();
     }
 
-  //  public List<Alergia> findByCreatorUser(String idUsuario) {
-  //      return this.alergiaRepository.findByCreatedByUser(idUsuario);
-  //  }
+    public List<Alergia> findByNome(String nome) {
+        return this.alergiaRepository.findByNome(nome);
+    }
 
+    //  public List<Alergia> findByCreatorUser(String idUsuario) {
+    //      return this.alergiaRepository.findByCreatedByUser(idUsuario);
+    //  }
     public void delete(String id) {
         this.alergiaRepository.delete(id);
     }

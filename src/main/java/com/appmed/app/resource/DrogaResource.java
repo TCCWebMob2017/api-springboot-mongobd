@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -42,7 +43,15 @@ public class DrogaResource implements Serializable {
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
                 .body(this.drogaService.findAll());
     }
+    @GetMapping("/nome")
+    public ResponseEntity<List<Droga>> getDrogaByNome(@RequestParam(value = "value") String nome) throws NotFound {
+        List<Droga> drogas = this.drogaService.findByNome(nome);
 
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(drogas);
+    }
+    
     @GetMapping("{id}")
     public ResponseEntity<Droga> getDrogaById(@PathVariable(name = "id") String id) throws NotFound {
         Droga droga = this.drogaService.findById(id);
