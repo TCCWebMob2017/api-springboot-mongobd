@@ -1,13 +1,12 @@
 
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.NivelPermissao;
-import com.appmed.app.domain.Droga;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
 public class DrogaFicha extends InfoFichaMedica{
+    
     @DBRef
     private Droga droga;
     private String quantidade;
@@ -66,6 +65,14 @@ public class DrogaFicha extends InfoFichaMedica{
 
     public void setDesde(LocalDate desde) {
         this.desde = desde;
+    }
+
+    public Droga getDroga() {
+        return droga;
+    }
+
+    public void setDroga(Droga droga) {
+        this.droga = droga;
     }
 
     

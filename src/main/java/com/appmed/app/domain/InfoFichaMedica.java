@@ -1,7 +1,6 @@
 
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.NivelPermissao;
 
 
 public class InfoFichaMedica {

@@ -2,14 +2,11 @@
 package com.appmed.app.domain;
 
 import java.time.LocalDate;
-
 import org.springframework.data.mongodb.core.mapping.DBRef;
-
-import com.appmed.app.domain.NivelPermissao;
-import com.appmed.app.domain.Doenca;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class DoencaFicha extends InfoFichaMedica {
+    
 	@DBRef
 	private Doenca doenca;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")

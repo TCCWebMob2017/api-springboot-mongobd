@@ -44,5 +44,13 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
         this.descricao = descricao;
     }
 
+    public CondicaoEspecial getCondicaoEpecial() {
+        return condicaoEpecial;
+    }
+
+    public void setCondicaoEpecial(CondicaoEspecial condicaoEpecial) {
+        this.condicaoEpecial = condicaoEpecial;
+    }
+
     
 }
