@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.appmed.app.domain.Usuario;
+import com.appmed.app.domain.UsuarioDTO;
 import com.appmed.app.repository.UsuarioRepository;
 import com.appmed.app.security.UserSS;
 import com.appmed.app.exceptions.AuthorizationException;
@@ -44,8 +45,8 @@ public class UsuarioService implements Serializable {
         this.usuarioRepository.delete(id);
     }
 
-    public List<Usuario> findUserByNome(String nome) {
-        return (List<Usuario>) usuarioRepository.findByNome(nome);
+    public List<UsuarioDTO> findUserByNome(String nome) {
+        return (List<UsuarioDTO>) usuarioRepository.findByNome(nome);
     }
 
     public Usuario findByEmail(String email) {

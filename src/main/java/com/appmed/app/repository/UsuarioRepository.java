@@ -5,6 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import com.appmed.app.domain.Usuario;
+import com.appmed.app.domain.UsuarioDTO;
+import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.Query;
@@ -14,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     @Transactional(readOnly=true)
     @Query("{'nome': ?0}")
-    public  Iterable<Usuario>  findByNome(String nome);
+    public  Iterable<UsuarioDTO>  findByNome(String nome);
     
     @Transactional(readOnly=true)
     @Query("{'email': ?0}")
@@ -23,4 +25,7 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     @Transactional(readOnly = true)
     public Page<Usuario> findById(Usuario usuario, Pageable pageRequest);
 
+    @Transactional(readOnly = true)
+    public List<UsuarioDTO> findById(String id);
+    
 }

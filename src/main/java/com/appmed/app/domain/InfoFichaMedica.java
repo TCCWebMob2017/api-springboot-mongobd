@@ -1,8 +1,6 @@
 
 package com.appmed.app.domain;
 
-
-
 public class InfoFichaMedica {
     private NivelPermissao privacidade;
     private String observacao;

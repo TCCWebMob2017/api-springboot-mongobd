@@ -14,6 +14,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.appmed.app.domain.Usuario;
+import com.appmed.app.domain.UsuarioDTO;
 import com.appmed.app.exceptions.NotFound;
 import com.appmed.app.service.EmailService;
 import com.appmed.app.service.PessoalService;
@@ -92,7 +93,8 @@ public class UsuarioResource implements Serializable {
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
-        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
+        if(usuario.getPassword()!=null){
+        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));}
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(usuario);
@@ -164,8 +166,8 @@ public class UsuarioResource implements Serializable {
     }
 
     @GetMapping("/nome/{nome}")
-    public ResponseEntity<List<Usuario>> getUsuarioByNome(@PathVariable(name = "nome") String nome) throws NotFound {
-        List<Usuario> usuarios = this.usuarioService.findUserByNome(nome);
+    public ResponseEntity<List<UsuarioDTO>> getUsuarioByNome(@PathVariable(name = "nome") String nome) throws NotFound {
+        List<UsuarioDTO> usuarios = this.usuarioService.findUserByNome(nome);
 
         if (usuarios == null) {
             throw new NotFound("There is no user with this name!");

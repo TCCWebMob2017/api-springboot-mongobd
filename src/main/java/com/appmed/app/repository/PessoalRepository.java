@@ -20,7 +20,7 @@ public interface PessoalRepository extends MongoRepository<Pessoal, String> {
     
     @Transactional(readOnly = true)
     Page<Pessoal> findByCreatedByUser(Usuario usuario, Pageable pageRequest);
-
+    
     @Query("{'cpf': ?0}")
     public Pessoal findByCPF(String cpf);
 
