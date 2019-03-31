@@ -94,10 +94,12 @@ public class UsuarioResource implements Serializable {
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
         Usuario usuario_antigo = this.usuarioService.findById(id);
+
         if (usuario.getPassword() == null) {
             usuario.setPassword(usuario_antigo.getPassword());
+        }else{
+            usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         }
-        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(usuario);
