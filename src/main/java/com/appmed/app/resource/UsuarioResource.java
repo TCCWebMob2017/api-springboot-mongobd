@@ -93,8 +93,11 @@ public class UsuarioResource implements Serializable {
     @PutMapping(value = "/{id}")
     public ResponseEntity<Usuario> updateUsuario(@PathVariable("id") String id, @Valid @RequestBody Usuario usuario) {
         usuario.setId(id);
-        if(usuario.getPassword()!=null){
-        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));}
+        Usuario usuario_antigo = this.usuarioService.findById(id);
+        if (usuario.getPassword() == null) {
+            usuario.setPassword(usuario_antigo.getPassword());
+        }
+        usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(usuario);
@@ -112,11 +115,11 @@ public class UsuarioResource implements Serializable {
         if (usuario == null) {
             throw new NotFound("Não existe usuário com este id!");
         }
-        Pessoal perfilPessoal = new Pessoal(pessoal,usuario);
+        Pessoal perfilPessoal = new Pessoal(pessoal, usuario);
         perfilPessoal = this.pessoalService.save(perfilPessoal);
-        
+
         usuario.setPerfilPessoal(perfilPessoal);
-        
+
         usuario = this.usuarioService.save(usuario);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(usuario);
@@ -139,6 +142,7 @@ public class UsuarioResource implements Serializable {
     @PutMapping(value = "/{id}/perfil/pessoal")
     public ResponseEntity<Pessoal> updatePerfilPessoalUsuario(@Valid @PathVariable(name = "id") String id, @Valid @RequestBody Pessoal pessoal) throws NotFound {
         Usuario usuario = this.usuarioService.findById(id);
+
         if (usuario == null) {
             throw new NotFound("Não existe usuário com este id!");
         }
