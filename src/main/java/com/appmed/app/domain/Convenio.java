@@ -1,16 +1,14 @@
-
 package com.appmed.app.domain;
 
 import com.appmed.app.domain.NivelPermissao;
 
+public class Convenio extends InfoFichaMedica {
 
-public class Convenio extends InfoFichaMedica{
     private String codigoUsuarioConvenio;
     private String nomeConvenio;
 
     public Convenio() {
     }
-
 
     public Convenio(String codigousuarioConvenio, String nomeConvenio) {
         super();
@@ -19,13 +17,12 @@ public class Convenio extends InfoFichaMedica{
     }
 
     public Convenio(String codigoUsuarioConvenio, String nomeConvenio, NivelPermissao privacidade) {
-        super(privacidade);
+        //    super(privacidade);
+        super();
         this.codigoUsuarioConvenio = codigoUsuarioConvenio;
         this.nomeConvenio = nomeConvenio;
     }
 
-    
-    
     public String getCodigousuarioConvenio() {
         return codigoUsuarioConvenio;
     }
@@ -42,5 +39,4 @@ public class Convenio extends InfoFichaMedica{
         this.nomeConvenio = nomeConvenio;
     }
 
-    
 }

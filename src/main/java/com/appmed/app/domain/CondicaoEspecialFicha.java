@@ -1,11 +1,9 @@
-
 package com.appmed.app.domain;
 
-import com.appmed.app.domain.NivelPermissao;
-import com.appmed.app.domain.CondicaoEspecial;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
-public class CondicaoEspecialFicha extends InfoFichaMedica{
+public class CondicaoEspecialFicha extends InfoFichaMedica {
+
     @DBRef
     private CondicaoEspecial condicaoEpecial;
 
@@ -13,12 +11,11 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
 
     public CondicaoEspecialFicha() {
     }
-    
-    
+
     public CondicaoEspecialFicha(String descricao) {
         super();
         this.descricao = descricao;
-    }    
+    }
 
     public CondicaoEspecialFicha(CondicaoEspecial condicaoEpecial) {
         super();
@@ -26,13 +23,14 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
     }
 
     public CondicaoEspecialFicha(CondicaoEspecial condicaoEpecial, NivelPermissao privacidade) {
-        super(privacidade);
+        //    super(privacidade);
+        super();
         this.condicaoEpecial = condicaoEpecial;
     }
-    
-   
+
     public CondicaoEspecialFicha(String descricao, NivelPermissao privacidade) {
-        super(privacidade);
+        //    super(privacidade);
+        super();
         this.descricao = descricao;
     }
 
@@ -52,5 +50,4 @@ public class CondicaoEspecialFicha extends InfoFichaMedica{
         this.condicaoEpecial = condicaoEpecial;
     }
 
-    
 }

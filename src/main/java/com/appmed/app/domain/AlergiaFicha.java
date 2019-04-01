@@ -1,4 +1,3 @@
-
 package com.appmed.app.domain;
 
 import com.appmed.app.domain.NivelPermissao;
@@ -7,7 +6,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 
-public class AlergiaFicha extends InfoFichaMedica{
+public class AlergiaFicha extends InfoFichaMedica {
+
     @DBRef
     private Alergia alergia;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
@@ -15,10 +15,10 @@ public class AlergiaFicha extends InfoFichaMedica{
 
     public AlergiaFicha() {
     }
-   
- 
+
     public AlergiaFicha(Alergia alergia, NivelPermissao privacidade) {
-        super(privacidade);
+        //    super(privacidade);
+        super();
         this.alergia = alergia;
     }
 
@@ -29,7 +29,8 @@ public class AlergiaFicha extends InfoFichaMedica{
     }
 
     public AlergiaFicha(Alergia alergia, LocalDate desde, NivelPermissao privacidade) {
-        super(privacidade);
+        //    super(privacidade);
+        super();
         this.alergia = alergia;
         this.desde = desde;
     }
@@ -49,9 +50,5 @@ public class AlergiaFicha extends InfoFichaMedica{
     public void setDesde(LocalDate desde) {
         this.desde = desde;
     }
-    
-    
 
-   
-    
 }

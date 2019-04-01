@@ -12,6 +12,8 @@ public class UsuarioDTO extends AbstractDocument implements Serializable {
     private String nome;
     private String email;
     private String tefefone;
+    @DBRef
+    private Pessoal perfilPessoal;
 
     public UsuarioDTO() {
     }
@@ -27,4 +29,10 @@ public class UsuarioDTO extends AbstractDocument implements Serializable {
     public String getTefefone() {
         return tefefone;
     }
+
+    public Pessoal getPerfilPessoal() {
+        return perfilPessoal;
+    }
+    
+    
 }

@@ -15,12 +15,12 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
     private String telefone;
     private String email;
     private String relacao;//tipo de relacionamento com contato amigo, parente, medico
-    private NivelPermissao nivelPermissao;
+    private int nivelPermissao;
     private String tipoContato;
     @DBRef
-    private UsuarioDTO contaPaciente;
+    private UsuarioDTO paciente;
     @DBRef
-    private UsuarioDTO contaContato;
+    private UsuarioDTO contato;
 
     public Contato() {
     super();
@@ -32,13 +32,13 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
         this.telefone = telefone;
     }
 
-    public Contato(String relacao, NivelPermissao nivelPermissao) {
+    public Contato(String relacao, int nivelPermissao) {
         super();
         this.relacao = relacao;
         this.nivelPermissao = nivelPermissao;
     }
 
-    public Contato(String relacao, NivelPermissao nivelPermissao, String tipoContato) {
+    public Contato(String relacao, int nivelPermissao, String tipoContato) {
         super();
         this.relacao = relacao;
         this.nivelPermissao = nivelPermissao;
@@ -80,11 +80,11 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
         this.relacao = relacao;
     }
 
-    public NivelPermissao getNivelPermissao() {
+    public int getNivelPermissao() {
         return nivelPermissao;
     }
 
-    public void setNivelPermissao(NivelPermissao nivelPermissao) {
+    public void setNivelPermissao(int nivelPermissao) {
         this.nivelPermissao = nivelPermissao;
     }
 
@@ -94,23 +94,22 @@ public class Contato extends AbstractEntityNetwork implements Serializable {
 
     public void setTipoContato(String tipoContato) {
         this.tipoContato = tipoContato;
+    }    
+
+    public UsuarioDTO getPaciente() {
+        return paciente;
     }
 
-    public UsuarioDTO getContaPaciente() {
-        return contaPaciente;
+    public void setPaciente(UsuarioDTO paciente) {
+        this.paciente = paciente;
     }
 
-    public void setContaPaciente(UsuarioDTO contaPaciente) {
-        this.contaPaciente = contaPaciente;
+    public UsuarioDTO getContato() {
+        return contato;
     }
 
-    public UsuarioDTO getContaContato() {
-        return contaContato;
+    public void setContato(UsuarioDTO contato) {
+        this.contato = contato;
     }
 
-    public void setContaContato(UsuarioDTO contaContato) {
-        this.contaContato = contaContato;
-    } 
-    
-    
 }

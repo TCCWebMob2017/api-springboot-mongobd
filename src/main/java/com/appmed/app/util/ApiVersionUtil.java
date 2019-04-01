@@ -20,5 +20,6 @@ public class ApiVersionUtil {
     public final static String MEDICAMENTO = "medicamento";
     public final static String DROGA = "droga";
     public final static String CONDICAOESPECIAL = "condicaoespecial";
+    public final static String CONTATO = "contato";
 
 }

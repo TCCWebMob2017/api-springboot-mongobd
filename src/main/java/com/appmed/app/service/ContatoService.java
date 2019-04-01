@@ -15,6 +15,9 @@ public class ContatoService implements Serializable {
     @Autowired
     private ContatoRepository contatoRepository;
 
+    @Autowired
+    private UsuarioService usuarioService;
+
     public Contato save(Contato contato) {
         return this.contatoRepository.save(contato);
     }
@@ -28,11 +31,35 @@ public class ContatoService implements Serializable {
     }
 
     public List<Contato> findByNomeContato(String nome) {
-        return this.contatoRepository.findByNomeAmigoPaciente(nome);
+        return this.contatoRepository.findByNomeContato(nome);
     }
 
-    public List<Contato> findByCreatorUser(String nome) {
+    public List<Contato> findByNomePaciente(String nome) {
         return this.contatoRepository.findByNomePaciente(nome);
+    }
+
+    public List<Contato> findByIdContato(String id) {
+        return this.contatoRepository.findByIdContato(id);
+    }
+
+    public List<Contato> findByIdPaciente(String id) {
+        return this.contatoRepository.findByIdPaciente(id);
+    }
+
+    public List<Contato> getPossoVer(String idVisitante) {
+        return this.contatoRepository.getPossoVer(idVisitante);
+    }
+
+    public List<Contato> getPossoEditar(String idVisitante) {
+        return this.contatoRepository.getPossoEditar(idVisitante);
+    }
+
+    public List<Contato> getPodemVer(String idVisitante) {
+        return this.contatoRepository.getPodemVer(idVisitante);
+    }
+
+    public List<Contato> getPodemEditar(String idVisitante) {
+        return this.contatoRepository.getPodemEditar(idVisitante);
     }
 
     public void delete(String id) {

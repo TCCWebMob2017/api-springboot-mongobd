@@ -1,5 +1,6 @@
 package com.appmed.app.resource;
 
+import com.appmed.app.domain.Contato;
 import com.appmed.app.domain.Pessoal;
 import static com.appmed.app.util.ApiVersionUtil.*;
 
@@ -97,7 +98,7 @@ public class UsuarioResource implements Serializable {
 
         if (usuario.getPassword() == null) {
             usuario.setPassword(usuario_antigo.getPassword());
-        }else{
+        } else {
             usuario.setPassword(this.gerarBCrypt(usuario.getPassword()));
         }
         usuario = this.usuarioService.save(usuario);
@@ -185,18 +186,32 @@ public class UsuarioResource implements Serializable {
 
     }
 
-    @GetMapping("/email")
-    public ResponseEntity<Usuario> getUsuarioByEmail(@RequestParam(value = "value") String email) throws NotFound {
-        Usuario usuario = this.usuarioService.findByEmail(email);
-
-        if (usuario == null) {
-            throw new NotFound("There is no user with this email!");
-        }
-
+    @GetMapping("/permissoes/visualiza/me")
+    public ResponseEntity<List<Contato>> getUsuarioVisualizaMe() throws NotFound {
         return ResponseEntity.status(HttpStatus.OK)
                 .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
-                .body(usuario);
+                .body(this.usuarioService.getPodemVer());
+    }
 
+    @GetMapping("/permissoes/edita/me")
+    public ResponseEntity<List<Contato>> getUsuarioEditaMe() throws NotFound {
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(this.usuarioService.getPodemEditar());
+    }
+
+    @GetMapping("/permissoes/edita")
+    public ResponseEntity<List<Contato>> getUsuarioEdita() throws NotFound {
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(this.usuarioService.getPossoEditar());
+    }
+
+    @GetMapping("/permissoes/visualiza")
+    public ResponseEntity<List<Contato>> getUsuarioVisualiza() throws NotFound {
+        return ResponseEntity.status(HttpStatus.OK)
+                .cacheControl(CacheControl.maxAge(60, TimeUnit.SECONDS))
+                .body(this.usuarioService.getPossoVer());
     }
 
     @PostMapping(value = "{id}/perfil/pessoal/avatar")

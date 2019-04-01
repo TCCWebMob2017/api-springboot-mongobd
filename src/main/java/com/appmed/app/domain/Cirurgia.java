@@ -1,11 +1,10 @@
-
 package com.appmed.app.domain;
 
 import com.appmed.app.domain.NivelPermissao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 
-public class Cirurgia extends InfoFichaMedica{
+public class Cirurgia extends InfoFichaMedica {
 
     private String descricao;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
@@ -14,9 +13,9 @@ public class Cirurgia extends InfoFichaMedica{
     public Cirurgia() {
     }
 
-
-    public Cirurgia( String descricao, NivelPermissao privacidade) {
-        super(privacidade);
+    public Cirurgia(String descricao, NivelPermissao privacidade) {
+        //    super(privacidade);
+        super();
         this.descricao = descricao;
     }
 
@@ -36,5 +35,4 @@ public class Cirurgia extends InfoFichaMedica{
         this.data = data;
     }
 
-    
 }

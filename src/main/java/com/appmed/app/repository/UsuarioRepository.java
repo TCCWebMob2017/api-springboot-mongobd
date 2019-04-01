@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface UsuarioRepository extends MongoRepository<Usuario, String> {
     @Transactional(readOnly=true)
-    @Query("{'nome': ?0}")
+    @Query("{'nome': {\"$regex\" : ?0 }}")
     public  Iterable<UsuarioDTO>  findByNome(String nome);
     
     @Transactional(readOnly=true)
@@ -27,5 +27,5 @@ public interface UsuarioRepository extends MongoRepository<Usuario, String> {
 
     @Transactional(readOnly = true)
     public List<UsuarioDTO> findById(String id);
-    
+  
 }

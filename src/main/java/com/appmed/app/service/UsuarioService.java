@@ -1,5 +1,6 @@
 package com.appmed.app.service;
 
+import com.appmed.app.domain.Contato;
 import java.io.Serializable;
 import java.util.List;
 
@@ -23,6 +24,9 @@ public class UsuarioService implements Serializable {
 
     @Autowired
     private EmailService emailService;
+
+    @Autowired
+    private ContatoService contatoService;
 
     public Usuario save(Usuario usuario) {
         return this.usuarioRepository.save(usuario);
@@ -51,6 +55,22 @@ public class UsuarioService implements Serializable {
 
     public Usuario findByEmail(String email) {
         return (Usuario) usuarioRepository.findByEmail(email);
+    }
+
+    public List<Contato> getPossoVer() {
+        return this.contatoService.getPossoVer(this.find().getId());
+    }
+
+    public List<Contato> getPossoEditar() {
+        return this.contatoService.getPossoEditar(this.find().getId());
+    }
+
+    public List<Contato> getPodemVer() {
+        return this.contatoService.getPodemVer(this.find().getId());
+    }
+
+    public List<Contato> getPodemEditar() {
+        return this.contatoService.getPodemEditar(this.find().getId());
     }
 
     public static UserSS authenticated() {
