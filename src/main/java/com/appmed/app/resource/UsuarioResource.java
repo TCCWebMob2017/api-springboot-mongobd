@@ -23,6 +23,7 @@ import com.appmed.app.service.UsuarioService;
 import static com.appmed.app.util.QRCodeReader.generateQRCodeImage;
 import com.google.zxing.WriterException;
 import java.io.IOException;
+import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,9 +31,11 @@ import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.data.domain.Page;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
+ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
 @RequestMapping(value = {
@@ -214,7 +217,7 @@ public class UsuarioResource implements Serializable {
                 .body(this.usuarioService.getPossoVer());
     }
 
-    @PostMapping(value = "{id}/perfil/pessoal/avatar")
+  /*  @PostMapping(value = "{id}/perfil/pessoal/avatar")
     public ResponseEntity<String> saveAvatarPerfilPessoal(@PathVariable String id, @RequestParam("file") MultipartFile file) throws IOException, NotFound {
         Usuario usuario = this.usuarioService.findById(id);
         if (usuario == null) {
@@ -231,42 +234,32 @@ public class UsuarioResource implements Serializable {
         return ResponseEntity.status(HttpStatus.CREATED).body("imagem salva");
     }
 
-    @PutMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_PNG_VALUE)
+    @PutMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_JPEG_VALUE)
     public ResponseEntity<String> updateAvatarPerfilPessoal(@PathVariable String id, @RequestParam("file") MultipartFile file) throws IOException, NotFound {
         Usuario usuario = this.usuarioService.findById(id);
         if (usuario == null) {
             throw new NotFound("Não existe usuário com este id!");
         }
 
-        Pessoal perfilPessoal = usuario.getPerfilPessoal();
-        if (perfilPessoal == null) {
-            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
-        }
-
-        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+        String filename = "avatar_" + usuario.getId() + ".jpg";
         Files.copy(file.getInputStream(), this.rootLocation.resolve(filename));
         return ResponseEntity.status(HttpStatus.OK).body("imagem salva");
     }
 
-    @GetMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_PNG_VALUE)
-    public ResponseEntity<InputStreamResource> getAvatarPerfilPessoal(@PathVariable String id) throws IOException, NotFound {
+    @GetMapping(value = "{id}/perfil/pessoal/avatar", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<InputStreamResource> getAvatarPerfilPessoal(@PathVariable(name = "id") String id) throws IOException, NotFound {
         Usuario usuario = this.usuarioService.findById(id);
         if (usuario == null) {
             throw new NotFound("Não existe usuário com este id!");
         }
 
-        Pessoal perfilPessoal = usuario.getPerfilPessoal();
-        if (perfilPessoal == null) {
-            throw new NotFound("Não existe perfil pessoal cadastrado para este usuário!");
-        }
-
-        String filename = "avatar_" + perfilPessoal.getId() + ".png";
+        String filename = "avatar_" + usuario.getId() + ".jpg";
         Path path = rootLocation.resolve(filename);
         Resource resource = new UrlResource(path.toUri());
         return ResponseEntity.ok().contentType(MediaType.IMAGE_PNG)
                 .body(new InputStreamResource(resource.getInputStream()));
     }
-
+*/
     @GetMapping(value = "{id}/perfil/pessoal/qrcode", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<InputStreamResource> getQRCodePerfilPessoal(@PathVariable(name = "id") String id) throws NotFound, WriterException, IOException {
         Usuario usuario = this.usuarioService.findById(id);
@@ -311,6 +304,12 @@ public class UsuarioResource implements Serializable {
     public ResponseEntity<Pessoal> findPerfilPessoal() {
         Pessoal perfil = usuarioService.find().getPerfilPessoal();
         return ResponseEntity.ok().body(perfil);
+    }
+
+    @RequestMapping(value = "/picture", method = RequestMethod.POST)
+    public ResponseEntity<Void> uploadProfilePicture(@RequestParam(name = "file") MultipartFile file) {
+        URI uri = usuarioService.uploadProfilePicture(file);
+        return ResponseEntity.created(uri).build();
     }
 
     @GetMapping

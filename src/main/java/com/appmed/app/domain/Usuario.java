@@ -22,11 +22,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario extends AbstractDocument implements Serializable {
 
     private static final long serialVersionUID = -8703831001278409915L;
-    
+
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String nome;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @Indexed(unique=true)
+    @Indexed(unique = true)
     @Email
     private String email;
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -34,17 +34,18 @@ public class Usuario extends AbstractDocument implements Serializable {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String tefefone;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    @Indexed(unique=true)
+    @Indexed(unique = true)
     @CPF
     private String cpf;
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String rg;
     private boolean enabled;
-    
-    @ElementCollection(fetch=FetchType.EAGER)
-    @CollectionTable(name="TIPOUSUARIOS")
-    private Set<Integer> tipos =new HashSet<>();
-    
+
+    //private String imageUrl;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "TIPOUSUARIOS")
+    private Set<Integer> tipos = new HashSet<>();
 
     @DBRef
     private Pessoal perfilPessoal;
@@ -70,7 +71,7 @@ public class Usuario extends AbstractDocument implements Serializable {
         this.tefefone = tefefone;
         this.cpf = cpf;
         this.rg = rg;
-         addTipo(TipoUsuario.PACIENTE);
+        addTipo(TipoUsuario.PACIENTE);
     }
 
     public String getNome() {
@@ -153,17 +154,16 @@ public class Usuario extends AbstractDocument implements Serializable {
         this.perfisInstituicoes = perfisInstituicoes;
     }
 
-    public Set<TipoUsuario> getTipos(){
+    public Set<TipoUsuario> getTipos() {
         return tipos.stream().map(x -> TipoUsuario.toEnum(x)).collect(Collectors.toSet());
     }
-    
-    public void addTipo(TipoUsuario tipo){
+
+    public void addTipo(TipoUsuario tipo) {
         tipos.add(tipo.getCod());
     }
-    
-    
+
     public boolean add(Institucional e) {
-        if (this.perfisInstituicoes==null) {
+        if (this.perfisInstituicoes == null) {
             this.perfisInstituicoes = new ArrayList<Institucional>();
         };
         return perfisInstituicoes.add(e);
@@ -173,13 +173,19 @@ public class Usuario extends AbstractDocument implements Serializable {
         return perfisInstituicoes.remove(o);
     }
 
+    /*public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }*/
+
     @Override
     public String toString() {
         return "Usuario{" + "nome=" + nome + ", email=" + email + ", tefefone=" + tefefone + ", cpf=" + cpf + ", rg=" + rg + ", enabled=" + enabled + '}';
     }
 
-    
-    
     @Override
     public int hashCode() {
         final int prime = 31;

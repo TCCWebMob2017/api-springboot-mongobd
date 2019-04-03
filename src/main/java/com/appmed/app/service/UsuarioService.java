@@ -6,13 +6,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import java.net.URI;
+import org.springframework.web.multipart.MultipartFile;
 import com.appmed.app.domain.Usuario;
 import com.appmed.app.domain.UsuarioDTO;
 import com.appmed.app.repository.UsuarioRepository;
 import com.appmed.app.security.UserSS;
 import com.appmed.app.exceptions.AuthorizationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import java.awt.image.BufferedImage;
+import org.springframework.beans.factory.annotation.Value;
 
 @Service
 public class UsuarioService implements Serializable {
@@ -27,6 +31,18 @@ public class UsuarioService implements Serializable {
 
     @Autowired
     private ContatoService contatoService;
+
+    @Autowired
+    private S3Service s3Service;
+
+    @Autowired
+    private ImageService imageService;
+
+    @Value("${img.prefix.client.profile}")
+    private String prefix;
+
+    @Value("${img.profile.size}")
+    private Integer size;
 
     public Usuario save(Usuario usuario) {
         return this.usuarioRepository.save(usuario);
@@ -71,6 +87,19 @@ public class UsuarioService implements Serializable {
 
     public List<Contato> getPodemEditar() {
         return this.contatoService.getPodemEditar(this.find().getId());
+    }
+
+    public URI uploadProfilePicture(MultipartFile multipartFile) {
+        UserSS user = this.authenticated();
+        if (user == null) {
+            throw new AuthorizationException("Acesso negado");
+        }
+        BufferedImage jpgImage = imageService.getJpgImageFromFile(multipartFile);
+        jpgImage = imageService.cropSquare(jpgImage);
+        jpgImage = imageService.resize(jpgImage, size);
+        String fileName = prefix + user.getId() + ".jpg";
+
+        return s3Service.uploadFile(imageService.getInputStream(jpgImage, "jpg"), fileName, "image");
     }
 
     public static UserSS authenticated() {
